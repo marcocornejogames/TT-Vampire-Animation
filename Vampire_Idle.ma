@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: Vampire_Idle.ma
-//Last modified: Mon, Jun 14, 2021 11:15:05 AM
+//Last modified: Mon, Jun 14, 2021 11:26:29 AM
 //Codeset: 1252
 file -rdi 1 -ns "Vampire__Controller" -rfn "Vampire__ControllerRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/student/Desktop/Repository/TT-Vampire-Animation/Vampire__Controller.ma";
@@ -14,17 +14,17 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "822873BB-4E26-C376-C6F5-ED8A3F44B6AB";
+fileInfo "UUID" "1463EA07-4DDB-5DF6-7D2E-43ACF2493005";
 createNode transform -s -n "persp";
 	rename -uid "6F5EA41C-4E6F-F3EC-89FF-8C8DD5C54839";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 240.70093862058542 561.29570968612029 567.05587570531361 ;
-	setAttr ".r" -type "double3" -42.338352729603656 23.000000000000231 -1.7276142920564473e-15 ;
+	setAttr ".t" -type "double3" -85.198101663941372 131.80908990800623 376.52727900993182 ;
+	setAttr ".r" -type "double3" -11.138352730720957 -1807.0000000002333 1.0013875287453854e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "8FE1E93B-4C91-4EB1-CC5A-119913B9DA26";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 833.39197364552683;
+	setAttr ".coi" 417.32338998263816;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -82,8 +82,8 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "E5152135-482B-ADF7-D632-E5BA0FB4AC14";
-	setAttr -s 46 ".lnk";
-	setAttr -s 46 ".slnk";
+	setAttr -s 90 ".lnk";
+	setAttr -s 90 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "D8E426E1-4ADB-73E1-2EAF-EE81B2C8C05A";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -145,13 +145,19 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
 createNode reference -n "Vampire__ControllerRN";
-	rename -uid "68E29058-4D46-8437-48E2-B3943288F269";
+	rename -uid "B85F82FB-4CA6-B065-3B00-FD8EE1156F77";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Vampire__ControllerRN"
 		"Vampire__ControllerRN" 0
-		"Vampire__ControllerRN" 1
-		2 "|Vampire__Controller:IK_Group|Vampire__Controller:LeftHand_IK" "visibility" 
-		" 0";
+		"Vampire__ControllerRN" 4
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON" 
+		"translateX" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON" 
+		"translateY" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON" 
+		"translateZ" " -av";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 select -ne :time1;
@@ -173,7 +179,7 @@ select -ne :postProcessList1;
 select -ne :defaultRenderingList1;
 	setAttr -s 2 ".r";
 select -ne :initialShadingGroup;
-	setAttr -s 4 ".dsm";
+	setAttr -s 3 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
