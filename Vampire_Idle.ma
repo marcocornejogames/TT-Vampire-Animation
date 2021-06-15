@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: Vampire_Idle.ma
-//Last modified: Mon, Jun 14, 2021 04:03:51 PM
+//Last modified: Tue, Jun 15, 2021 01:51:03 PM
 //Codeset: 1252
 file -rdi 1 -ns "Vampire__Controller" -rfn "Vampire__ControllerRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/student/Desktop/Repository/TT-Vampire-Animation/Vampire__Controller.ma";
@@ -8,23 +8,25 @@ file -r -ns "Vampire__Controller" -dr 1 -rfn "Vampire__ControllerRN" -op "v=0;"
 		-typ "mayaAscii" "C:/Users/student/Desktop/Repository/TT-Vampire-Animation/Vampire__Controller.ma";
 requires maya "2020";
 requires "mtoa" "4.0.3";
+requires "mtoa" "4.0.3";
 currentUnit -l centimeter -a degree -t ntsc;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "56628644-4348-9117-E6F5-2E8F38695098";
+fileInfo "UUID" "8E160A0D-47CD-8421-CA27-05856F91AC4A";
 createNode transform -s -n "persp";
 	rename -uid "6F5EA41C-4E6F-F3EC-89FF-8C8DD5C54839";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 86.992530585452116 652.72885720930356 1515.8156862542876 ;
-	setAttr ".r" -type "double3" -20.738352768455897 -3599.3999999992989 -9.9397783839302213e-17 ;
+	setAttr ".t" -type "double3" -33.184367061679623 1141.9508135367855 1240.0055854805228 ;
+	setAttr ".r" -type "double3" -42.338352768453476 -3600.5999999997957 -2.4849445959821449e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "8FE1E93B-4C91-4EB1-CC5A-119913B9DA26";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1643.6170269836093;
+	setAttr ".ncp" 1;
+	setAttr ".coi" 1643.6170269985084;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -82,7 +84,7 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode fosterParent -n "Vampire__ControllerRNfosterParent1";
-	rename -uid "DF5A026E-44FB-CA18-55BA-AAB9986814A0";
+	rename -uid "4EE2B454-432D-6FC7-1247-1CA8F0E1F61C";
 createNode parentConstraint -n "Right_Shoulder_parentConstraint1" -p "Vampire__ControllerRNfosterParent1";
 	rename -uid "E8596C67-40C6-A62D-D10E-82807BB9E484";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "RightShoulder_CONW0" -dv 1 -min 0 
@@ -107,19 +109,19 @@ createNode parentConstraint -n "Right_Shoulder_parentConstraint1" -p "Vampire__C
 	setAttr ".rsrr" -type "double3" 69.345225864755164 3.5515908161013749 -13.372136757411711 ;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "FB3C9A95-4650-47BC-BECD-93A7852D84C7";
+	rename -uid "D31E5501-4869-0D0B-2BEA-0A81A8E6B824";
 	setAttr -s 46 ".lnk";
 	setAttr -s 46 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "9193F01D-4D81-630F-B918-D581A2BA370C";
+	rename -uid "382C9826-4E1A-01CE-864A-F28150633DC8";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "B6DD4923-4BB5-5D4E-3F1E-85A7908B7978";
+	rename -uid "7487D9EB-4FDB-2782-FE8F-48A2437E5BF0";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "EBC454E6-4C58-A478-BE74-2EB324D5006E";
+	rename -uid "5637C2DF-4067-14E1-4F9D-97A20276F7A4";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "91CB9611-44EC-3B2C-68A9-EDA5C009F5C1";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "437DAA31-4014-7D4F-F527-3FB0E2F291D5";
+	rename -uid "6E8B7566-4689-B7DF-F357-A7ABF5E7C477";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "D77FB9E5-42A3-B286-A3A8-578DCCBEA0C6";
 	setAttr ".g" yes;
@@ -129,17 +131,17 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 589\n            -height 215\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 589\n            -height 215\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 589\n            -height 215\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1247\n            -height 474\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1247\n            -height 534\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -autoExpandAnimatedShapes 1\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n"
 		+ "            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n"
 		+ "            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -autoExpandAnimatedShapes 1\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n"
@@ -162,8 +164,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1247\\n    -height 474\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1247\\n    -height 474\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1247\\n    -height 534\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1247\\n    -height 534\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 50 -size 100 -divisions 1 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -1621,31 +1623,33 @@ createNode reference -n "Vampire__ControllerRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Vampire__ControllerRN"
 		"Vampire__ControllerRN" 0
-		"Vampire__ControllerRN" 1911
+		"Vampire__ControllerRN" 1913
 		0 "|Vampire__ControllerRNfosterParent1|Right_Shoulder_parentConstraint1" 
 		"|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Right_Shoulder" 
 		"-s -r "
 		2 "Vampire__Controller:Geometry" "displayType" " 2"
-		2 "Vampire__Controller:Control_Rig" "visibility" " 1"
-		3 "Vampire__Controller:Left_Hand_Index2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.visibility" 
+		2 "Vampire__Controller:Geometry" "visibility" " 1"
+		2 "Vampire__Controller:Skeleton" "visibility" " 0"
+		2 "Vampire__Controller:Control_Rig" "visibility" " 0"
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.visibility" 
 		""
-		3 "Vampire__Controller:Left_Hand_Index2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.translateX" 
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.translateX" 
 		""
-		3 "Vampire__Controller:Left_Hand_Index2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.translateY" 
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.translateY" 
 		""
-		3 "Vampire__Controller:Left_Hand_Index2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.translateZ" 
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.translateZ" 
 		""
-		3 "Vampire__Controller:Left_Hand_Index2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rotateX" 
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rotateX" 
 		""
-		3 "Vampire__Controller:Left_Hand_Index2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rotateY" 
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rotateY" 
 		""
-		3 "Vampire__Controller:Left_Hand_Index2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rotateZ" 
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:Left_Hand_Index2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.scaleX" 
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.scaleX" 
 		""
-		3 "Vampire__Controller:Left_Hand_Index2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.scaleY" 
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.scaleY" 
 		""
-		3 "Vampire__Controller:Left_Hand_Index2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.scaleZ" 
+		3 "Vampire__Controller:Right_Hand_Ring2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.scaleZ" 
 		""
 		3 "Vampire__Controller:Left_Hand_Index1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.visibility" 
 		""
@@ -1667,45 +1671,125 @@ createNode reference -n "Vampire__ControllerRN";
 		""
 		3 "Vampire__Controller:Left_Hand_Index1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.visibility" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.visibility" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.translateX" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.translateX" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.translateY" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.translateY" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.translateZ" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.translateZ" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.rotateX" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rotateX" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.rotateY" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rotateY" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.rotateZ" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.scaleX" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.scaleX" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.scaleY" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.scaleY" 
 		""
-		3 "Vampire__Controller:LeftShoulder_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.scaleZ" 
+		3 "Vampire__Controller:Right_Hand_Middle2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:Spine2_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.visibility" 
+		3 "Vampire__Controller:Spine1_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.visibility" 
 		""
-		3 "Vampire__Controller:Spine2_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.translateX" 
+		3 "Vampire__Controller:Spine1_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.translateX" 
 		""
-		3 "Vampire__Controller:Spine2_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.translateY" 
+		3 "Vampire__Controller:Spine1_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.translateY" 
 		""
-		3 "Vampire__Controller:Spine2_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.translateZ" 
+		3 "Vampire__Controller:Spine1_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.translateZ" 
 		""
-		3 "Vampire__Controller:Spine2_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.rotateX" 
+		3 "Vampire__Controller:Spine1_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.rotateX" 
 		""
-		3 "Vampire__Controller:Spine2_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.rotateY" 
+		3 "Vampire__Controller:Spine1_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.rotateY" 
 		""
-		3 "Vampire__Controller:Spine2_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.rotateZ" 
+		3 "Vampire__Controller:Spine1_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:Spine2_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.scaleX" 
+		3 "Vampire__Controller:Spine1_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.scaleX" 
 		""
-		3 "Vampire__Controller:Spine2_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.scaleY" 
+		3 "Vampire__Controller:Spine1_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.scaleY" 
 		""
-		3 "Vampire__Controller:Spine2_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.scaleZ" 
+		3 "Vampire__Controller:Spine1_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.visibility" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.translateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.translateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.visibility" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.translateX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.translateY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Ring1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.visibility" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.translateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.translateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Middle1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Jaw_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.visibility" 
+		""
+		3 "Vampire__Controller:Jaw_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.translateX" 
+		""
+		3 "Vampire__Controller:Jaw_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.translateY" 
+		""
+		3 "Vampire__Controller:Jaw_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Jaw_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Jaw_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Jaw_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Jaw_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Jaw_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Jaw_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.scaleZ" 
 		""
 		3 "Vampire__Controller:Hips_Translate_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON.visibility" 
 		""
@@ -1727,25 +1811,125 @@ createNode reference -n "Vampire__ControllerRN";
 		""
 		3 "Vampire__Controller:Hips_Translate_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.visibility" 
+		3 "Vampire__Controller:LeftToeEnd_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.visibility" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.translateX" 
+		3 "Vampire__Controller:LeftToeEnd_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.translateX" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.translateY" 
+		3 "Vampire__Controller:LeftToeEnd_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.translateY" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.translateZ" 
+		3 "Vampire__Controller:LeftToeEnd_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.translateZ" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.rotateX" 
+		3 "Vampire__Controller:LeftToeEnd_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.rotateX" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.rotateY" 
+		3 "Vampire__Controller:LeftToeEnd_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.rotateY" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.rotateZ" 
+		3 "Vampire__Controller:LeftToeEnd_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.scaleX" 
+		3 "Vampire__Controller:LeftToeEnd_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.scaleX" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.scaleY" 
+		3 "Vampire__Controller:LeftToeEnd_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.scaleY" 
 		""
-		3 "Vampire__Controller:LeftHand_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.scaleZ" 
+		3 "Vampire__Controller:LeftToeEnd_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.visibility" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.translateX" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.translateY" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.translateZ" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.rotateX" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.rotateY" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.scaleX" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.scaleY" 
+		""
+		3 "Vampire__Controller:LeftToeBase_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.visibility" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.translateX" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.translateY" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Left_Ear_Base_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.visibility" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.translateX" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.translateY" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.translateZ" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.rotateX" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.rotateY" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.scaleX" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.scaleY" 
+		""
+		3 "Vampire__Controller:LeftShoulder_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.visibility" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.translateX" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.translateY" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.translateZ" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.rotateX" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.rotateY" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.scaleX" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.scaleY" 
+		""
+		3 "Vampire__Controller:RightHeel_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Head_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.visibility" 
+		""
+		3 "Vampire__Controller:Head_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.translateX" 
+		""
+		3 "Vampire__Controller:Head_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.translateY" 
+		""
+		3 "Vampire__Controller:Head_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Head_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Head_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Head_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Head_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Head_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Head_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.scaleZ" 
 		""
 		3 "Vampire__Controller:RightToeEnd_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightToeEnd_CON|Vampire__Controller:RightToeEnd_CON.visibility" 
 		""
@@ -1767,25 +1951,331 @@ createNode reference -n "Vampire__ControllerRN";
 		""
 		3 "Vampire__Controller:RightToeEnd_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightToeEnd_CON|Vampire__Controller:RightToeEnd_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.visibility" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.visibility" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.translateX" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.translateX" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.translateY" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.translateY" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.translateZ" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.translateZ" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rotateX" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rotateX" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rotateY" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rotateY" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rotateZ" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.scaleX" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.scaleX" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.scaleY" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.scaleY" 
 		""
-		3 "Vampire__Controller:Right_Hand_Pinky2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.scaleZ" 
+		3 "Vampire__Controller:Right_Hand_Middle1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:pairBlend56.outRotateX" "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Right_Shoulder.rotateX" 
+		""
+		3 "Vampire__Controller:pairBlend56.outRotateY" "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Right_Shoulder.rotateY" 
+		""
+		3 "Vampire__Controller:pairBlend56.outRotateZ" "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Right_Shoulder.rotateZ" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.visibility" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.translateX" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.translateY" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Right_Ear_Base_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.visibility" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.translateX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.translateY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Thumb2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.visibility" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.translateX" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.translateY" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.translateZ" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.rotateX" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.rotateY" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.rotateZ" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.scaleX" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.scaleY" 
+		""
+		3 "Vampire__Controller:LeftFoot_PV_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.scaleZ" 
+		""
+		3 "Vampire__Controller:Root_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.visibility" 
+		""
+		3 "Vampire__Controller:Root_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.translateX" 
+		""
+		3 "Vampire__Controller:Root_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.translateY" 
+		""
+		3 "Vampire__Controller:Root_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Root_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Root_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Root_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Root_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Root_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Root_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Neck_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.visibility" 
+		""
+		3 "Vampire__Controller:Neck_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.translateX" 
+		""
+		3 "Vampire__Controller:Neck_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.translateY" 
+		""
+		3 "Vampire__Controller:Neck_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Neck_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Neck_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Neck_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Neck_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Neck_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Neck_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.visibility" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.translateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.translateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Thumb1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.visibility" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.translateX" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.translateY" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.translateZ" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.rotateX" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.rotateY" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.scaleX" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.scaleY" 
+		""
+		3 "Vampire__Controller:LeftHand_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.visibility" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.translateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.translateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Ring1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.visibility" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.translateX" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.translateY" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.translateZ" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.rotateX" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.rotateY" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.rotateZ" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.scaleX" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.scaleY" 
+		""
+		3 "Vampire__Controller:RightFoot_PV_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.scaleZ" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.visibility" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.translateX" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.translateY" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.translateZ" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.rotateX" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.rotateY" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.rotateZ" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.scaleX" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.scaleY" 
+		""
+		3 "Vampire__Controller:Hips_Rotate_CON_Full_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.scaleZ" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.visibility" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.translateX" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.translateY" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Left_Ear_Bond_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Spine2_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.visibility" 
+		""
+		3 "Vampire__Controller:Spine2_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.translateX" 
+		""
+		3 "Vampire__Controller:Spine2_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.translateY" 
+		""
+		3 "Vampire__Controller:Spine2_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Spine2_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Spine2_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Spine2_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Spine2_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Spine2_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Spine2_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.visibility" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.translateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.translateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Left_Hand_Pinky1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Spine_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.visibility" 
+		""
+		3 "Vampire__Controller:Spine_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.translateX" 
+		""
+		3 "Vampire__Controller:Spine_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.translateY" 
+		""
+		3 "Vampire__Controller:Spine_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Spine_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Spine_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Spine_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Spine_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Spine_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Spine_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.visibility" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.translateX" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.translateY" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.translateZ" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.rotateX" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.rotateY" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.scaleX" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.scaleY" 
+		""
+		3 "Vampire__Controller:LeftHeel_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.scaleZ" 
 		""
 		3 "Vampire__Controller:Left_Hand_Middle2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.visibility" 
 		""
@@ -1827,106 +2317,6 @@ createNode reference -n "Vampire__ControllerRN";
 		""
 		3 "Vampire__Controller:RightToeBase_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightToeEnd_CON|Vampire__Controller:RightToeEnd_CON|Vampire__Controller:Zero_RightToeBase_CON|Vampire__Controller:RightToeBase_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.visibility" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.translateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.translateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:persp1_visibility.output" "|Vampire__Controller:persp1.visibility" 
-		""
-		3 "Vampire__Controller:persp1_translateX.output" "|Vampire__Controller:persp1.translateX" 
-		""
-		3 "Vampire__Controller:persp1_translateY.output" "|Vampire__Controller:persp1.translateY" 
-		""
-		3 "Vampire__Controller:persp1_translateZ.output" "|Vampire__Controller:persp1.translateZ" 
-		""
-		3 "Vampire__Controller:persp1_rotateX.output" "|Vampire__Controller:persp1.rotateX" 
-		""
-		3 "Vampire__Controller:persp1_rotateY.output" "|Vampire__Controller:persp1.rotateY" 
-		""
-		3 "Vampire__Controller:persp1_rotateZ.output" "|Vampire__Controller:persp1.rotateZ" 
-		""
-		3 "Vampire__Controller:persp1_scaleX.output" "|Vampire__Controller:persp1.scaleX" 
-		""
-		3 "Vampire__Controller:persp1_scaleY.output" "|Vampire__Controller:persp1.scaleY" 
-		""
-		3 "Vampire__Controller:persp1_scaleZ.output" "|Vampire__Controller:persp1.scaleZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.visibility" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.translateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.translateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Pinky1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.visibility" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.translateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.translateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.visibility" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.translateX" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.translateY" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.translateZ" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.rotateX" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.rotateY" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.scaleX" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.scaleY" 
-		""
-		3 "Vampire__Controller:RightHeel_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON.scaleZ" 
-		""
 		3 "Vampire__Controller:RightHand_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON.visibility" 
 		""
 		3 "Vampire__Controller:RightHand_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON.translateX" 
@@ -1946,26 +2336,6 @@ createNode reference -n "Vampire__ControllerRN";
 		3 "Vampire__Controller:RightHand_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON.scaleY" 
 		""
 		3 "Vampire__Controller:RightHand_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.visibility" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.translateX" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.translateY" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.translateZ" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.rotateX" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.rotateY" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.scaleX" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.scaleY" 
-		""
-		3 "Vampire__Controller:LeftToeBase_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON|Vampire__Controller:Zero_LeftToeBase_CON|Vampire__Controller:LeftToeBase_CON.scaleZ" 
 		""
 		3 "Vampire__Controller:Right_Ear_Bond_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.visibility" 
 		""
@@ -1987,365 +2357,25 @@ createNode reference -n "Vampire__ControllerRN";
 		""
 		3 "Vampire__Controller:Right_Ear_Bond_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:Root_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.visibility" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.visibility" 
 		""
-		3 "Vampire__Controller:Root_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.translateX" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.translateX" 
 		""
-		3 "Vampire__Controller:Root_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.translateY" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.translateY" 
 		""
-		3 "Vampire__Controller:Root_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.translateZ" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.translateZ" 
 		""
-		3 "Vampire__Controller:Root_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.rotateX" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rotateX" 
 		""
-		3 "Vampire__Controller:Root_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.rotateY" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rotateY" 
 		""
-		3 "Vampire__Controller:Root_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.rotateZ" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:Root_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.scaleX" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.scaleX" 
 		""
-		3 "Vampire__Controller:Root_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.scaleY" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.scaleY" 
 		""
-		3 "Vampire__Controller:Root_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.visibility" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.translateX" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.translateY" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.translateZ" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.rotateX" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.rotateY" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.scaleX" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.scaleY" 
-		""
-		3 "Vampire__Controller:LeftHeel_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.visibility" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.translateX" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.translateY" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.translateZ" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.rotateX" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.rotateY" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.rotateZ" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.scaleX" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.scaleY" 
-		""
-		3 "Vampire__Controller:LeftFoot_PV_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftFoot_PV|Vampire__Controller:LeftFoot_PV.scaleZ" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.visibility" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.translateX" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.translateY" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.translateZ" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.rotateX" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.rotateY" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.rotateZ" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.scaleX" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.scaleY" 
-		""
-		3 "Vampire__Controller:Hips_Rotate_CON_Full_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full.scaleZ" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.visibility" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateX" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateY" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateZ" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateX" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateY" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.scaleX" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.scaleY" 
-		""
-		3 "Vampire__Controller:RightShoulder_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.visibility" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.translateX" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.translateY" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Left_Ear_Bond_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.visibility" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.translateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.translateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Thumb1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Neck_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.visibility" 
-		""
-		3 "Vampire__Controller:Neck_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.translateX" 
-		""
-		3 "Vampire__Controller:Neck_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.translateY" 
-		""
-		3 "Vampire__Controller:Neck_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Neck_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Neck_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Neck_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Neck_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Neck_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Neck_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.visibility" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.translateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.translateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.visibility" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.translateX" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.translateY" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Left_Ear_Base_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Spine_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.visibility" 
-		""
-		3 "Vampire__Controller:Spine_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.translateX" 
-		""
-		3 "Vampire__Controller:Spine_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.translateY" 
-		""
-		3 "Vampire__Controller:Spine_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Spine_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Spine_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Spine_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Spine_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Spine_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Spine_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.visibility" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.translateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.translateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Ring2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Head_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.visibility" 
-		""
-		3 "Vampire__Controller:Head_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.translateX" 
-		""
-		3 "Vampire__Controller:Head_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.translateY" 
-		""
-		3 "Vampire__Controller:Head_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Head_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Head_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Head_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Head_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Head_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Head_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.visibility" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.translateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.translateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Index2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.visibility" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.translateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.translateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Pinky2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.visibility" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.translateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.translateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Ring2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.visibility" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.translateX" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.translateY" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.translateZ" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.rotateX" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.rotateY" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.scaleX" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.scaleY" 
-		""
-		3 "Vampire__Controller:LeftToeEnd_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON|Vampire__Controller:Zero_LeftToeEnd_CON|Vampire__Controller:LeftToeEnd_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.visibility" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.translateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.translateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Right_Hand_Thumb2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.scaleZ" 
+		3 "Vampire__Controller:Left_Hand_Index2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.scaleZ" 
 		""
 		3 "Vampire__Controller:Right_Hand_Thumb1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.visibility" 
 		""
@@ -2367,65 +2397,105 @@ createNode reference -n "Vampire__ControllerRN";
 		""
 		3 "Vampire__Controller:Right_Hand_Thumb1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.visibility" 
+		3 "Vampire__Controller:persp1_visibility.output" "|Vampire__Controller:persp1.visibility" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.translateX" 
+		3 "Vampire__Controller:persp1_translateX.output" "|Vampire__Controller:persp1.translateX" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.translateY" 
+		3 "Vampire__Controller:persp1_translateY.output" "|Vampire__Controller:persp1.translateY" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.translateZ" 
+		3 "Vampire__Controller:persp1_translateZ.output" "|Vampire__Controller:persp1.translateZ" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rotateX" 
+		3 "Vampire__Controller:persp1_rotateX.output" "|Vampire__Controller:persp1.rotateX" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rotateY" 
+		3 "Vampire__Controller:persp1_rotateY.output" "|Vampire__Controller:persp1.rotateY" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rotateZ" 
+		3 "Vampire__Controller:persp1_rotateZ.output" "|Vampire__Controller:persp1.rotateZ" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.scaleX" 
+		3 "Vampire__Controller:persp1_scaleX.output" "|Vampire__Controller:persp1.scaleX" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.scaleY" 
+		3 "Vampire__Controller:persp1_scaleY.output" "|Vampire__Controller:persp1.scaleY" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.scaleZ" 
+		3 "Vampire__Controller:persp1_scaleZ.output" "|Vampire__Controller:persp1.scaleZ" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.visibility" 
+		3 "Vampire__Controller:RightShoulder_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.visibility" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.translateX" 
+		3 "Vampire__Controller:RightShoulder_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateX" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.translateY" 
+		3 "Vampire__Controller:RightShoulder_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateY" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.translateZ" 
+		3 "Vampire__Controller:RightShoulder_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateZ" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rotateX" 
+		3 "Vampire__Controller:RightShoulder_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateX" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rotateY" 
+		3 "Vampire__Controller:RightShoulder_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateY" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rotateZ" 
+		3 "Vampire__Controller:RightShoulder_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.scaleX" 
+		3 "Vampire__Controller:RightShoulder_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.scaleX" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.scaleY" 
+		3 "Vampire__Controller:RightShoulder_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.scaleY" 
 		""
-		3 "Vampire__Controller:Left_Hand_Pinky1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.scaleZ" 
+		3 "Vampire__Controller:RightShoulder_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:Jaw_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.visibility" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.visibility" 
 		""
-		3 "Vampire__Controller:Jaw_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.translateX" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.translateX" 
 		""
-		3 "Vampire__Controller:Jaw_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.translateY" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.translateY" 
 		""
-		3 "Vampire__Controller:Jaw_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.translateZ" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.translateZ" 
 		""
-		3 "Vampire__Controller:Jaw_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.rotateX" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rotateX" 
 		""
-		3 "Vampire__Controller:Jaw_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.rotateY" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rotateY" 
 		""
-		3 "Vampire__Controller:Jaw_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.rotateZ" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:Jaw_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.scaleX" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.scaleX" 
 		""
-		3 "Vampire__Controller:Jaw_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.scaleY" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.scaleY" 
 		""
-		3 "Vampire__Controller:Jaw_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Zero_Jaw_CON|Vampire__Controller:Jaw_CON.scaleZ" 
+		3 "Vampire__Controller:Right_Hand_Index2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.visibility" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.translateX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.translateY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.scaleZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.visibility" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.translateX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.translateY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.translateZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rotateX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rotateY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rotateZ" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.scaleX" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.scaleY" 
+		""
+		3 "Vampire__Controller:Right_Hand_Pinky1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.scaleZ" 
 		""
 		3 "Vampire__Controller:Right_Hand_Index1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.visibility" 
 		""
@@ -2447,111 +2517,45 @@ createNode reference -n "Vampire__ControllerRN";
 		""
 		3 "Vampire__Controller:Right_Hand_Index1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.visibility" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.visibility" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.translateX" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.translateX" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.translateY" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.translateY" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.translateZ" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.translateZ" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rotateX" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rotateX" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rotateY" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rotateY" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rotateZ" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.scaleX" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.scaleX" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.scaleY" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.scaleY" 
 		""
-		3 "Vampire__Controller:Right_Hand_Middle1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.scaleZ" 
+		3 "Vampire__Controller:Left_Hand_Thumb2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.scaleZ" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.visibility" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.visibility" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.translateX" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.translateX" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.translateY" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.translateY" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.translateZ" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.translateZ" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rotateX" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rotateX" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rotateY" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rotateY" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rotateZ" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rotateZ" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.scaleX" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.scaleX" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.scaleY" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.scaleY" 
 		""
-		3 "Vampire__Controller:Right_Ear_Base_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.visibility" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.translateX" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.translateY" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.translateZ" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.rotateX" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.rotateY" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.rotateZ" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.scaleX" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.scaleY" 
-		""
-		3 "Vampire__Controller:RightFoot_PV_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON|Vampire__Controller:Zero_RightFoot_PV|Vampire__Controller:RightFoot_PV.scaleZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_visibility1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.visibility" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_translateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.translateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_translateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.translateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_translateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_rotateX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_rotateY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_rotateZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_scaleX1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_scaleY1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Left_Hand_Middle1_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.scaleZ" 
-		""
-		3 "Vampire__Controller:pairBlend28.outRotateX" "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Right_Shoulder.rotateX" 
-		""
-		3 "Vampire__Controller:pairBlend28.outRotateY" "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Right_Shoulder.rotateY" 
-		""
-		3 "Vampire__Controller:pairBlend28.outRotateZ" "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Right_Shoulder.rotateZ" 
-		""
-		3 "Vampire__Controller:Spine1_CON_visibility.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.visibility" 
-		""
-		3 "Vampire__Controller:Spine1_CON_translateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.translateX" 
-		""
-		3 "Vampire__Controller:Spine1_CON_translateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.translateY" 
-		""
-		3 "Vampire__Controller:Spine1_CON_translateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.translateZ" 
-		""
-		3 "Vampire__Controller:Spine1_CON_rotateX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.rotateX" 
-		""
-		3 "Vampire__Controller:Spine1_CON_rotateY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.rotateY" 
-		""
-		3 "Vampire__Controller:Spine1_CON_rotateZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.rotateZ" 
-		""
-		3 "Vampire__Controller:Spine1_CON_scaleX.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.scaleX" 
-		""
-		3 "Vampire__Controller:Spine1_CON_scaleY.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.scaleY" 
-		""
-		3 "Vampire__Controller:Spine1_CON_scaleZ.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON.scaleZ" 
+		3 "Vampire__Controller:Left_Hand_Pinky2_CON_scaleZ1.output" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.scaleZ" 
 		""
 		5 4 "Vampire__ControllerRN" "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Right_Shoulder.rotateX" 
 		"Vampire__ControllerRN.placeHolderList[1]" ""
@@ -3203,35 +3207,35 @@ createNode reference -n "Vampire__ControllerRN";
 		"Vampire__ControllerRN.placeHolderList[324]" ""
 		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translate" 
 		"Vampire__ControllerRN.placeHolderList[325]" ""
-		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateX" 
-		"Vampire__ControllerRN.placeHolderList[326]" ""
-		5 4 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateX" 
-		"Vampire__ControllerRN.placeHolderList[327]" ""
 		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateY" 
-		"Vampire__ControllerRN.placeHolderList[328]" ""
+		"Vampire__ControllerRN.placeHolderList[326]" ""
 		5 4 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateY" 
+		"Vampire__ControllerRN.placeHolderList[327]" ""
+		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateX" 
+		"Vampire__ControllerRN.placeHolderList[328]" ""
+		5 4 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateX" 
 		"Vampire__ControllerRN.placeHolderList[329]" ""
 		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateZ" 
 		"Vampire__ControllerRN.placeHolderList[330]" ""
 		5 4 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.translateZ" 
 		"Vampire__ControllerRN.placeHolderList[331]" ""
-		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotatePivot" 
-		"Vampire__ControllerRN.placeHolderList[332]" ""
-		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotatePivotTranslate" 
-		"Vampire__ControllerRN.placeHolderList[333]" ""
 		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotate" 
-		"Vampire__ControllerRN.placeHolderList[334]" ""
+		"Vampire__ControllerRN.placeHolderList[332]" ""
 		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateX" 
-		"Vampire__ControllerRN.placeHolderList[335]" ""
+		"Vampire__ControllerRN.placeHolderList[333]" ""
 		5 4 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateX" 
-		"Vampire__ControllerRN.placeHolderList[336]" ""
+		"Vampire__ControllerRN.placeHolderList[334]" ""
 		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateY" 
-		"Vampire__ControllerRN.placeHolderList[337]" ""
+		"Vampire__ControllerRN.placeHolderList[335]" ""
 		5 4 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateY" 
-		"Vampire__ControllerRN.placeHolderList[338]" ""
+		"Vampire__ControllerRN.placeHolderList[336]" ""
 		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateZ" 
-		"Vampire__ControllerRN.placeHolderList[339]" ""
+		"Vampire__ControllerRN.placeHolderList[337]" ""
 		5 4 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateZ" 
+		"Vampire__ControllerRN.placeHolderList[338]" ""
+		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotatePivot" 
+		"Vampire__ControllerRN.placeHolderList[339]" ""
+		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotatePivotTranslate" 
 		"Vampire__ControllerRN.placeHolderList[340]" ""
 		5 3 "Vampire__ControllerRN" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON.rotateOrder" 
 		"Vampire__ControllerRN.placeHolderList[341]" ""
@@ -4547,1302 +4551,1302 @@ createNode reference -n "Vampire__ControllerRN";
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHeel_CON_scaleZ.output" 
 		"Vampire__ControllerRN.placeHolderList[992]" "Vampire__Controller:LeftHeel_CON.sz"
 		
-		5 3 "Vampire__ControllerRN" "Vampire__Controller:pairBlend28.outRotateX" 
-		"Vampire__ControllerRN.placeHolderList[993]" "Vampire__Controller:Right_Shoulder.rx"
-		
-		5 3 "Vampire__ControllerRN" "Vampire__Controller:pairBlend28.outRotateY" 
-		"Vampire__ControllerRN.placeHolderList[994]" "Vampire__Controller:Right_Shoulder.ry"
-		
-		5 3 "Vampire__ControllerRN" "Vampire__Controller:pairBlend28.outRotateZ" 
-		"Vampire__ControllerRN.placeHolderList[995]" "Vampire__Controller:Right_Shoulder.rz"
-		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[996]" "Vampire__Controller:Root_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[993]" "Vampire__Controller:Root_CON.tx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[997]" "Vampire__Controller:Root_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[994]" "Vampire__Controller:Root_CON.ty"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[998]" "Vampire__Controller:Root_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[995]" "Vampire__Controller:Root_CON.tz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[999]" "Vampire__Controller:Hips_Translate_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[996]" "Vampire__Controller:Hips_Translate_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1000]" "Vampire__Controller:Hips_Translate_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[997]" "Vampire__Controller:Hips_Translate_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1001]" "Vampire__Controller:Hips_Translate_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[998]" "Vampire__Controller:Hips_Translate_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1002]" "Vampire__Controller:Hips_Rotate_CON_Full.tx"
+		"Vampire__ControllerRN.placeHolderList[999]" "Vampire__Controller:Hips_Rotate_CON_Full.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1003]" "Vampire__Controller:Hips_Rotate_CON_Full.ty"
+		"Vampire__ControllerRN.placeHolderList[1000]" "Vampire__Controller:Hips_Rotate_CON_Full.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1004]" "Vampire__Controller:Hips_Rotate_CON_Full.tz"
+		"Vampire__ControllerRN.placeHolderList[1001]" "Vampire__Controller:Hips_Rotate_CON_Full.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1005]" "Vampire__Controller:Spine_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1002]" "Vampire__Controller:Spine_CON.tx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1006]" "Vampire__Controller:Spine_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1003]" "Vampire__Controller:Spine_CON.ty"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1007]" "Vampire__Controller:Spine_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1004]" "Vampire__Controller:Spine_CON.tz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1008]" "Vampire__Controller:Spine1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1005]" "Vampire__Controller:Spine1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1009]" "Vampire__Controller:Spine1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1006]" "Vampire__Controller:Spine1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1010]" "Vampire__Controller:Spine1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1007]" "Vampire__Controller:Spine1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1011]" "Vampire__Controller:Spine2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1008]" "Vampire__Controller:Spine2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1012]" "Vampire__Controller:Spine2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1009]" "Vampire__Controller:Spine2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1013]" "Vampire__Controller:Spine2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1010]" "Vampire__Controller:Spine2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1014]" "Vampire__Controller:LeftShoulder_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1011]" "Vampire__Controller:LeftShoulder_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1015]" "Vampire__Controller:LeftShoulder_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1012]" "Vampire__Controller:LeftShoulder_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1016]" "Vampire__Controller:LeftShoulder_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1013]" "Vampire__Controller:LeftShoulder_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1017]" "Vampire__Controller:Neck_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1014]" "Vampire__Controller:Neck_CON.tx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1018]" "Vampire__Controller:Neck_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1015]" "Vampire__Controller:Neck_CON.ty"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1019]" "Vampire__Controller:Neck_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1016]" "Vampire__Controller:Neck_CON.tz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1020]" "Vampire__Controller:Head_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1017]" "Vampire__Controller:Head_CON.tx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1021]" "Vampire__Controller:Head_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1018]" "Vampire__Controller:Head_CON.ty"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1022]" "Vampire__Controller:Head_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1019]" "Vampire__Controller:Head_CON.tz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1023]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1020]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1024]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1021]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1025]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1022]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1026]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1023]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1027]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1024]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1028]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1025]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1029]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1026]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1030]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1027]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1031]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1028]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1032]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1029]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1033]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1030]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1034]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1031]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1035]" "Vampire__Controller:Jaw_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1032]" "Vampire__Controller:Jaw_CON.tx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1036]" "Vampire__Controller:Jaw_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1033]" "Vampire__Controller:Jaw_CON.ty"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1037]" "Vampire__Controller:Jaw_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1034]" "Vampire__Controller:Jaw_CON.tz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1038]" "Vampire__Controller:RightShoulder_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1035]" "Vampire__Controller:RightShoulder_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1039]" "Vampire__Controller:RightShoulder_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1036]" "Vampire__Controller:RightShoulder_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1040]" "Vampire__Controller:RightShoulder_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1037]" "Vampire__Controller:RightShoulder_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1041]" "Vampire__Controller:LeftHand_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1038]" "Vampire__Controller:LeftHand_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1042]" "Vampire__Controller:LeftHand_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1039]" "Vampire__Controller:LeftHand_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1043]" "Vampire__Controller:LeftHand_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1040]" "Vampire__Controller:LeftHand_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1044]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1041]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1045]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1042]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1046]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1043]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1047]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1044]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1048]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1045]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1049]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1046]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1050]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1047]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1051]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1048]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1052]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1049]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1053]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1050]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1054]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1051]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1055]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1052]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1056]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1053]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1057]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1054]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1058]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1055]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1059]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1056]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1060]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1057]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1061]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1058]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1062]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1059]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1063]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1060]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1064]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1061]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1065]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1062]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1066]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1063]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1067]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1064]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1068]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1065]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1069]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1066]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1070]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1067]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1071]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1068]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1072]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1069]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1073]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1070]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1074]" "Vampire__Controller:LeftFoot_PV.tx"
+		"Vampire__ControllerRN.placeHolderList[1071]" "Vampire__Controller:LeftFoot_PV.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1075]" "Vampire__Controller:LeftFoot_PV.ty"
+		"Vampire__ControllerRN.placeHolderList[1072]" "Vampire__Controller:LeftFoot_PV.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1076]" "Vampire__Controller:LeftFoot_PV.tz"
+		"Vampire__ControllerRN.placeHolderList[1073]" "Vampire__Controller:LeftFoot_PV.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1077]" "Vampire__Controller:LeftToeEnd_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1074]" "Vampire__Controller:LeftToeEnd_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1078]" "Vampire__Controller:LeftToeEnd_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1075]" "Vampire__Controller:LeftToeEnd_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1079]" "Vampire__Controller:LeftToeEnd_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1076]" "Vampire__Controller:LeftToeEnd_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1080]" "Vampire__Controller:LeftToeBase_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1077]" "Vampire__Controller:LeftToeBase_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1081]" "Vampire__Controller:LeftToeBase_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1078]" "Vampire__Controller:LeftToeBase_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1082]" "Vampire__Controller:LeftToeBase_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1079]" "Vampire__Controller:LeftToeBase_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1083]" "Vampire__Controller:RightHand_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1080]" "Vampire__Controller:RightHand_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1084]" "Vampire__Controller:RightHand_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1081]" "Vampire__Controller:RightHand_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1085]" "Vampire__Controller:RightHand_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1082]" "Vampire__Controller:RightHand_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1086]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1083]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1087]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1084]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1088]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1085]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1089]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1086]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1090]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1087]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1091]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1088]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1092]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1089]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1093]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1090]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1094]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1091]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1095]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1092]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1096]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1093]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1097]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1094]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1098]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1095]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1099]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1096]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1100]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1097]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1101]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1098]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1102]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1099]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1103]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1100]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1104]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1101]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1105]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1102]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1106]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1103]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1107]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1104]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1108]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1105]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1109]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1106]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1110]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1107]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1111]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1108]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1112]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1109]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_translateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1113]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1110]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_translateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1114]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1111]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_translateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1115]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1112]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1116]" "Vampire__Controller:RightHeel_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1113]" "Vampire__Controller:RightHeel_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1117]" "Vampire__Controller:RightHeel_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1114]" "Vampire__Controller:RightHeel_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1118]" "Vampire__Controller:RightHeel_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1115]" "Vampire__Controller:RightHeel_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1119]" "Vampire__Controller:RightFoot_PV.tx"
+		"Vampire__ControllerRN.placeHolderList[1116]" "Vampire__Controller:RightFoot_PV.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1120]" "Vampire__Controller:RightFoot_PV.ty"
+		"Vampire__ControllerRN.placeHolderList[1117]" "Vampire__Controller:RightFoot_PV.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1121]" "Vampire__Controller:RightFoot_PV.tz"
+		"Vampire__ControllerRN.placeHolderList[1118]" "Vampire__Controller:RightFoot_PV.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1122]" "Vampire__Controller:RightToeEnd_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1119]" "Vampire__Controller:RightToeEnd_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1123]" "Vampire__Controller:RightToeEnd_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1120]" "Vampire__Controller:RightToeEnd_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1124]" "Vampire__Controller:RightToeEnd_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1121]" "Vampire__Controller:RightToeEnd_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1125]" "Vampire__Controller:RightToeBase_CON.tx"
+		"Vampire__ControllerRN.placeHolderList[1122]" "Vampire__Controller:RightToeBase_CON.tx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1126]" "Vampire__Controller:RightToeBase_CON.ty"
+		"Vampire__ControllerRN.placeHolderList[1123]" "Vampire__Controller:RightToeBase_CON.ty"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1127]" "Vampire__Controller:RightToeBase_CON.tz"
+		"Vampire__ControllerRN.placeHolderList[1124]" "Vampire__Controller:RightToeBase_CON.tz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_translateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1128]" "Vampire__Controller:persp1.tx"
+		"Vampire__ControllerRN.placeHolderList[1125]" "Vampire__Controller:persp1.tx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_translateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1129]" "Vampire__Controller:persp1.ty"
+		"Vampire__ControllerRN.placeHolderList[1126]" "Vampire__Controller:persp1.ty"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_translateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1130]" "Vampire__Controller:persp1.tz"
+		"Vampire__ControllerRN.placeHolderList[1127]" "Vampire__Controller:persp1.tz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1131]" "Vampire__Controller:persp1.v"
+		"Vampire__ControllerRN.placeHolderList[1128]" "Vampire__Controller:persp1.v"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1132]" "Vampire__Controller:persp1.rx"
+		"Vampire__ControllerRN.placeHolderList[1129]" "Vampire__Controller:persp1.rx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1133]" "Vampire__Controller:persp1.ry"
+		"Vampire__ControllerRN.placeHolderList[1130]" "Vampire__Controller:persp1.ry"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1134]" "Vampire__Controller:persp1.rz"
+		"Vampire__ControllerRN.placeHolderList[1131]" "Vampire__Controller:persp1.rz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1135]" "Vampire__Controller:persp1.sx"
+		"Vampire__ControllerRN.placeHolderList[1132]" "Vampire__Controller:persp1.sx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1136]" "Vampire__Controller:persp1.sy"
+		"Vampire__ControllerRN.placeHolderList[1133]" "Vampire__Controller:persp1.sy"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:persp1_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1137]" "Vampire__Controller:persp1.sz"
+		"Vampire__ControllerRN.placeHolderList[1134]" "Vampire__Controller:persp1.sz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1138]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1135]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1139]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1136]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1140]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1137]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1141]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1138]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1142]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1139]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1143]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1140]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1144]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1141]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1145]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1142]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1146]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1143]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1147]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1144]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1148]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1145]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1149]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1146]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1150]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1147]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1151]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1148]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1152]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1149]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1153]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1150]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1154]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1151]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1155]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1152]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1156]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1153]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1157]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1154]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Middle1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1158]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1155]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1159]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1156]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1160]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1157]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1161]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1158]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1162]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1159]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1163]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1160]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1164]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1161]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1165]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1162]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1166]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1163]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1167]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1164]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1168]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1165]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1169]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1166]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1170]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1167]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1171]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1168]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Index1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1172]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1169]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1173]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1170]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1174]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1171]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1175]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1172]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1176]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1173]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1177]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1174]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1178]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1175]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1179]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1176]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1180]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1177]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1181]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1178]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1182]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1179]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1183]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1180]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1184]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1181]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1185]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1182]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Thumb1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1186]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1183]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1187]" "Vampire__Controller:LeftHand_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1184]" "Vampire__Controller:LeftHand_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1188]" "Vampire__Controller:LeftHand_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1185]" "Vampire__Controller:LeftHand_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1189]" "Vampire__Controller:LeftHand_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1186]" "Vampire__Controller:LeftHand_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1190]" "Vampire__Controller:LeftHand_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1187]" "Vampire__Controller:LeftHand_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1191]" "Vampire__Controller:LeftHand_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1188]" "Vampire__Controller:LeftHand_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1192]" "Vampire__Controller:LeftHand_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1189]" "Vampire__Controller:LeftHand_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftHand_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1193]" "Vampire__Controller:LeftHand_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1190]" "Vampire__Controller:LeftHand_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1194]" "Vampire__Controller:RightFoot_PV.v"
+		"Vampire__ControllerRN.placeHolderList[1191]" "Vampire__Controller:RightFoot_PV.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1195]" "Vampire__Controller:RightFoot_PV.rx"
+		"Vampire__ControllerRN.placeHolderList[1192]" "Vampire__Controller:RightFoot_PV.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1196]" "Vampire__Controller:RightFoot_PV.ry"
+		"Vampire__ControllerRN.placeHolderList[1193]" "Vampire__Controller:RightFoot_PV.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1197]" "Vampire__Controller:RightFoot_PV.rz"
+		"Vampire__ControllerRN.placeHolderList[1194]" "Vampire__Controller:RightFoot_PV.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1198]" "Vampire__Controller:RightFoot_PV.sx"
+		"Vampire__ControllerRN.placeHolderList[1195]" "Vampire__Controller:RightFoot_PV.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1199]" "Vampire__Controller:RightFoot_PV.sy"
+		"Vampire__ControllerRN.placeHolderList[1196]" "Vampire__Controller:RightFoot_PV.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightFoot_PV_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1200]" "Vampire__Controller:RightFoot_PV.sz"
+		"Vampire__ControllerRN.placeHolderList[1197]" "Vampire__Controller:RightFoot_PV.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1201]" "Vampire__Controller:LeftFoot_PV.v"
+		"Vampire__ControllerRN.placeHolderList[1198]" "Vampire__Controller:LeftFoot_PV.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1202]" "Vampire__Controller:LeftFoot_PV.rx"
+		"Vampire__ControllerRN.placeHolderList[1199]" "Vampire__Controller:LeftFoot_PV.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1203]" "Vampire__Controller:LeftFoot_PV.ry"
+		"Vampire__ControllerRN.placeHolderList[1200]" "Vampire__Controller:LeftFoot_PV.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1204]" "Vampire__Controller:LeftFoot_PV.rz"
+		"Vampire__ControllerRN.placeHolderList[1201]" "Vampire__Controller:LeftFoot_PV.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1205]" "Vampire__Controller:LeftFoot_PV.sx"
+		"Vampire__ControllerRN.placeHolderList[1202]" "Vampire__Controller:LeftFoot_PV.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1206]" "Vampire__Controller:LeftFoot_PV.sy"
+		"Vampire__ControllerRN.placeHolderList[1203]" "Vampire__Controller:LeftFoot_PV.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftFoot_PV_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1207]" "Vampire__Controller:LeftFoot_PV.sz"
+		"Vampire__ControllerRN.placeHolderList[1204]" "Vampire__Controller:LeftFoot_PV.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1208]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1205]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1209]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1206]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1210]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1207]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1211]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1208]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1212]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1209]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1213]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1210]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1214]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1211]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1215]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1212]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1216]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1213]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1217]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1214]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1218]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1215]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1219]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1216]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1220]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1217]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Pinky1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1221]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1218]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1222]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1219]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1223]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1220]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1224]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1221]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1225]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1222]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1226]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1223]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1227]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1224]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Hand_Ring2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1228]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1225]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1229]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1226]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1230]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1227]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1231]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1228]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1232]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1229]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1233]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1230]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1234]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1231]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1235]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1232]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb2_CON|Vampire__Controller:Right_Hand_Thumb2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1236]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1233]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1237]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1234]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1238]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1235]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1239]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1236]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1240]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1237]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1241]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1238]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Thumb1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1242]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1239]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Thumb1_CON|Vampire__Controller:Right_Hand_Thumb1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1243]" "Vampire__Controller:RightHand_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1240]" "Vampire__Controller:RightHand_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1244]" "Vampire__Controller:RightHand_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1241]" "Vampire__Controller:RightHand_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1245]" "Vampire__Controller:RightHand_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1242]" "Vampire__Controller:RightHand_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1246]" "Vampire__Controller:RightHand_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1243]" "Vampire__Controller:RightHand_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1247]" "Vampire__Controller:RightHand_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1244]" "Vampire__Controller:RightHand_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1248]" "Vampire__Controller:RightHand_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1245]" "Vampire__Controller:RightHand_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHand_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1249]" "Vampire__Controller:RightHand_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1246]" "Vampire__Controller:RightHand_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1250]" "Vampire__Controller:LeftToeBase_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1247]" "Vampire__Controller:LeftToeBase_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1251]" "Vampire__Controller:LeftToeBase_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1248]" "Vampire__Controller:LeftToeBase_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1252]" "Vampire__Controller:LeftToeBase_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1249]" "Vampire__Controller:LeftToeBase_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1253]" "Vampire__Controller:LeftToeBase_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1250]" "Vampire__Controller:LeftToeBase_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1254]" "Vampire__Controller:LeftToeBase_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1251]" "Vampire__Controller:LeftToeBase_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1255]" "Vampire__Controller:LeftToeBase_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1252]" "Vampire__Controller:LeftToeBase_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeBase_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1256]" "Vampire__Controller:LeftToeBase_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1253]" "Vampire__Controller:LeftToeBase_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1257]" "Vampire__Controller:LeftToeEnd_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1254]" "Vampire__Controller:LeftToeEnd_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1258]" "Vampire__Controller:LeftToeEnd_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1255]" "Vampire__Controller:LeftToeEnd_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1259]" "Vampire__Controller:LeftToeEnd_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1256]" "Vampire__Controller:LeftToeEnd_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1260]" "Vampire__Controller:LeftToeEnd_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1257]" "Vampire__Controller:LeftToeEnd_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1261]" "Vampire__Controller:LeftToeEnd_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1258]" "Vampire__Controller:LeftToeEnd_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1262]" "Vampire__Controller:LeftToeEnd_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1259]" "Vampire__Controller:LeftToeEnd_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftToeEnd_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1263]" "Vampire__Controller:LeftToeEnd_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1260]" "Vampire__Controller:LeftToeEnd_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1264]" "Vampire__Controller:RightToeBase_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1261]" "Vampire__Controller:RightToeBase_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1265]" "Vampire__Controller:RightToeBase_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1262]" "Vampire__Controller:RightToeBase_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1266]" "Vampire__Controller:RightToeBase_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1263]" "Vampire__Controller:RightToeBase_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1267]" "Vampire__Controller:RightToeBase_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1264]" "Vampire__Controller:RightToeBase_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1268]" "Vampire__Controller:RightToeBase_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1265]" "Vampire__Controller:RightToeBase_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1269]" "Vampire__Controller:RightToeBase_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1266]" "Vampire__Controller:RightToeBase_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeBase_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1270]" "Vampire__Controller:RightToeBase_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1267]" "Vampire__Controller:RightToeBase_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1271]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1268]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1272]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1269]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1273]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1270]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1274]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1271]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1275]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1272]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1276]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1273]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1277]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1274]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky2_CON|Vampire__Controller:Right_Hand_Pinky2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1278]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1275]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1279]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1276]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1280]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1277]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1281]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1278]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1282]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1279]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1283]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1280]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Pinky1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1284]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1281]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1285]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1282]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1286]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1283]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1287]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1284]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1288]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1285]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1289]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1286]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1290]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1287]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1291]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1288]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring2_CON|Vampire__Controller:Right_Hand_Ring2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1292]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1289]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1293]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1290]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1294]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1291]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1295]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1292]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1296]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1293]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1297]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1294]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Ring1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1298]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1295]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Ring1_CON|Vampire__Controller:Right_Hand_Ring1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1299]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1296]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1300]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1297]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1301]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1298]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1302]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1299]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1303]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1300]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1304]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1301]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1305]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1302]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle2_CON|Vampire__Controller:Right_Hand_Middle2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1306]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1303]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1307]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1304]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1308]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1305]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1309]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1306]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1310]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1307]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1311]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1308]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Middle1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1312]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1309]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Middle1_CON|Vampire__Controller:Right_Hand_Middle1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1313]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1310]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1314]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1311]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1315]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1312]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1316]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1313]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1317]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1314]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1318]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1315]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index2_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1319]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1316]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index2_CON|Vampire__Controller:Right_Hand_Index2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1320]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1317]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1321]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1318]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1322]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1319]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1323]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1320]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1324]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1321]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1325]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1322]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Hand_Index1_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1326]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1323]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Index1_CON|Vampire__Controller:Right_Hand_Index1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1327]" "Vampire__Controller:Root_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1324]" "Vampire__Controller:Root_CON.v"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1328]" "Vampire__Controller:Root_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1325]" "Vampire__Controller:Root_CON.rx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1329]" "Vampire__Controller:Root_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1326]" "Vampire__Controller:Root_CON.ry"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1330]" "Vampire__Controller:Root_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1327]" "Vampire__Controller:Root_CON.rz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1331]" "Vampire__Controller:Root_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1328]" "Vampire__Controller:Root_CON.sx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1332]" "Vampire__Controller:Root_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1329]" "Vampire__Controller:Root_CON.sy"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Root_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1333]" "Vampire__Controller:Root_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1330]" "Vampire__Controller:Root_CON.sz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1334]" "Vampire__Controller:Jaw_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1331]" "Vampire__Controller:Jaw_CON.v"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1335]" "Vampire__Controller:Jaw_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1332]" "Vampire__Controller:Jaw_CON.rx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1336]" "Vampire__Controller:Jaw_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1333]" "Vampire__Controller:Jaw_CON.ry"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1337]" "Vampire__Controller:Jaw_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1334]" "Vampire__Controller:Jaw_CON.rz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1338]" "Vampire__Controller:Jaw_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1335]" "Vampire__Controller:Jaw_CON.sx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1339]" "Vampire__Controller:Jaw_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1336]" "Vampire__Controller:Jaw_CON.sy"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Jaw_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1340]" "Vampire__Controller:Jaw_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1337]" "Vampire__Controller:Jaw_CON.sz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1341]" "Vampire__Controller:Head_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1338]" "Vampire__Controller:Head_CON.v"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1342]" "Vampire__Controller:Head_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1339]" "Vampire__Controller:Head_CON.rx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1343]" "Vampire__Controller:Head_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1340]" "Vampire__Controller:Head_CON.ry"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1344]" "Vampire__Controller:Head_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1341]" "Vampire__Controller:Head_CON.rz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1345]" "Vampire__Controller:Head_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1342]" "Vampire__Controller:Head_CON.sx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1346]" "Vampire__Controller:Head_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1343]" "Vampire__Controller:Head_CON.sy"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Head_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1347]" "Vampire__Controller:Head_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1344]" "Vampire__Controller:Head_CON.sz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1348]" "Vampire__Controller:Neck_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1345]" "Vampire__Controller:Neck_CON.v"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1349]" "Vampire__Controller:Neck_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1346]" "Vampire__Controller:Neck_CON.rx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1350]" "Vampire__Controller:Neck_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1347]" "Vampire__Controller:Neck_CON.ry"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1351]" "Vampire__Controller:Neck_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1348]" "Vampire__Controller:Neck_CON.rz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1352]" "Vampire__Controller:Neck_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1349]" "Vampire__Controller:Neck_CON.sx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1353]" "Vampire__Controller:Neck_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1350]" "Vampire__Controller:Neck_CON.sy"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Neck_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1354]" "Vampire__Controller:Neck_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1351]" "Vampire__Controller:Neck_CON.sz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1355]" "Vampire__Controller:Spine2_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1352]" "Vampire__Controller:Spine2_CON.v"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1356]" "Vampire__Controller:Spine2_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1353]" "Vampire__Controller:Spine2_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1357]" "Vampire__Controller:Spine2_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1354]" "Vampire__Controller:Spine2_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1358]" "Vampire__Controller:Spine2_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1355]" "Vampire__Controller:Spine2_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1359]" "Vampire__Controller:Spine2_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1356]" "Vampire__Controller:Spine2_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1360]" "Vampire__Controller:Spine2_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1357]" "Vampire__Controller:Spine2_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine2_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1361]" "Vampire__Controller:Spine2_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1358]" "Vampire__Controller:Spine2_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1362]" "Vampire__Controller:Spine1_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1359]" "Vampire__Controller:Spine1_CON.v"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1363]" "Vampire__Controller:Spine1_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1360]" "Vampire__Controller:Spine1_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1364]" "Vampire__Controller:Spine1_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1361]" "Vampire__Controller:Spine1_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1365]" "Vampire__Controller:Spine1_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1362]" "Vampire__Controller:Spine1_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1366]" "Vampire__Controller:Spine1_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1363]" "Vampire__Controller:Spine1_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1367]" "Vampire__Controller:Spine1_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1364]" "Vampire__Controller:Spine1_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine1_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1368]" "Vampire__Controller:Spine1_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1365]" "Vampire__Controller:Spine1_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1369]" "Vampire__Controller:Spine_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1366]" "Vampire__Controller:Spine_CON.v"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1370]" "Vampire__Controller:Spine_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1367]" "Vampire__Controller:Spine_CON.rx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1371]" "Vampire__Controller:Spine_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1368]" "Vampire__Controller:Spine_CON.ry"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1372]" "Vampire__Controller:Spine_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1369]" "Vampire__Controller:Spine_CON.rz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1373]" "Vampire__Controller:Spine_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1370]" "Vampire__Controller:Spine_CON.sx"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1374]" "Vampire__Controller:Spine_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1371]" "Vampire__Controller:Spine_CON.sy"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Spine_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1375]" "Vampire__Controller:Spine_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1372]" "Vampire__Controller:Spine_CON.sz"
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1376]" "Vampire__Controller:Hips_Rotate_CON_Full.v"
+		"Vampire__ControllerRN.placeHolderList[1373]" "Vampire__Controller:Hips_Rotate_CON_Full.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1377]" "Vampire__Controller:Hips_Rotate_CON_Full.rx"
+		"Vampire__ControllerRN.placeHolderList[1374]" "Vampire__Controller:Hips_Rotate_CON_Full.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1378]" "Vampire__Controller:Hips_Rotate_CON_Full.ry"
+		"Vampire__ControllerRN.placeHolderList[1375]" "Vampire__Controller:Hips_Rotate_CON_Full.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1379]" "Vampire__Controller:Hips_Rotate_CON_Full.rz"
+		"Vampire__ControllerRN.placeHolderList[1376]" "Vampire__Controller:Hips_Rotate_CON_Full.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1380]" "Vampire__Controller:Hips_Rotate_CON_Full.sx"
+		"Vampire__ControllerRN.placeHolderList[1377]" "Vampire__Controller:Hips_Rotate_CON_Full.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1381]" "Vampire__Controller:Hips_Rotate_CON_Full.sy"
+		"Vampire__ControllerRN.placeHolderList[1378]" "Vampire__Controller:Hips_Rotate_CON_Full.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Rotate_CON_Full_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1382]" "Vampire__Controller:Hips_Rotate_CON_Full.sz"
+		"Vampire__ControllerRN.placeHolderList[1379]" "Vampire__Controller:Hips_Rotate_CON_Full.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1383]" "Vampire__Controller:Hips_Translate_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1380]" "Vampire__Controller:Hips_Translate_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1384]" "Vampire__Controller:Hips_Translate_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1381]" "Vampire__Controller:Hips_Translate_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1385]" "Vampire__Controller:Hips_Translate_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1382]" "Vampire__Controller:Hips_Translate_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1386]" "Vampire__Controller:Hips_Translate_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1383]" "Vampire__Controller:Hips_Translate_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1387]" "Vampire__Controller:Hips_Translate_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1384]" "Vampire__Controller:Hips_Translate_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1388]" "Vampire__Controller:Hips_Translate_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1385]" "Vampire__Controller:Hips_Translate_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Hips_Translate_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1389]" "Vampire__Controller:Hips_Translate_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1386]" "Vampire__Controller:Hips_Translate_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1390]" "Vampire__Controller:RightToeEnd_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1387]" "Vampire__Controller:RightToeEnd_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1391]" "Vampire__Controller:RightToeEnd_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1388]" "Vampire__Controller:RightToeEnd_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1392]" "Vampire__Controller:RightToeEnd_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1389]" "Vampire__Controller:RightToeEnd_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1393]" "Vampire__Controller:RightToeEnd_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1390]" "Vampire__Controller:RightToeEnd_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1394]" "Vampire__Controller:RightToeEnd_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1391]" "Vampire__Controller:RightToeEnd_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1395]" "Vampire__Controller:RightToeEnd_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1392]" "Vampire__Controller:RightToeEnd_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightToeEnd_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1396]" "Vampire__Controller:RightToeEnd_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1393]" "Vampire__Controller:RightToeEnd_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1397]" "Vampire__Controller:RightHeel_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1394]" "Vampire__Controller:RightHeel_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1398]" "Vampire__Controller:RightHeel_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1395]" "Vampire__Controller:RightHeel_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1399]" "Vampire__Controller:RightHeel_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1396]" "Vampire__Controller:RightHeel_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1400]" "Vampire__Controller:RightHeel_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1397]" "Vampire__Controller:RightHeel_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1401]" "Vampire__Controller:RightHeel_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1398]" "Vampire__Controller:RightHeel_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1402]" "Vampire__Controller:RightHeel_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1399]" "Vampire__Controller:RightHeel_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightHeel_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1403]" "Vampire__Controller:RightHeel_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1400]" "Vampire__Controller:RightHeel_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1404]" "Vampire__Controller:RightShoulder_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1401]" "Vampire__Controller:RightShoulder_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1405]" "Vampire__Controller:RightShoulder_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1402]" "Vampire__Controller:RightShoulder_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1406]" "Vampire__Controller:RightShoulder_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1403]" "Vampire__Controller:RightShoulder_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1407]" "Vampire__Controller:RightShoulder_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1404]" "Vampire__Controller:RightShoulder_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1408]" "Vampire__Controller:RightShoulder_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1405]" "Vampire__Controller:RightShoulder_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1409]" "Vampire__Controller:RightShoulder_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1406]" "Vampire__Controller:RightShoulder_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:RightShoulder_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1410]" "Vampire__Controller:RightShoulder_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1407]" "Vampire__Controller:RightShoulder_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_visibility.output" 
-		"Vampire__ControllerRN.placeHolderList[1411]" "Vampire__Controller:LeftShoulder_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1408]" "Vampire__Controller:LeftShoulder_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_rotateX.output" 
-		"Vampire__ControllerRN.placeHolderList[1412]" "Vampire__Controller:LeftShoulder_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1409]" "Vampire__Controller:LeftShoulder_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_rotateY.output" 
-		"Vampire__ControllerRN.placeHolderList[1413]" "Vampire__Controller:LeftShoulder_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1410]" "Vampire__Controller:LeftShoulder_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_rotateZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1414]" "Vampire__Controller:LeftShoulder_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1411]" "Vampire__Controller:LeftShoulder_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_scaleX.output" 
-		"Vampire__ControllerRN.placeHolderList[1415]" "Vampire__Controller:LeftShoulder_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1412]" "Vampire__Controller:LeftShoulder_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_scaleY.output" 
-		"Vampire__ControllerRN.placeHolderList[1416]" "Vampire__Controller:LeftShoulder_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1413]" "Vampire__Controller:LeftShoulder_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:LeftShoulder_CON_scaleZ.output" 
-		"Vampire__ControllerRN.placeHolderList[1417]" "Vampire__Controller:LeftShoulder_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1414]" "Vampire__Controller:LeftShoulder_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1418]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1415]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1419]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1416]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1420]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1417]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1421]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1418]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1422]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1419]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1423]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1420]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Base_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1424]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1421]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Base_CON|Vampire__Controller:Left_Ear_Base_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1425]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1422]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1426]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1423]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1427]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1424]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1428]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1425]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1429]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1426]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1430]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1427]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Left_Ear_Bond_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1431]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1428]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Left_Ear_Bond_CON|Vampire__Controller:Left_Ear_Bond_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1432]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1429]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1433]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1430]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1434]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1431]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1435]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1432]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1436]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1433]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1437]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1434]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Base_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1438]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.sz"
+		"Vampire__ControllerRN.placeHolderList[1435]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Base_CON|Vampire__Controller:Right_Ear_Base_CON.sz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_visibility1.output" 
-		"Vampire__ControllerRN.placeHolderList[1439]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.v"
+		"Vampire__ControllerRN.placeHolderList[1436]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.v"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_rotateX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1440]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.rx"
+		"Vampire__ControllerRN.placeHolderList[1437]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.rx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_rotateY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1441]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.ry"
+		"Vampire__ControllerRN.placeHolderList[1438]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.ry"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_rotateZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1442]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.rz"
+		"Vampire__ControllerRN.placeHolderList[1439]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.rz"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_scaleX1.output" 
-		"Vampire__ControllerRN.placeHolderList[1443]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.sx"
+		"Vampire__ControllerRN.placeHolderList[1440]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.sx"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_scaleY1.output" 
-		"Vampire__ControllerRN.placeHolderList[1444]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.sy"
+		"Vampire__ControllerRN.placeHolderList[1441]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.sy"
 		
 		5 3 "Vampire__ControllerRN" "Vampire__Controller:Right_Ear_Bond_CON_scaleZ1.output" 
-		"Vampire__ControllerRN.placeHolderList[1445]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.sz";
+		"Vampire__ControllerRN.placeHolderList[1442]" "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON|Vampire__Controller:Right_Ear_Bond_CON|Vampire__Controller:Right_Ear_Bond_CON.sz"
+		
+		5 3 "Vampire__ControllerRN" "Vampire__Controller:pairBlend56.outRotateX" 
+		"Vampire__ControllerRN.placeHolderList[1443]" "Vampire__Controller:Right_Shoulder.rx"
+		
+		5 3 "Vampire__ControllerRN" "Vampire__Controller:pairBlend56.outRotateY" 
+		"Vampire__ControllerRN.placeHolderList[1444]" "Vampire__Controller:Right_Shoulder.ry"
+		
+		5 3 "Vampire__ControllerRN" "Vampire__Controller:pairBlend56.outRotateZ" 
+		"Vampire__ControllerRN.placeHolderList[1445]" "Vampire__Controller:Right_Shoulder.rz";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode timeEditor -s -n "timeEditor";
@@ -6395,7 +6399,7 @@ createNode animBlendNodeAdditiveDL -n "Head_CON_translateZ_Idle";
 	rename -uid "E0B740A3-440B-B9B9-2685-9FA6B4D5BB9A";
 createNode animBlendNodeAdditiveRotation -n "Head_CON_rotate_Idle";
 	rename -uid "2706A080-4246-B3B7-3D36-729AFF71528D";
-	setAttr ".o" -type "double3" -7.3012962962962957 0 0 ;
+	setAttr ".o" -type "double3" -14.383703703703704 0 0 ;
 createNode animBlendNodeAdditiveScale -n "Head_CON_scaleX_Idle";
 	rename -uid "64C0756E-49C5-E29A-77AD-A1AFB1EEFF84";
 	setAttr ".o" 1;
@@ -6436,7 +6440,7 @@ createNode animBlendNodeAdditiveDL -n "Spine2_CON_translateZ_Idle";
 	rename -uid "A6573BE6-441A-0623-27AF-7A8AFAE81E91";
 createNode animBlendNodeAdditiveRotation -n "Spine2_CON_rotate_Idle";
 	rename -uid "B09C4CB7-4966-D0EB-72FB-6787B9D01FD0";
-	setAttr ".o" -type "double3" 4.8340740740740733 0 0 ;
+	setAttr ".o" -type "double3" 3.3303703703703698 0 6.7182407407407396 ;
 createNode animBlendNodeAdditiveScale -n "Spine2_CON_scaleX_Idle";
 	rename -uid "F3B9F4CC-41DF-ECC4-C14B-DEA395C425B1";
 	setAttr ".o" 1;
@@ -6457,7 +6461,7 @@ createNode animBlendNodeAdditiveDL -n "Spine1_CON_translateZ_Idle";
 	rename -uid "E608F591-432E-3C0F-2580-E7A4705508A3";
 createNode animBlendNodeAdditiveRotation -n "Spine1_CON_rotate_Idle";
 	rename -uid "1A13BE47-4772-1CFE-B3F8-879AAD59D41B";
-	setAttr ".o" -type "double3" 0.74370370370370442 0 0 ;
+	setAttr ".o" -type "double3" -2.9140740740740743 0 9.5140740740740721 ;
 createNode animBlendNodeAdditiveScale -n "Spine1_CON_scaleX_Idle";
 	rename -uid "032A7BA3-42C5-6C45-7858-B9B4C72CF368";
 	setAttr ".o" 1;
@@ -6478,7 +6482,7 @@ createNode animBlendNodeAdditiveDL -n "Spine_CON_translateZ_Idle";
 	rename -uid "F6F73A8B-4B2F-4184-832A-91A4626A2618";
 createNode animBlendNodeAdditiveRotation -n "Spine_CON_rotate_Idle";
 	rename -uid "E70AF4BD-4E2F-C71C-EC1E-AF9DFAB49F68";
-	setAttr ".o" -type "double3" -4.8340740740740733 0 4.0059259259259257 ;
+	setAttr ".o" -type "double3" -3.3303703703703698 0 3.1881481481481475 ;
 createNode animBlendNodeAdditiveScale -n "Spine_CON_scaleX_Idle";
 	rename -uid "27ED3CEF-4126-0328-0ED5-CFBA3E877762";
 	setAttr ".o" 1;
@@ -6499,7 +6503,7 @@ createNode animBlendNodeAdditiveDL -n "Hips_Rotate_CON_Full_translateZ_Idle";
 	rename -uid "6FAEF624-48BF-CD66-3CE5-9EAE6EF9960D";
 createNode animBlendNodeAdditiveRotation -n "Hips_Rotate_CON_Full_rotate_Idle";
 	rename -uid "55A942E6-4483-036A-9BF0-24BE660A5A2D";
-	setAttr ".o" -type "double3" 7.3012962962962957 0 0 ;
+	setAttr ".o" -type "double3" 14.383703703703704 0 0 ;
 createNode animBlendNodeAdditiveScale -n "Hips_Rotate_CON_Full_scaleX_Idle";
 	rename -uid "A6973991-4CC7-3FCE-41D8-7A9F75BBD9F1";
 	setAttr ".o" 1;
@@ -6516,7 +6520,7 @@ createNode animBlendNodeAdditiveDL -n "Hips_Translate_CON_translateX_Idle";
 	rename -uid "FDB0B954-4FF8-4960-2278-5890CA236232";
 createNode animBlendNodeAdditiveDL -n "Hips_Translate_CON_translateY_Idle";
 	rename -uid "DE48B3EA-42C1-A70E-E33E-9490178444F7";
-	setAttr ".o" -21.364518518518519;
+	setAttr ".o" -23.262518518518519;
 createNode animBlendNodeAdditiveDL -n "Hips_Translate_CON_translateZ_Idle";
 	rename -uid "99C8EB7E-4EC2-9184-707A-8ABFED7B8C8C";
 createNode animBlendNodeAdditiveRotation -n "Hips_Translate_CON_rotate_Idle";
@@ -6641,7 +6645,7 @@ createNode animBlendNodeAdditiveDL -n "Left_Ear_Base_CON_translateZ_Idle";
 	rename -uid "CE200C74-4D81-14EE-89E5-1399C0A24BCC";
 createNode animBlendNodeAdditiveRotation -n "Left_Ear_Base_CON_rotate_Idle";
 	rename -uid "350F781A-4754-1B65-A11F-86A8CCA13F3B";
-	setAttr ".o" -type "double3" 0 0 0.74370370370370442 ;
+	setAttr ".o" -type "double3" -1.7572979736007704e-16 -23.742222222222225 -2.9140740740740836 ;
 createNode animBlendNodeAdditiveScale -n "Left_Ear_Base_CON_scaleX_Idle";
 	rename -uid "22A3DD72-458E-A8D8-45F7-C78E1EB93A79";
 	setAttr ".o" 1;
@@ -6662,7 +6666,7 @@ createNode animBlendNodeAdditiveDL -n "Left_Ear_Bond_CON_translateZ_Idle";
 	rename -uid "5603D1B4-48B9-6BEC-B35F-419993257934";
 createNode animBlendNodeAdditiveRotation -n "Left_Ear_Bond_CON_rotate_Idle";
 	rename -uid "C8EF8062-4A69-1394-3C60-8DB0F1B8A88E";
-	setAttr ".o" -type "double3" 0 0 -4.8340740740740733 ;
+	setAttr ".o" -type "double3" 0 0 -3.3303703703703698 ;
 createNode animBlendNodeAdditiveScale -n "Left_Ear_Bond_CON_scaleX_Idle";
 	rename -uid "EEA117C5-4E01-947E-7CBB-7E9A1A1EF30E";
 	setAttr ".o" 1;
@@ -6683,7 +6687,7 @@ createNode animBlendNodeAdditiveDL -n "Right_Ear_Base_CON_translateZ_Idle";
 	rename -uid "6F23F895-4089-B5E1-621A-8FA9739B0C5A";
 createNode animBlendNodeAdditiveRotation -n "Right_Ear_Base_CON_rotate_Idle";
 	rename -uid "E4D2C519-41DC-42B8-D7AF-EC92AF5CBDD8";
-	setAttr ".o" -type "double3" 0 0 -0.74370370370370442 ;
+	setAttr ".o" -type "double3" 0 0 2.9140740740740743 ;
 createNode animBlendNodeAdditiveScale -n "Right_Ear_Base_CON_scaleX_Idle";
 	rename -uid "62F61194-4469-518A-85C7-D0B095CCE596";
 	setAttr ".o" 1;
@@ -6704,7 +6708,7 @@ createNode animBlendNodeAdditiveDL -n "Right_Ear_Bond_CON_translateZ_Idle";
 	rename -uid "3AF4F73C-4100-5D4B-227A-99AFCDD6B677";
 createNode animBlendNodeAdditiveRotation -n "Right_Ear_Bond_CON_rotate_Idle";
 	rename -uid "170D6A02-4255-39CA-3C34-D7826412C312";
-	setAttr ".o" -type "double3" 0 0 4.8340740740740733 ;
+	setAttr ".o" -type "double3" 0 0 3.3303703703703698 ;
 createNode animBlendNodeAdditiveScale -n "Right_Ear_Bond_CON_scaleX_Idle";
 	rename -uid "44A38722-4CFA-2CB2-5B7E-449E810A3FEB";
 	setAttr ".o" 1;
@@ -8199,7 +8203,7 @@ createNode animCurveTA -n "Left_Ear_Base_CON_rotate_Idle_inputBZ";
 	rename -uid "2AA4AEF5-44F4-37A6-2ED9-1DAAE45E1052";
 	setAttr ".tan" 18;
 	setAttr -s 25 ".ktv[0:24]"  0 -5 15 0 30 5 45 0 60 -5 75 0 90 5 105 -5.5659706925611543e-15
-		 120 -5.0000000000000098 135 0 150 5 165 0 180 -5 195 0 210 5 225 0 240 -5 255 0 270 5
+		 120 -5.0000000000000107 135 0 150 5 165 0 180 -5 195 0 210 5 225 0 240 -5 255 0 270 5
 		 285 0 300 -5 315 0 330 5 345 0 360 -5;
 createNode animCurveTU -n "Left_Ear_Base_CON_scaleX_Idle_inputB";
 	rename -uid "65D02FDA-4946-8C55-1D8E-FEB277184FC5";
@@ -8887,13 +8891,15 @@ createNode animCurveTU -n "Right_Hand_Thumb2_CON_scaleZ_Idle_inputB";
 	setAttr ".tan" 18;
 	setAttr ".ktv[0]"  0 1;
 select -ne :time1;
-	setAttr ".o" 43;
-	setAttr ".unw" 43;
+	setAttr ".o" 112;
+	setAttr ".unw" 112;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
 		 1 1 1 0 0 0 0 0 0 0 0 0
 		 0 0 0 0 ;
+	setAttr ".aoon" yes;
+	setAttr ".msaa" yes;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
 	setAttr -s 46 ".st";
@@ -8919,6 +8925,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "pairBlend1.orx" "Vampire__ControllerRN.phl[1]";
 connectAttr "pairBlend1.ory" "Vampire__ControllerRN.phl[2]";
 connectAttr "pairBlend1.orz" "Vampire__ControllerRN.phl[3]";
@@ -9305,26 +9312,26 @@ connectAttr "LeftShoulder_CON_visibility_Idle.o" "Vampire__ControllerRN.phl[324]
 connectAttr "Vampire__ControllerRN.phl[325]" "Right_Shoulder_parentConstraint1.tg[0].tt"
 		;
 connectAttr "Vampire__ControllerRN.phl[326]" "Idle.dsm" -na;
-connectAttr "RightShoulder_CON_translateX_Idle.o" "Vampire__ControllerRN.phl[327]"
+connectAttr "RightShoulder_CON_translateY_Idle.o" "Vampire__ControllerRN.phl[327]"
 		;
 connectAttr "Vampire__ControllerRN.phl[328]" "Idle.dsm" -na;
-connectAttr "RightShoulder_CON_translateY_Idle.o" "Vampire__ControllerRN.phl[329]"
+connectAttr "RightShoulder_CON_translateX_Idle.o" "Vampire__ControllerRN.phl[329]"
 		;
 connectAttr "Vampire__ControllerRN.phl[330]" "Idle.dsm" -na;
 connectAttr "RightShoulder_CON_translateZ_Idle.o" "Vampire__ControllerRN.phl[331]"
 		;
-connectAttr "Vampire__ControllerRN.phl[332]" "Right_Shoulder_parentConstraint1.tg[0].trp"
+connectAttr "Vampire__ControllerRN.phl[332]" "Right_Shoulder_parentConstraint1.tg[0].tr"
 		;
-connectAttr "Vampire__ControllerRN.phl[333]" "Right_Shoulder_parentConstraint1.tg[0].trt"
-		;
-connectAttr "Vampire__ControllerRN.phl[334]" "Right_Shoulder_parentConstraint1.tg[0].tr"
-		;
+connectAttr "Vampire__ControllerRN.phl[333]" "Idle.dsm" -na;
+connectAttr "RightShoulder_CON_rotate_Idle.ox" "Vampire__ControllerRN.phl[334]";
 connectAttr "Vampire__ControllerRN.phl[335]" "Idle.dsm" -na;
-connectAttr "RightShoulder_CON_rotate_Idle.ox" "Vampire__ControllerRN.phl[336]";
+connectAttr "RightShoulder_CON_rotate_Idle.oy" "Vampire__ControllerRN.phl[336]";
 connectAttr "Vampire__ControllerRN.phl[337]" "Idle.dsm" -na;
-connectAttr "RightShoulder_CON_rotate_Idle.oy" "Vampire__ControllerRN.phl[338]";
-connectAttr "Vampire__ControllerRN.phl[339]" "Idle.dsm" -na;
-connectAttr "RightShoulder_CON_rotate_Idle.oz" "Vampire__ControllerRN.phl[340]";
+connectAttr "RightShoulder_CON_rotate_Idle.oz" "Vampire__ControllerRN.phl[338]";
+connectAttr "Vampire__ControllerRN.phl[339]" "Right_Shoulder_parentConstraint1.tg[0].trp"
+		;
+connectAttr "Vampire__ControllerRN.phl[340]" "Right_Shoulder_parentConstraint1.tg[0].trt"
+		;
 connectAttr "Vampire__ControllerRN.phl[341]" "RightShoulder_CON_rotate_Idle.ro";
 connectAttr "Vampire__ControllerRN.phl[342]" "Right_Shoulder_parentConstraint1.tg[0].tro"
 		;
@@ -10213,773 +10220,773 @@ connectAttr "Vampire__ControllerRN.phl[989]" "LeftHeel_CON_translateZ_Idle.ia";
 connectAttr "Vampire__ControllerRN.phl[990]" "LeftHeel_CON_scaleX_Idle.ia";
 connectAttr "Vampire__ControllerRN.phl[991]" "LeftHeel_CON_scaleY_Idle.ia";
 connectAttr "Vampire__ControllerRN.phl[992]" "LeftHeel_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[993]" "pairBlend1.irx1";
-connectAttr "Vampire__ControllerRN.phl[994]" "pairBlend1.iry1";
-connectAttr "Vampire__ControllerRN.phl[995]" "pairBlend1.irz1";
-connectAttr "Vampire__ControllerRN.phl[996]" "Root_CON_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[997]" "Root_CON_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[998]" "Root_CON_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[999]" "Hips_Translate_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[993]" "Root_CON_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[994]" "Root_CON_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[995]" "Root_CON_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[996]" "Hips_Translate_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1000]" "Hips_Translate_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[997]" "Hips_Translate_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1001]" "Hips_Translate_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[998]" "Hips_Translate_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1002]" "Hips_Rotate_CON_Full_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[999]" "Hips_Rotate_CON_Full_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1003]" "Hips_Rotate_CON_Full_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1000]" "Hips_Rotate_CON_Full_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1004]" "Hips_Rotate_CON_Full_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1001]" "Hips_Rotate_CON_Full_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1005]" "Spine_CON_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1006]" "Spine_CON_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1007]" "Spine_CON_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1008]" "Spine1_CON_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1009]" "Spine1_CON_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1010]" "Spine1_CON_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1011]" "Spine2_CON_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1012]" "Spine2_CON_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1013]" "Spine2_CON_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1014]" "LeftShoulder_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1002]" "Spine_CON_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1003]" "Spine_CON_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1004]" "Spine_CON_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1005]" "Spine1_CON_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1006]" "Spine1_CON_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1007]" "Spine1_CON_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1008]" "Spine2_CON_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1009]" "Spine2_CON_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1010]" "Spine2_CON_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1011]" "LeftShoulder_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1015]" "LeftShoulder_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1012]" "LeftShoulder_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1016]" "LeftShoulder_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1013]" "LeftShoulder_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1017]" "Neck_CON_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1018]" "Neck_CON_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1019]" "Neck_CON_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1020]" "Head_CON_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1021]" "Head_CON_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1022]" "Head_CON_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1023]" "Left_Ear_Bond_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1014]" "Neck_CON_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1015]" "Neck_CON_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1016]" "Neck_CON_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1017]" "Head_CON_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1018]" "Head_CON_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1019]" "Head_CON_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1020]" "Left_Ear_Bond_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1024]" "Left_Ear_Bond_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1021]" "Left_Ear_Bond_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1025]" "Left_Ear_Bond_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1022]" "Left_Ear_Bond_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1026]" "Left_Ear_Base_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1023]" "Left_Ear_Base_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1027]" "Left_Ear_Base_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1024]" "Left_Ear_Base_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1028]" "Left_Ear_Base_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1025]" "Left_Ear_Base_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1029]" "Right_Ear_Bond_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1026]" "Right_Ear_Bond_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1030]" "Right_Ear_Bond_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1027]" "Right_Ear_Bond_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1031]" "Right_Ear_Bond_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1028]" "Right_Ear_Bond_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1032]" "Right_Ear_Base_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1029]" "Right_Ear_Base_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1033]" "Right_Ear_Base_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1030]" "Right_Ear_Base_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1034]" "Right_Ear_Base_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1031]" "Right_Ear_Base_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1035]" "Jaw_CON_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1036]" "Jaw_CON_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1037]" "Jaw_CON_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1038]" "RightShoulder_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1032]" "Jaw_CON_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1033]" "Jaw_CON_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1034]" "Jaw_CON_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1035]" "RightShoulder_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1039]" "RightShoulder_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1036]" "RightShoulder_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1040]" "RightShoulder_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1037]" "RightShoulder_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1041]" "LeftHand_CON_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1042]" "LeftHand_CON_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1043]" "LeftHand_CON_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1044]" "Left_Hand_Index1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1038]" "LeftHand_CON_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1039]" "LeftHand_CON_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1040]" "LeftHand_CON_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1041]" "Left_Hand_Index1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1045]" "Left_Hand_Index1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1042]" "Left_Hand_Index1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1046]" "Left_Hand_Index1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1043]" "Left_Hand_Index1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1047]" "Left_Hand_Index2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1044]" "Left_Hand_Index2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1048]" "Left_Hand_Index2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1045]" "Left_Hand_Index2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1049]" "Left_Hand_Index2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1046]" "Left_Hand_Index2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1050]" "Left_Hand_Middle1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1047]" "Left_Hand_Middle1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1051]" "Left_Hand_Middle1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1048]" "Left_Hand_Middle1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1052]" "Left_Hand_Middle1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1049]" "Left_Hand_Middle1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1053]" "Left_Hand_Middle2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1050]" "Left_Hand_Middle2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1054]" "Left_Hand_Middle2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1051]" "Left_Hand_Middle2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1055]" "Left_Hand_Middle2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1052]" "Left_Hand_Middle2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1056]" "Left_Hand_Pinky1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1053]" "Left_Hand_Pinky1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1057]" "Left_Hand_Pinky1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1054]" "Left_Hand_Pinky1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1058]" "Left_Hand_Pinky1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1055]" "Left_Hand_Pinky1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1059]" "Left_Hand_Pinky2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1056]" "Left_Hand_Pinky2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1060]" "Left_Hand_Pinky2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1057]" "Left_Hand_Pinky2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1061]" "Left_Hand_Pinky2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1058]" "Left_Hand_Pinky2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1062]" "Left_Hand_Ring1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1059]" "Left_Hand_Ring1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1063]" "Left_Hand_Ring1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1060]" "Left_Hand_Ring1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1064]" "Left_Hand_Ring1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1061]" "Left_Hand_Ring1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1065]" "Left_Hand_Ring2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1062]" "Left_Hand_Ring2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1066]" "Left_Hand_Ring2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1063]" "Left_Hand_Ring2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1067]" "Left_Hand_Ring2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1064]" "Left_Hand_Ring2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1068]" "Left_Hand_Thumb1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1065]" "Left_Hand_Thumb1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1069]" "Left_Hand_Thumb1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1066]" "Left_Hand_Thumb1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1070]" "Left_Hand_Thumb1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1067]" "Left_Hand_Thumb1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1071]" "Left_Hand_Thumb2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1068]" "Left_Hand_Thumb2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1072]" "Left_Hand_Thumb2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1069]" "Left_Hand_Thumb2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1073]" "Left_Hand_Thumb2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1070]" "Left_Hand_Thumb2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1074]" "LeftFoot_PV_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1075]" "LeftFoot_PV_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1076]" "LeftFoot_PV_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1077]" "LeftToeEnd_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1071]" "LeftFoot_PV_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1072]" "LeftFoot_PV_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1073]" "LeftFoot_PV_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1074]" "LeftToeEnd_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1078]" "LeftToeEnd_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1075]" "LeftToeEnd_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1079]" "LeftToeEnd_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1076]" "LeftToeEnd_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1080]" "LeftToeBase_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1077]" "LeftToeBase_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1081]" "LeftToeBase_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1078]" "LeftToeBase_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1082]" "LeftToeBase_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1079]" "LeftToeBase_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1083]" "RightHand_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1080]" "RightHand_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1084]" "RightHand_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1081]" "RightHand_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1085]" "RightHand_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1082]" "RightHand_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1086]" "Right_Hand_Index1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1083]" "Right_Hand_Index1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1087]" "Right_Hand_Index1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1084]" "Right_Hand_Index1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1088]" "Right_Hand_Index1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1085]" "Right_Hand_Index1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1089]" "Right_Hand_Index2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1086]" "Right_Hand_Index2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1090]" "Right_Hand_Index2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1087]" "Right_Hand_Index2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1091]" "Right_Hand_Index2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1088]" "Right_Hand_Index2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1092]" "Right_Hand_Middle1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1089]" "Right_Hand_Middle1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1093]" "Right_Hand_Middle1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1090]" "Right_Hand_Middle1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1094]" "Right_Hand_Middle1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1091]" "Right_Hand_Middle1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1095]" "Right_Hand_Middle2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1092]" "Right_Hand_Middle2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1096]" "Right_Hand_Middle2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1093]" "Right_Hand_Middle2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1097]" "Right_Hand_Middle2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1094]" "Right_Hand_Middle2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1098]" "Right_Hand_Pinky1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1095]" "Right_Hand_Pinky1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1099]" "Right_Hand_Pinky1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1096]" "Right_Hand_Pinky1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1100]" "Right_Hand_Pinky1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1097]" "Right_Hand_Pinky1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1101]" "Right_Hand_Pinky2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1098]" "Right_Hand_Pinky2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1102]" "Right_Hand_Pinky2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1099]" "Right_Hand_Pinky2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1103]" "Right_Hand_Pinky2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1100]" "Right_Hand_Pinky2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1104]" "Right_Hand_Ring1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1101]" "Right_Hand_Ring1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1105]" "Right_Hand_Ring1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1102]" "Right_Hand_Ring1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1106]" "Right_Hand_Ring1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1103]" "Right_Hand_Ring1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1107]" "Right_Hand_Ring2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1104]" "Right_Hand_Ring2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1108]" "Right_Hand_Ring2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1105]" "Right_Hand_Ring2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1109]" "Right_Hand_Ring2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1106]" "Right_Hand_Ring2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1110]" "Right_Hand_Thumb1_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1107]" "Right_Hand_Thumb1_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1111]" "Right_Hand_Thumb1_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1108]" "Right_Hand_Thumb1_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1112]" "Right_Hand_Thumb1_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1109]" "Right_Hand_Thumb1_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1113]" "Right_Hand_Thumb2_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1110]" "Right_Hand_Thumb2_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1114]" "Right_Hand_Thumb2_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1111]" "Right_Hand_Thumb2_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1115]" "Right_Hand_Thumb2_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1112]" "Right_Hand_Thumb2_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1116]" "RightHeel_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1113]" "RightHeel_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1117]" "RightHeel_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1114]" "RightHeel_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1118]" "RightHeel_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1115]" "RightHeel_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1119]" "RightFoot_PV_translateX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1120]" "RightFoot_PV_translateY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1121]" "RightFoot_PV_translateZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1122]" "RightToeEnd_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1116]" "RightFoot_PV_translateX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1117]" "RightFoot_PV_translateY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1118]" "RightFoot_PV_translateZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1119]" "RightToeEnd_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1123]" "RightToeEnd_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1120]" "RightToeEnd_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1124]" "RightToeEnd_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1121]" "RightToeEnd_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1125]" "RightToeBase_CON_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1122]" "RightToeBase_CON_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1126]" "RightToeBase_CON_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1123]" "RightToeBase_CON_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1127]" "RightToeBase_CON_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1124]" "RightToeBase_CON_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1128]" "Vampire__Controller:persp1_translateX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1125]" "Vampire__Controller:persp1_translateX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1129]" "Vampire__Controller:persp1_translateY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1126]" "Vampire__Controller:persp1_translateY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1130]" "Vampire__Controller:persp1_translateZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1127]" "Vampire__Controller:persp1_translateZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1131]" "Vampire__Controller:persp1_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1128]" "Vampire__Controller:persp1_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1132]" "Vampire__Controller:persp1_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1129]" "Vampire__Controller:persp1_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1133]" "Vampire__Controller:persp1_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1130]" "Vampire__Controller:persp1_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1134]" "Vampire__Controller:persp1_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1131]" "Vampire__Controller:persp1_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1135]" "Vampire__Controller:persp1_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1132]" "Vampire__Controller:persp1_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1136]" "Vampire__Controller:persp1_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1133]" "Vampire__Controller:persp1_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1137]" "Vampire__Controller:persp1_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1134]" "Vampire__Controller:persp1_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1138]" "Left_Hand_Ring1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1135]" "Left_Hand_Ring1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1139]" "Left_Hand_Ring1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1136]" "Left_Hand_Ring1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1140]" "Left_Hand_Ring1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1137]" "Left_Hand_Ring1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1141]" "Left_Hand_Ring1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1138]" "Left_Hand_Ring1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1142]" "Left_Hand_Ring1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1139]" "Left_Hand_Ring1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1143]" "Left_Hand_Ring1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1140]" "Left_Hand_Ring1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1144]" "Left_Hand_Ring1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1141]" "Left_Hand_Ring1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1145]" "Left_Hand_Middle2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1142]" "Left_Hand_Middle2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1146]" "Left_Hand_Middle2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1143]" "Left_Hand_Middle2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1147]" "Left_Hand_Middle2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1144]" "Left_Hand_Middle2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1148]" "Left_Hand_Middle2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1145]" "Left_Hand_Middle2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1149]" "Left_Hand_Middle2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1146]" "Left_Hand_Middle2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1150]" "Left_Hand_Middle2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1147]" "Left_Hand_Middle2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1151]" "Left_Hand_Middle2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1148]" "Left_Hand_Middle2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1152]" "Left_Hand_Middle1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1149]" "Left_Hand_Middle1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1153]" "Left_Hand_Middle1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1150]" "Left_Hand_Middle1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1154]" "Left_Hand_Middle1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1151]" "Left_Hand_Middle1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1155]" "Left_Hand_Middle1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1152]" "Left_Hand_Middle1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1156]" "Left_Hand_Middle1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1153]" "Left_Hand_Middle1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1157]" "Left_Hand_Middle1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1154]" "Left_Hand_Middle1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1158]" "Left_Hand_Middle1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1155]" "Left_Hand_Middle1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1159]" "Left_Hand_Index2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1156]" "Left_Hand_Index2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1160]" "Left_Hand_Index2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1157]" "Left_Hand_Index2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1161]" "Left_Hand_Index2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1158]" "Left_Hand_Index2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1162]" "Left_Hand_Index2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1159]" "Left_Hand_Index2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1163]" "Left_Hand_Index2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1160]" "Left_Hand_Index2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1164]" "Left_Hand_Index2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1161]" "Left_Hand_Index2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1165]" "Left_Hand_Index2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1162]" "Left_Hand_Index2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1166]" "Left_Hand_Index1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1163]" "Left_Hand_Index1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1167]" "Left_Hand_Index1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1164]" "Left_Hand_Index1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1168]" "Left_Hand_Index1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1165]" "Left_Hand_Index1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1169]" "Left_Hand_Index1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1166]" "Left_Hand_Index1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1170]" "Left_Hand_Index1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1167]" "Left_Hand_Index1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1171]" "Left_Hand_Index1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1168]" "Left_Hand_Index1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1172]" "Left_Hand_Index1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1169]" "Left_Hand_Index1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1173]" "Left_Hand_Thumb2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1170]" "Left_Hand_Thumb2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1174]" "Left_Hand_Thumb2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1171]" "Left_Hand_Thumb2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1175]" "Left_Hand_Thumb2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1172]" "Left_Hand_Thumb2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1176]" "Left_Hand_Thumb2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1173]" "Left_Hand_Thumb2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1177]" "Left_Hand_Thumb2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1174]" "Left_Hand_Thumb2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1178]" "Left_Hand_Thumb2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1175]" "Left_Hand_Thumb2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1179]" "Left_Hand_Thumb2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1176]" "Left_Hand_Thumb2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1180]" "Left_Hand_Thumb1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1177]" "Left_Hand_Thumb1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1181]" "Left_Hand_Thumb1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1178]" "Left_Hand_Thumb1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1182]" "Left_Hand_Thumb1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1179]" "Left_Hand_Thumb1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1183]" "Left_Hand_Thumb1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1180]" "Left_Hand_Thumb1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1184]" "Left_Hand_Thumb1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1181]" "Left_Hand_Thumb1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1185]" "Left_Hand_Thumb1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1182]" "Left_Hand_Thumb1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1186]" "Left_Hand_Thumb1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1183]" "Left_Hand_Thumb1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1187]" "LeftHand_CON_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1188]" "LeftHand_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1189]" "LeftHand_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1190]" "LeftHand_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1191]" "LeftHand_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1192]" "LeftHand_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1193]" "LeftHand_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1194]" "RightFoot_PV_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1195]" "RightFoot_PV_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1196]" "RightFoot_PV_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1197]" "RightFoot_PV_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1198]" "RightFoot_PV_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1199]" "RightFoot_PV_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1200]" "RightFoot_PV_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1201]" "LeftFoot_PV_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1202]" "LeftFoot_PV_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1203]" "LeftFoot_PV_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1204]" "LeftFoot_PV_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1205]" "LeftFoot_PV_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1206]" "LeftFoot_PV_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1207]" "LeftFoot_PV_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1208]" "Left_Hand_Pinky2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1184]" "LeftHand_CON_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1185]" "LeftHand_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1186]" "LeftHand_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1187]" "LeftHand_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1188]" "LeftHand_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1189]" "LeftHand_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1190]" "LeftHand_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1191]" "RightFoot_PV_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1192]" "RightFoot_PV_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1193]" "RightFoot_PV_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1194]" "RightFoot_PV_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1195]" "RightFoot_PV_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1196]" "RightFoot_PV_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1197]" "RightFoot_PV_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1198]" "LeftFoot_PV_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1199]" "LeftFoot_PV_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1200]" "LeftFoot_PV_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1201]" "LeftFoot_PV_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1202]" "LeftFoot_PV_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1203]" "LeftFoot_PV_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1204]" "LeftFoot_PV_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1205]" "Left_Hand_Pinky2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1209]" "Left_Hand_Pinky2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1206]" "Left_Hand_Pinky2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1210]" "Left_Hand_Pinky2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1207]" "Left_Hand_Pinky2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1211]" "Left_Hand_Pinky2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1208]" "Left_Hand_Pinky2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1212]" "Left_Hand_Pinky2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1209]" "Left_Hand_Pinky2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1213]" "Left_Hand_Pinky2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1210]" "Left_Hand_Pinky2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1214]" "Left_Hand_Pinky2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1211]" "Left_Hand_Pinky2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1215]" "Left_Hand_Pinky1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1212]" "Left_Hand_Pinky1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1216]" "Left_Hand_Pinky1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1213]" "Left_Hand_Pinky1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1217]" "Left_Hand_Pinky1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1214]" "Left_Hand_Pinky1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1218]" "Left_Hand_Pinky1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1215]" "Left_Hand_Pinky1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1219]" "Left_Hand_Pinky1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1216]" "Left_Hand_Pinky1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1220]" "Left_Hand_Pinky1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1217]" "Left_Hand_Pinky1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1221]" "Left_Hand_Pinky1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1218]" "Left_Hand_Pinky1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1222]" "Left_Hand_Ring2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1219]" "Left_Hand_Ring2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1223]" "Left_Hand_Ring2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1220]" "Left_Hand_Ring2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1224]" "Left_Hand_Ring2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1221]" "Left_Hand_Ring2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1225]" "Left_Hand_Ring2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1222]" "Left_Hand_Ring2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1226]" "Left_Hand_Ring2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1223]" "Left_Hand_Ring2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1227]" "Left_Hand_Ring2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1224]" "Left_Hand_Ring2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1228]" "Left_Hand_Ring2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1225]" "Left_Hand_Ring2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1229]" "Right_Hand_Thumb2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1226]" "Right_Hand_Thumb2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1230]" "Right_Hand_Thumb2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1227]" "Right_Hand_Thumb2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1231]" "Right_Hand_Thumb2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1228]" "Right_Hand_Thumb2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1232]" "Right_Hand_Thumb2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1229]" "Right_Hand_Thumb2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1233]" "Right_Hand_Thumb2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1230]" "Right_Hand_Thumb2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1234]" "Right_Hand_Thumb2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1231]" "Right_Hand_Thumb2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1235]" "Right_Hand_Thumb2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1232]" "Right_Hand_Thumb2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1236]" "Right_Hand_Thumb1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1233]" "Right_Hand_Thumb1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1237]" "Right_Hand_Thumb1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1234]" "Right_Hand_Thumb1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1238]" "Right_Hand_Thumb1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1235]" "Right_Hand_Thumb1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1239]" "Right_Hand_Thumb1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1236]" "Right_Hand_Thumb1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1240]" "Right_Hand_Thumb1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1237]" "Right_Hand_Thumb1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1241]" "Right_Hand_Thumb1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1238]" "Right_Hand_Thumb1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1242]" "Right_Hand_Thumb1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1239]" "Right_Hand_Thumb1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1243]" "RightHand_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1240]" "RightHand_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1244]" "RightHand_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1245]" "RightHand_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1246]" "RightHand_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1247]" "RightHand_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1248]" "RightHand_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1249]" "RightHand_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1250]" "LeftToeBase_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1241]" "RightHand_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1242]" "RightHand_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1243]" "RightHand_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1244]" "RightHand_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1245]" "RightHand_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1246]" "RightHand_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1247]" "LeftToeBase_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1251]" "LeftToeBase_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1252]" "LeftToeBase_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1253]" "LeftToeBase_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1254]" "LeftToeBase_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1255]" "LeftToeBase_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1256]" "LeftToeBase_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1257]" "LeftToeEnd_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1248]" "LeftToeBase_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1249]" "LeftToeBase_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1250]" "LeftToeBase_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1251]" "LeftToeBase_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1252]" "LeftToeBase_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1253]" "LeftToeBase_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1254]" "LeftToeEnd_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1258]" "LeftToeEnd_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1259]" "LeftToeEnd_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1260]" "LeftToeEnd_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1261]" "LeftToeEnd_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1262]" "LeftToeEnd_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1263]" "LeftToeEnd_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1264]" "RightToeBase_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1255]" "LeftToeEnd_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1256]" "LeftToeEnd_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1257]" "LeftToeEnd_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1258]" "LeftToeEnd_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1259]" "LeftToeEnd_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1260]" "LeftToeEnd_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1261]" "RightToeBase_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1265]" "RightToeBase_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1262]" "RightToeBase_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1266]" "RightToeBase_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1263]" "RightToeBase_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1267]" "RightToeBase_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1264]" "RightToeBase_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1268]" "RightToeBase_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1269]" "RightToeBase_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1270]" "RightToeBase_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1271]" "Right_Hand_Pinky2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1265]" "RightToeBase_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1266]" "RightToeBase_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1267]" "RightToeBase_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1268]" "Right_Hand_Pinky2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1272]" "Right_Hand_Pinky2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1269]" "Right_Hand_Pinky2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1273]" "Right_Hand_Pinky2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1270]" "Right_Hand_Pinky2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1274]" "Right_Hand_Pinky2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1271]" "Right_Hand_Pinky2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1275]" "Right_Hand_Pinky2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1272]" "Right_Hand_Pinky2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1276]" "Right_Hand_Pinky2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1273]" "Right_Hand_Pinky2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1277]" "Right_Hand_Pinky2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1274]" "Right_Hand_Pinky2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1278]" "Right_Hand_Pinky1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1275]" "Right_Hand_Pinky1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1279]" "Right_Hand_Pinky1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1276]" "Right_Hand_Pinky1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1280]" "Right_Hand_Pinky1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1277]" "Right_Hand_Pinky1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1281]" "Right_Hand_Pinky1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1278]" "Right_Hand_Pinky1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1282]" "Right_Hand_Pinky1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1279]" "Right_Hand_Pinky1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1283]" "Right_Hand_Pinky1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1280]" "Right_Hand_Pinky1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1284]" "Right_Hand_Pinky1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1281]" "Right_Hand_Pinky1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1285]" "Right_Hand_Ring2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1282]" "Right_Hand_Ring2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1286]" "Right_Hand_Ring2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1283]" "Right_Hand_Ring2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1287]" "Right_Hand_Ring2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1284]" "Right_Hand_Ring2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1288]" "Right_Hand_Ring2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1285]" "Right_Hand_Ring2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1289]" "Right_Hand_Ring2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1286]" "Right_Hand_Ring2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1290]" "Right_Hand_Ring2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1287]" "Right_Hand_Ring2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1291]" "Right_Hand_Ring2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1288]" "Right_Hand_Ring2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1292]" "Right_Hand_Ring1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1289]" "Right_Hand_Ring1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1293]" "Right_Hand_Ring1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1290]" "Right_Hand_Ring1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1294]" "Right_Hand_Ring1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1291]" "Right_Hand_Ring1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1295]" "Right_Hand_Ring1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1292]" "Right_Hand_Ring1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1296]" "Right_Hand_Ring1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1293]" "Right_Hand_Ring1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1297]" "Right_Hand_Ring1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1294]" "Right_Hand_Ring1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1298]" "Right_Hand_Ring1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1295]" "Right_Hand_Ring1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1299]" "Right_Hand_Middle2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1296]" "Right_Hand_Middle2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1300]" "Right_Hand_Middle2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1297]" "Right_Hand_Middle2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1301]" "Right_Hand_Middle2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1298]" "Right_Hand_Middle2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1302]" "Right_Hand_Middle2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1299]" "Right_Hand_Middle2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1303]" "Right_Hand_Middle2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1300]" "Right_Hand_Middle2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1304]" "Right_Hand_Middle2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1301]" "Right_Hand_Middle2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1305]" "Right_Hand_Middle2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1302]" "Right_Hand_Middle2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1306]" "Right_Hand_Middle1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1303]" "Right_Hand_Middle1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1307]" "Right_Hand_Middle1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1304]" "Right_Hand_Middle1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1308]" "Right_Hand_Middle1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1305]" "Right_Hand_Middle1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1309]" "Right_Hand_Middle1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1306]" "Right_Hand_Middle1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1310]" "Right_Hand_Middle1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1307]" "Right_Hand_Middle1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1311]" "Right_Hand_Middle1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1308]" "Right_Hand_Middle1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1312]" "Right_Hand_Middle1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1309]" "Right_Hand_Middle1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1313]" "Right_Hand_Index2_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1310]" "Right_Hand_Index2_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1314]" "Right_Hand_Index2_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1311]" "Right_Hand_Index2_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1315]" "Right_Hand_Index2_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1312]" "Right_Hand_Index2_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1316]" "Right_Hand_Index2_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1313]" "Right_Hand_Index2_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1317]" "Right_Hand_Index2_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1314]" "Right_Hand_Index2_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1318]" "Right_Hand_Index2_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1315]" "Right_Hand_Index2_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1319]" "Right_Hand_Index2_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1316]" "Right_Hand_Index2_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1320]" "Right_Hand_Index1_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1317]" "Right_Hand_Index1_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1321]" "Right_Hand_Index1_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1318]" "Right_Hand_Index1_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1322]" "Right_Hand_Index1_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1319]" "Right_Hand_Index1_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1323]" "Right_Hand_Index1_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1320]" "Right_Hand_Index1_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1324]" "Right_Hand_Index1_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1321]" "Right_Hand_Index1_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1325]" "Right_Hand_Index1_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1322]" "Right_Hand_Index1_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1326]" "Right_Hand_Index1_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1323]" "Right_Hand_Index1_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1327]" "Root_CON_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1328]" "Root_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1329]" "Root_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1330]" "Root_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1331]" "Root_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1332]" "Root_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1333]" "Root_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1334]" "Jaw_CON_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1335]" "Jaw_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1336]" "Jaw_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1337]" "Jaw_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1338]" "Jaw_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1339]" "Jaw_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1340]" "Jaw_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1341]" "Head_CON_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1342]" "Head_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1343]" "Head_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1344]" "Head_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1345]" "Head_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1346]" "Head_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1347]" "Head_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1348]" "Neck_CON_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1349]" "Neck_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1350]" "Neck_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1351]" "Neck_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1352]" "Neck_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1353]" "Neck_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1354]" "Neck_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1355]" "Spine2_CON_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1356]" "Spine2_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1357]" "Spine2_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1358]" "Spine2_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1359]" "Spine2_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1360]" "Spine2_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1361]" "Spine2_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1362]" "Spine1_CON_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1363]" "Spine1_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1364]" "Spine1_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1365]" "Spine1_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1366]" "Spine1_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1367]" "Spine1_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1368]" "Spine1_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1369]" "Spine_CON_visibility_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1370]" "Spine_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1371]" "Spine_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1372]" "Spine_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1373]" "Spine_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1374]" "Spine_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1375]" "Spine_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1376]" "Hips_Rotate_CON_Full_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1324]" "Root_CON_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1325]" "Root_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1326]" "Root_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1327]" "Root_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1328]" "Root_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1329]" "Root_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1330]" "Root_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1331]" "Jaw_CON_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1332]" "Jaw_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1333]" "Jaw_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1334]" "Jaw_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1335]" "Jaw_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1336]" "Jaw_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1337]" "Jaw_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1338]" "Head_CON_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1339]" "Head_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1340]" "Head_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1341]" "Head_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1342]" "Head_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1343]" "Head_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1344]" "Head_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1345]" "Neck_CON_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1346]" "Neck_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1347]" "Neck_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1348]" "Neck_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1349]" "Neck_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1350]" "Neck_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1351]" "Neck_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1352]" "Spine2_CON_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1353]" "Spine2_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1354]" "Spine2_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1355]" "Spine2_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1356]" "Spine2_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1357]" "Spine2_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1358]" "Spine2_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1359]" "Spine1_CON_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1360]" "Spine1_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1361]" "Spine1_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1362]" "Spine1_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1363]" "Spine1_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1364]" "Spine1_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1365]" "Spine1_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1366]" "Spine_CON_visibility_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1367]" "Spine_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1368]" "Spine_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1369]" "Spine_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1370]" "Spine_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1371]" "Spine_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1372]" "Spine_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1373]" "Hips_Rotate_CON_Full_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1377]" "Hips_Rotate_CON_Full_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1374]" "Hips_Rotate_CON_Full_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1378]" "Hips_Rotate_CON_Full_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1375]" "Hips_Rotate_CON_Full_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1379]" "Hips_Rotate_CON_Full_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1376]" "Hips_Rotate_CON_Full_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1380]" "Hips_Rotate_CON_Full_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1377]" "Hips_Rotate_CON_Full_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1381]" "Hips_Rotate_CON_Full_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1378]" "Hips_Rotate_CON_Full_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1382]" "Hips_Rotate_CON_Full_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1379]" "Hips_Rotate_CON_Full_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1383]" "Hips_Translate_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1380]" "Hips_Translate_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1384]" "Hips_Translate_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1381]" "Hips_Translate_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1385]" "Hips_Translate_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1382]" "Hips_Translate_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1386]" "Hips_Translate_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1383]" "Hips_Translate_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1387]" "Hips_Translate_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1384]" "Hips_Translate_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1388]" "Hips_Translate_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1385]" "Hips_Translate_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1389]" "Hips_Translate_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1386]" "Hips_Translate_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1390]" "RightToeEnd_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1387]" "RightToeEnd_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1391]" "RightToeEnd_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1392]" "RightToeEnd_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1393]" "RightToeEnd_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1394]" "RightToeEnd_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1395]" "RightToeEnd_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1396]" "RightToeEnd_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1397]" "RightHeel_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1388]" "RightToeEnd_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1389]" "RightToeEnd_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1390]" "RightToeEnd_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1391]" "RightToeEnd_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1392]" "RightToeEnd_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1393]" "RightToeEnd_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1394]" "RightHeel_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1398]" "RightHeel_CON_rotate_Idle.iax";
-connectAttr "Vampire__ControllerRN.phl[1399]" "RightHeel_CON_rotate_Idle.iay";
-connectAttr "Vampire__ControllerRN.phl[1400]" "RightHeel_CON_rotate_Idle.iaz";
-connectAttr "Vampire__ControllerRN.phl[1401]" "RightHeel_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1402]" "RightHeel_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1403]" "RightHeel_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1404]" "RightShoulder_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1395]" "RightHeel_CON_rotate_Idle.iax";
+connectAttr "Vampire__ControllerRN.phl[1396]" "RightHeel_CON_rotate_Idle.iay";
+connectAttr "Vampire__ControllerRN.phl[1397]" "RightHeel_CON_rotate_Idle.iaz";
+connectAttr "Vampire__ControllerRN.phl[1398]" "RightHeel_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1399]" "RightHeel_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1400]" "RightHeel_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1401]" "RightShoulder_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1405]" "RightShoulder_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1402]" "RightShoulder_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1406]" "RightShoulder_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1403]" "RightShoulder_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1407]" "RightShoulder_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1404]" "RightShoulder_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1408]" "RightShoulder_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1405]" "RightShoulder_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1409]" "RightShoulder_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1406]" "RightShoulder_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1410]" "RightShoulder_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1407]" "RightShoulder_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1411]" "LeftShoulder_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1408]" "LeftShoulder_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1412]" "LeftShoulder_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1409]" "LeftShoulder_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1413]" "LeftShoulder_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1410]" "LeftShoulder_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1414]" "LeftShoulder_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1411]" "LeftShoulder_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1415]" "LeftShoulder_CON_scaleX_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1416]" "LeftShoulder_CON_scaleY_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1417]" "LeftShoulder_CON_scaleZ_Idle.ia";
-connectAttr "Vampire__ControllerRN.phl[1418]" "Left_Ear_Base_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1412]" "LeftShoulder_CON_scaleX_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1413]" "LeftShoulder_CON_scaleY_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1414]" "LeftShoulder_CON_scaleZ_Idle.ia";
+connectAttr "Vampire__ControllerRN.phl[1415]" "Left_Ear_Base_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1419]" "Left_Ear_Base_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1416]" "Left_Ear_Base_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1420]" "Left_Ear_Base_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1417]" "Left_Ear_Base_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1421]" "Left_Ear_Base_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1418]" "Left_Ear_Base_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1422]" "Left_Ear_Base_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1419]" "Left_Ear_Base_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1423]" "Left_Ear_Base_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1420]" "Left_Ear_Base_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1424]" "Left_Ear_Base_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1421]" "Left_Ear_Base_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1425]" "Left_Ear_Bond_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1422]" "Left_Ear_Bond_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1426]" "Left_Ear_Bond_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1423]" "Left_Ear_Bond_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1427]" "Left_Ear_Bond_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1424]" "Left_Ear_Bond_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1428]" "Left_Ear_Bond_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1425]" "Left_Ear_Bond_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1429]" "Left_Ear_Bond_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1426]" "Left_Ear_Bond_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1430]" "Left_Ear_Bond_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1427]" "Left_Ear_Bond_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1431]" "Left_Ear_Bond_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1428]" "Left_Ear_Bond_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1432]" "Right_Ear_Base_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1429]" "Right_Ear_Base_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1433]" "Right_Ear_Base_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1430]" "Right_Ear_Base_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1434]" "Right_Ear_Base_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1431]" "Right_Ear_Base_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1435]" "Right_Ear_Base_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1432]" "Right_Ear_Base_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1436]" "Right_Ear_Base_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1433]" "Right_Ear_Base_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1437]" "Right_Ear_Base_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1434]" "Right_Ear_Base_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1438]" "Right_Ear_Base_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1435]" "Right_Ear_Base_CON_scaleZ_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1439]" "Right_Ear_Bond_CON_visibility_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1436]" "Right_Ear_Bond_CON_visibility_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1440]" "Right_Ear_Bond_CON_rotate_Idle.iax"
+connectAttr "Vampire__ControllerRN.phl[1437]" "Right_Ear_Bond_CON_rotate_Idle.iax"
 		;
-connectAttr "Vampire__ControllerRN.phl[1441]" "Right_Ear_Bond_CON_rotate_Idle.iay"
+connectAttr "Vampire__ControllerRN.phl[1438]" "Right_Ear_Bond_CON_rotate_Idle.iay"
 		;
-connectAttr "Vampire__ControllerRN.phl[1442]" "Right_Ear_Bond_CON_rotate_Idle.iaz"
+connectAttr "Vampire__ControllerRN.phl[1439]" "Right_Ear_Bond_CON_rotate_Idle.iaz"
 		;
-connectAttr "Vampire__ControllerRN.phl[1443]" "Right_Ear_Bond_CON_scaleX_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1440]" "Right_Ear_Bond_CON_scaleX_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1444]" "Right_Ear_Bond_CON_scaleY_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1441]" "Right_Ear_Bond_CON_scaleY_Idle.ia"
 		;
-connectAttr "Vampire__ControllerRN.phl[1445]" "Right_Ear_Bond_CON_scaleZ_Idle.ia"
+connectAttr "Vampire__ControllerRN.phl[1442]" "Right_Ear_Bond_CON_scaleZ_Idle.ia"
 		;
+connectAttr "Vampire__ControllerRN.phl[1443]" "pairBlend1.irx1";
+connectAttr "Vampire__ControllerRN.phl[1444]" "pairBlend1.iry1";
+connectAttr "Vampire__ControllerRN.phl[1445]" "pairBlend1.irz1";
 connectAttr "Right_Shoulder_parentConstraint1.w0" "Right_Shoulder_parentConstraint1.tg[0].tw"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
