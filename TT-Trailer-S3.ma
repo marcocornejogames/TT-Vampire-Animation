@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: TT-Trailer-S3.ma
-//Last modified: Sat, Jul 17, 2021 10:51:48 AM
+//Last modified: Sat, Jul 17, 2021 11:02:23 AM
 //Codeset: 1252
 requires "fbxmaya" "2020.1.1";
 file -rdi 1 -ns "Shopping_Mall_GEO_Lightfix" -rfn "Shopping_Mall_GEO_LightfixRN"
@@ -51,21 +51,21 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "BEB44BDF-428C-CF56-26C9-AC987B6E84F6";
+fileInfo "UUID" "875F5749-4C55-EAEC-63AC-C79F6284E191";
 createNode transform -s -n "persp";
 	rename -uid "52586057-4BF7-9F02-55E1-75A41DCAFC5F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2136.7388491209745 845.63637040300478 958.16898911008161 ;
-	setAttr ".r" -type "double3" -50.738352513932242 -7336.9999999956535 0 ;
+	setAttr ".t" -type "double3" 1830.5741109186388 661.76279032679042 1665.0754191992023 ;
+	setAttr ".r" -type "double3" -21.938352514126983 -12657.800000003686 2.9843275302487564e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "850FB6B5-4412-3A63-F21E-5C80EE9BBFF6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 720.10977166278678;
+	setAttr ".coi" 753.85659025858843;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 2791.2006048578432 428.50308057600569 1296.5491012037228 ;
+	setAttr ".tp" -type "double3" 2320.5170639558137 461.12834411217932 1365.8429153956854 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -50324,7 +50324,7 @@ createNode mesh -n "Escalator_End_2_lowShape" -p "|LevelGeo|Escalator_low2|Escal
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode fosterParent -n "Shopping_Mall_GEO_LightfixRNfosterParent1";
-	rename -uid "7B4A1E19-4768-C0CD-A277-2D86E2A20B2C";
+	rename -uid "FA749BDB-472D-C9EE-9911-80879F8D232E";
 createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape3" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
 	rename -uid "C24E4AFD-4769-508D-F9D8-91912C4A654B";
 	setAttr -k off ".v";
@@ -51271,7 +51271,7 @@ createNode reference -n "Shopping_Mall_GEO_LightfixRN";
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
 		"pnts[89]" " -type \"float3\" 0 0 0 0 0 0 1602.77890000000002146 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1602.77890000000002146 0 0 0 0 0 1602.77890000000002146 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0"
 		
-		"Shopping_Mall_GEO_LightfixRN" 157
+		"Shopping_Mall_GEO_LightfixRN" 165
 		0 "|Shopping_Mall_GEO_Lightfix:ShoppingMall" "|LevelGeo" "-s -r "
 		0 "|Shopping_Mall_GEO_LightfixRNfosterParent1|Shopping_Mall_GEO_Lightfix:polySurfaceShape2" 
 		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1" 
@@ -51316,27 +51316,39 @@ createNode reference -n "Shopping_Mall_GEO_LightfixRN";
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
 		"instObjGroups.objectGroups" " -s 12"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
-		"uvPivot" " -type \"double2\" -0.22299635410308838 -4.25320148468017578"
+		"uvPivot" " -type \"double2\" -1.01301991939544678 -4.25327014923095703"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
 		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
-		"pnts" " -s 11"
+		"pnts" " -s 14"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
 		"pnts[0]" " -type \"float3\" 0 0 0"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
-		"pt[2:4]" " -type \"float3\" 0 0 0 1.5258788999999999e-05 -3.0517577999999997e-05 0 0 0 0"
-		
+		"pnts[2]" " -type \"float3\" 0 0 0"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
-		"pt[10:11]" " -type \"float3\" 1.5258788999999999e-05 -3.0517577999999997e-05 0 0 0 0"
-		
+		"pnts[3]" " -type \"float3\" 1.5258788999999999e-05 -3.0517577999999997e-05 0"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
-		"pt[19:20]" " -type \"float3\" 0 0 0 1.5258788999999999e-05 -3.0517577999999997e-05 0"
-		
+		"pnts[4]" " -type \"float3\" 0 0 0"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
-		"pt[27:28]" " -type \"float3\" 1.5258788999999999e-05 -3.0517577999999997e-05 0 1602.77890000000002146 0 0"
-		
+		"pnts[10]" " -type \"float3\" 1.5258788999999999e-05 -3.0517577999999997e-05 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
+		"pnts[11]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
+		"pnts[19]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
+		"pnts[20]" " -type \"float3\" 1.5258788999999999e-05 -3.0517577999999997e-05 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
+		"pnts[27]" " -type \"float3\" 1.5258788999999999e-05 -3.0517577999999997e-05 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
+		"pnts[28]" " -type \"float3\" 1602.77890000000002146 0 0"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
 		"pnts[89]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
+		"pnts[116]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
+		"pnts[128]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
+		"pnts[132]" " -type \"float3\" 0 0 0"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor2|Shopping_Mall_GEO_Lightfix:Floor2Shape" 
 		"uvPivot" " -type \"double2\" -1.92898780107498169 -1.1575959324836731"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor2|Shopping_Mall_GEO_Lightfix:Floor2Shape" 
@@ -68011,20 +68023,42 @@ createNode reference -n "Mahler_AutoRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Mahler_AutoRN"
 		"Mahler_AutoRN" 0
-		"Mahler_AutoRN" 136
+		"Mahler_AutoRN" 188
 		2 "|Mahler_Auto:mixamorig:Hips" "visibility" " -av 1"
+		2 "|Mahler_Auto:mixamorig:Hips" "translate" " -type \"double3\" 2304.12755412380738562 414.76735561994246382 1360.20430645723763519"
+		
+		2 "|Mahler_Auto:mixamorig:Hips" "translateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips" "translateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips" "translateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips" "rotate" " -type \"double3\" -35.68428847826073991 89.99999999999998579 0"
+		
+		2 "|Mahler_Auto:mixamorig:Hips" "rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips" "rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips" "rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips" "preferredAngle" " -type \"double3\" 0 0 0"
 		
 		2 "|Mahler_Auto:mixamorig:Hips" "filmboxTypeID" " -k 1 5"
 		2 "|Mahler_Auto:mixamorig:Hips" "lockInfluenceWeights" " -k 1 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine" "rotate" " -type \"double3\" 19.35108036956043165 0 0"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine" "rotateX" " -av"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine" "rotateY" " -av"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine" "rotateZ" " -av"
+		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine" "preferredAngle" 
 		" -type \"double3\" 0 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1" 
+		"rotate" " -type \"double3\" 0.061678573941244229 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1" 
+		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck" 
-		"rotate" " -type \"double3\" -10.9297490206394059 -53.08663329885817461 8.95559575399031615"
+		"rotate" " -type \"double3\" -36.59757826476121068 -33.82293794967740297 20.19259829389887173"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck" 
 		"rotateX" " -av"
@@ -68035,11 +68069,19 @@ createNode reference -n "Mahler_AutoRN";
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck|Mahler_Auto:mixamorig:Head" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck|Mahler_Auto:mixamorig:Head" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck|Mahler_Auto:mixamorig:Head" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck|Mahler_Auto:mixamorig:Head" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck|Mahler_Auto:mixamorig:Head" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm" 
-		"rotate" " -type \"double3\" 71.35856182508413781 -3.29828258378831984 14.46437827578509072"
+		"rotate" " -type \"double3\" 38.02099153753938765 25.81777027269122726 -19.52332214596165016"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm" 
 		"rotateX" " -av"
@@ -68050,7 +68092,8 @@ createNode reference -n "Mahler_AutoRN";
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm" 
-		"rotate" " -type \"double3\" -3.21579422613704713 0 0"
+		"rotate" " -type \"double3\" -2.8754833833968716 1.44037148209010657 26.58527158342018026"
+		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm" 
@@ -68073,7 +68116,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" 1.5584564749815399e-08 -1.8968654558193523e-07 -6.694401832874064e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1" 
-		"rotate" " -type \"double3\" 0 0 -18.01323373279697293"
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1" 
@@ -68084,13 +68127,29 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" -1.1497792939962893e-07 -1.6436374039585644e-07 -2.1679689155007509e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2" 
 		"preferredAngle" " -type \"double3\" -1.1497792939962893e-07 -4.6193335379030038e-08 -5.2343008150046444e-08"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2|Mahler_Auto:mixamorig:LeftHandThumb3" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2|Mahler_Auto:mixamorig:LeftHandThumb3" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2|Mahler_Auto:mixamorig:LeftHandThumb3" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2|Mahler_Auto:mixamorig:LeftHandThumb3" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1|Mahler_Auto:mixamorig:LeftHandThumb2|Mahler_Auto:mixamorig:LeftHandThumb3" 
 		"preferredAngle" " -type \"double3\" 6.58479881286621094 -4.32209873199462891 22.38180923461914063"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1" 
-		"rotate" " -type \"double3\" 42.61136014778313807 0 0"
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1" 
@@ -68101,7 +68160,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" -2.2067554894533714e-08 -1.9038381537939131e-07 -6.3026917018760287e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2" 
-		"rotate" " -type \"double3\" 72.00339810498323345 0 0"
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2" 
@@ -68112,8 +68171,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" -2.2067558447247393e-08 -2.8988290523557225e-07 -2.9169232362846742e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2|Mahler_Auto:mixamorig:LeftHandIndex3" 
-		"rotate" " -type \"double3\" 38.13442603154914678 -0.013097696937620645 -0.13526090979576133"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2|Mahler_Auto:mixamorig:LeftHandIndex3" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2|Mahler_Auto:mixamorig:LeftHandIndex3" 
@@ -68124,8 +68182,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" -2.50756931304931641 -0.01309769693762064 -0.13526090979576111"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1" 
-		"rotate" " -type \"double3\" 34.01506459673667848 6.26456999545707927 12.92949703926929139"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1" 
@@ -68136,8 +68193,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" -1.48314889258927e-08 -1.9585029065183335e-07 -4.6130828934565216e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2" 
-		"rotate" " -type \"double3\" 78.51338013920094738 3.97496403964042821 19.11171205095776315"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2" 
@@ -68148,8 +68204,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" -1.4831489814071118e-08 -3.3202204008375702e-07 -4.6376246842783075e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2|Mahler_Auto:mixamorig:LeftHandMiddle3" 
-		"rotate" " -type \"double3\" 45.28860301734034266 5.12016057896505838 10.1995638293801214"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2|Mahler_Auto:mixamorig:LeftHandMiddle3" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2|Mahler_Auto:mixamorig:LeftHandMiddle3" 
@@ -68160,8 +68215,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" 2.15819048881530762 -0.0072653298266232005 0.11834285408258438"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1" 
-		"rotate" " -type \"double3\" 28.55495212397547178 13.14298364510516315 13.04338104641060525"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1" 
@@ -68172,8 +68226,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" 1.3911680696310214e-08 -1.9464377487565798e-07 -5.1240874654467916e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2" 
-		"rotate" " -type \"double3\" 70.61659628962190993 14.94699647595917824 19.5486231154222807"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2" 
@@ -68184,8 +68237,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" 1.3911678031774954e-08 -4.5807837523170747e-07 -1.5127243457868644e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2|Mahler_Auto:mixamorig:LeftHandRing3" 
-		"rotate" " -type \"double3\" 60.38487342476769015 15.26364467302009231 16.01681848320579604"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2|Mahler_Auto:mixamorig:LeftHandRing3" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2|Mahler_Auto:mixamorig:LeftHandRing3" 
@@ -68196,8 +68248,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" -1.96579611301422141 -0.0044107669964432716 -0.085382647812366486"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1" 
-		"rotate" " -type \"double3\" 19.22119605530803454 0.38284015526425796 8.81093470897452669"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1" 
@@ -68208,8 +68259,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" 7.5010156308508158e-08 -1.8615229180340975e-07 -2.0643748044335556e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2" 
-		"rotate" " -type \"double3\" 74.05502991078432729 31.93049460864836675 31.44356817822328765"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2" 
@@ -68220,8 +68270,7 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" 7.5010156308508158e-08 -7.7839155210313038e-07 6.3062373101274729e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2|Mahler_Auto:mixamorig:LeftHandPinky3" 
-		"rotate" " -type \"double3\" 43.08110999088594184 -0.0021527849603444377 0.0161896161735058"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2|Mahler_Auto:mixamorig:LeftHandPinky3" 
 		"rotateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2|Mahler_Auto:mixamorig:LeftHandPinky3" 
@@ -68312,20 +68361,72 @@ createNode reference -n "Mahler_AutoRN";
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandPinky1|Mahler_Auto:mixamorig:RightHandPinky2|Mahler_Auto:mixamorig:RightHandPinky3" 
 		"preferredAngle" " -type \"double3\" 1.02438759803771973 -0.00011735020234482363 0.014665147289633749"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg" "rotate" 
+		" -type \"double3\" 2.16985380765699709 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg" "rotateX" 
+		" -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg" "rotateZ" 
+		" -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg" "preferredAngle" 
 		" -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg" 
+		"rotate" " -type \"double3\" -104.70798054067915928 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot" 
+		"rotate" " -type \"double3\" 27.03389844208534143 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot" 
 		"preferredAngle" " -type \"double3\" 0 2.4702092815687138e-08 -3.601373421702192e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot|Mahler_Auto:mixamorig:LeftToeBase" 
+		"rotate" " -type \"double3\" 43.84361905566614581 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot|Mahler_Auto:mixamorig:LeftToeBase" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot|Mahler_Auto:mixamorig:LeftToeBase" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot|Mahler_Auto:mixamorig:LeftToeBase" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:LeftUpLeg|Mahler_Auto:mixamorig:LeftLeg|Mahler_Auto:mixamorig:LeftFoot|Mahler_Auto:mixamorig:LeftToeBase" 
 		"preferredAngle" " -type \"double3\" 4.6061252589879587e-08 6.4713151459727669e-07 -2.0802943367925764e-08"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg" "rotate" 
+		" -type \"double3\" 67.51365192279658345 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg" "rotateX" 
+		" -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg" "rotateZ" 
+		" -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg" "preferredAngle" 
 		" -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg" 
+		"rotate" " -type \"double3\" -71.04639709361822497 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg|Mahler_Auto:mixamorig:RightFoot" 
+		"rotate" " -type \"double3\" 19.4021631697692527 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg|Mahler_Auto:mixamorig:RightFoot" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg|Mahler_Auto:mixamorig:RightFoot" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg|Mahler_Auto:mixamorig:RightFoot" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:RightUpLeg|Mahler_Auto:mixamorig:RightLeg|Mahler_Auto:mixamorig:RightFoot" 
 		"preferredAngle" " -type \"double3\" 0 6.7407421866505493e-09 -1.0299372910083093e-08"
 		
@@ -68342,7 +68443,7 @@ createNode reference -n "TrashCanLidRN";
 		"TrashCanLidRN"
 		"TrashCanLidRN" 0
 		"TrashCanLidRN" 5
-		2 "|TrashCanLid:TrashCan_low" "translate" " -type \"double3\" 2270.14326553593127755 470.09336962465272336 1371.74045161109302171"
+		2 "|TrashCanLid:TrashCan_low" "translate" " -type \"double3\" 2270.14326553593127755 470.09336962465272336 1094.99355212722389297"
 		
 		2 "|TrashCanLid:TrashCan_low" "rotate" " -type \"double3\" -146.14317826126827526 -21.53099995198970618 -99.4170263207312388"
 		
@@ -69026,7 +69127,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		"Vampire__ControllerRN2" 0
 		"Vampire__ControllerRN2" 170
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Left_Shoulder|Vampire__Controller2:Left_Arm" 
-		"rotate" " -type \"double3\" -35.11716432877429384 28.74834513813096848 30.14316081689240789"
+		"rotate" " -type \"double3\" -20.63802449683923612 6.79844273415648015 28.47633676341289188"
 		
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Left_Shoulder|Vampire__Controller2:Left_Arm" 
 		"rotateX" " -av"
@@ -69035,7 +69136,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Left_Shoulder|Vampire__Controller2:Left_Arm" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Right_Shoulder|Vampire__Controller2:Right_Arm" 
-		"rotate" " -type \"double3\" -32.71863967638569193 58.43558482306808344 20.15136457558358529"
+		"rotate" " -type \"double3\" -9.31501612029481763 22.49345940156768719 36.61730161452450716"
 		
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Right_Shoulder|Vampire__Controller2:Right_Arm" 
 		"rotateX" " -av"
@@ -69048,7 +69149,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:IK_Group" "rotate" " -type \"double3\" 0 -80.43732026726472384 0"
 		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "translate" 
-		" -type \"double3\" 2755.94587259751870079 335.51374660707404018 1236.38869298873237312"
+		" -type \"double3\" 2409.14314977899311998 335.51374660707404018 1362.6643864806833335"
 		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "translateX" 
 		" -av"
@@ -69095,7 +69196,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON" 
-		"rotate" " -type \"double3\" 24.96117400054631474 0 0"
+		"rotate" " -type \"double3\" 8.94062890718470982 0 0"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON" 
@@ -69189,7 +69290,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
-		"translate" " -type \"double3\" 24.32701465911663519 5.71693991234704768 15.34408819871560503"
+		"translate" " -type \"double3\" 24.0978444676920347 1.98848619540423943 45.9753506272806689"
 		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
 		"translateX" " -av"
