@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: TT-Trailer-S1.ma
-//Last modified: Sat, Jul 17, 2021 09:33:17 AM
+//Last modified: Sat, Jul 17, 2021 10:02:00 AM
 //Codeset: 1252
 requires "fbxmaya" "2020.1.1";
 file -rdi 1 -ns "Shopping_Mall_GEO_Lightfix" -rfn "Shopping_Mall_GEO_LightfixRN"
@@ -51,21 +51,21 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "8E498920-47F6-F9F5-E81E-26A0BC4E9240";
+fileInfo "UUID" "C1264473-4ED6-BBAD-9363-4EBCDEBADA58";
 createNode transform -s -n "persp";
 	rename -uid "52586057-4BF7-9F02-55E1-75A41DCAFC5F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 614.31554954044373 998.46908236922673 1536.5043692435499 ;
-	setAttr ".r" -type "double3" -23.738352623433649 -6224.199999980945 0 ;
+	setAttr ".t" -type "double3" 1063.8039973148648 2432.4502796810507 1888.439384870831 ;
+	setAttr ".r" -type "double3" -68.138352623173105 -6176.5999999819142 -5.7777764930518863e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "850FB6B5-4412-3A63-F21E-5C80EE9BBFF6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1519.9820197336339;
+	setAttr ".coi" 2788.1975852836945;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 2211.7946896851345 419.8514009222838 1307.1191759690105 ;
+	setAttr ".tp" -type "double3" 2791.2006048578432 428.50308057600569 1296.5491012037228 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -50324,7 +50324,57 @@ createNode mesh -n "Escalator_End_2_lowShape" -p "|LevelGeo|Escalator_low2|Escal
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode fosterParent -n "Shopping_Mall_GEO_LightfixRNfosterParent1";
-	rename -uid "31974BD6-4430-8459-A536-C39F6DD6D001";
+	rename -uid "8AC07DCB-4871-0BD8-7980-9498522FE6E4";
+createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape3" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
+	rename -uid "C24E4AFD-4769-508D-F9D8-91912C4A654B";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 1.4800840020179749 -2.3287817239761353 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 18 ".uvst[0].uvsp[0:17]" -type "float2" 1.4175452 -2.37987852
+		 1.54262269 -2.37987852 1.5426228 -2.27768493 1.4175452 -2.27768493 1.26881957 -2.37987876
+		 1.40151489 -2.37987852 1.40151477 -2.27768493 1.26881933 -2.27768517 1.57746542 -2.39306641
+		 1.59539115 -2.39306641 1.59539115 -2.26440954 1.57746542 -2.26440954 1.67518234 -2.39314365
+		 1.69310856 -2.39314365 1.69310832 -2.26448655 1.67518234 -2.26448679 1.24893391 -2.27768517
+		 1.24893415 -2.37987876;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr -s 8 ".vt[0:7]"  2932.76855469 344.067840576 1559.44592285
+		 2998.30566406 344.067840576 1543.55761719 2932.76855469 761.86456299 1559.44592285
+		 2998.30566406 761.86456299 1543.55761719 2900.62402344 761.86456299 1016.94793701
+		 2981.9206543 761.86456299 1032.20385742 2900.62402344 344.067840576 1016.94793701
+		 2981.9206543 344.067840576 1032.20422363;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 1 3 0 3 2 0 2 0 0 3 5 0 5 4 0 4 2 0
+		 5 7 0 7 6 0 6 4 0 7 1 0 0 6 0;
+	setAttr -s 24 ".n[0:23]" -type "float3"  0.23560666 0 0.97184843 0.23560666
+		 0 0.97184843 0.23560666 0 0.97184843 0.23560666 0 0.97184843 0 1 5.0477478e-08 0
+		 1 5.0477478e-08 0 1 5.0477475e-08 0 1 5.0477482e-08 0.18444158 -5.6516689e-07 -0.98284346
+		 0.18444158 -5.6516694e-07 -0.98284346 0.18444154 -5.6516689e-07 -0.9828434 0.18444158
+		 -5.6516689e-07 -0.98284346 0 -0.99999994 2.5238737e-08 0 -1 2.5238739e-08 0 -1 2.5238739e-08
+		 0 -1 2.5238741e-08 0.9994871 5.8479139e-07 -0.032025997 0.99948698 5.8479134e-07
+		 -0.032025993 0.99948698 5.8479134e-07 -0.032025997 0.9994871 5.8479139e-07 -0.032025997
+		 -0.99824917 0 0.059149075 -0.99824917 0 0.059149075 -0.99824917 0 0.059149075 -0.99824917
+		 0 0.059149075;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 1 2 3
+		mu 0 4 5 0 3 6
+		f 4 -3 4 5 6
+		mu 0 4 8 9 10 11
+		f 4 -6 7 8 9
+		mu 0 4 7 16 17 4
+		f 4 -9 10 -1 11
+		mu 0 4 12 13 14 15
+		f 4 -11 -8 -5 -2
+		mu 0 4 0 1 2 3
+		f 4 -12 -4 -7 -10
+		mu 0 4 4 5 6 7;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".ai_translator" -type "string" "polymesh";
 createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape1" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
 	rename -uid "5ED7FF3E-4A84-958F-CC0E-1FB8E0BC0CD2";
 	setAttr -k off ".v";
@@ -50717,6 +50767,391 @@ createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape1" -p "Shopping_M
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape4" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
+	rename -uid "4EF88940-46B2-C876-280F-3CAD39D4E034";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 4 ".iog[0].og";
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 8 "f[0:3]" "f[5:6]" "f[13:14]" "f[17]" "f[19:21]" "f[24:26]" "f[28]" "f[34:37]";
+	setAttr ".iog[0].og[1].gcl" -type "componentList" 3 "f[4]" "f[12]" "f[22]";
+	setAttr ".iog[0].og[2].gcl" -type "componentList" 3 "f[7]" "f[15]" "f[23]";
+	setAttr ".iog[0].og[3].gcl" -type "componentList" 6 "f[8:11]" "f[16]" "f[18]" "f[27]" "f[29:33]" "f[38:39]";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" -1.9572708606719971 0.62911137938499451 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 91 ".uvst[0].uvsp[0:90]" -type "float2" -1.88726425 0.68011969
+		 -1.88726139 0.6562342 -1.87211609 0.65623587 -1.87211895 0.68012142 -1.91730595 0.68011642
+		 -1.91730356 0.65623093 -1.87210751 0.57812023 -1.88725281 0.57811856 -1.66167784
+		 0.6562593 -1.6616807 0.68014473 -2.25286961 0.65619367 -2.25287247 0.6800791 -1.91729498
+		 0.57811522 -1.66166925 0.5781436 -2.25286102 0.57807803 -1.49149096 0.53905225 -1.037125468
+		 0.67755467 -1.46775246 0.51516438 -1.46775007 0.53904986 -1.052995086 0.70144123
+		 -1.052996159 0.67755568 -1.037129879 0.59943902 -1.46776056 0.43704867 -1.20257032
+		 0.51513726 -1.20256782 0.5390228 -1.27351868 0.6775682 -1.27351749 0.70145357 -1.053000689
+		 0.59943992 -1.43897676 0.16278464 -1.23001325 0.16282226 -1.2300272 0.2409379 -1.43899083
+		 0.24090034 -1.17757738 0.36675853 -1.17757607 0.28864288 -0.84334433 0.28864819 -0.84334552
+		 0.36676383 -1.34206069 1.15878618 -1.33870614 1.13617551 -1.32367194 1.13579667 -1.32691574
+		 1.15890336 -1.54760373 1.14143884 -1.5524925 1.15715992 -1.28989673 0.82859886 -1.30335021
+		 0.83701849 -1.293782 1.13719785 -1.29687393 1.15887129 -1.49028277 0.95400691 -1.26814175
+		 0.83810383 -0.95991707 1.15284848 -0.961308 1.15851378 -1.025140643 0.94427425 -1.82613075
+		 0.48294204 -1.83038008 0.46048224 -1.62143898 0.45744681 -1.6159296 0.47296131 -1.841259
+		 0.48366037 -1.84352231 0.46184564 -1.87127852 0.48482123 -1.87522817 0.46328759 -1.89136434
+		 0.15508653 -1.87758684 0.16296543 -2.20820832 0.49218258 -2.20659375 0.4977884 -1.91272426
+		 0.16544797 -2.29379082 0.78317136 -2.086957932 0.81293553 -2.086985588 1.11417472
+		 -2.25888252 0.97603869 -2.029390335 0.79710287 -1.72941971 0.78559369 -1.7295289
+		 1.11982548 -1.93479586 1.04483974 -0.98403347 0.53900051 -0.98403597 0.51511484 -0.97820246
+		 0.51511425 -0.97819996 0.5389998 -0.98404396 0.43699932 -0.97821033 0.43699872 -1.46951997
+		 0.67757916 -1.46951842 0.70146477 -1.48598218 0.70146561 -1.48598337 0.67758012 -1.46952415
+		 0.59946358 -1.48598814 0.59946454 -1.47776842 0.36675343 -1.47776711 0.28863779 -0.92877424
+		 0.16287567 -0.92878807 0.24099131 -1.49149323 0.5151667 -1.49150133 0.43705121 -1.037123919
+		 0.70144027;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr -s 42 ".vt[0:41]"  2849.79272461 344.067810059 3960.49804688
+		 1990.67834473 761.86462402 3643.74365234 2849.79272461 761.86462402 3960.49804688
+		 2151.66601563 761.86462402 1744.9161377 2998.30566406 761.86462402 1543.55761719
+		 2998.30566406 344.067810059 1543.55761719 1586.81945801 761.86462402 2531.35742188
+		 2946.65283203 761.86462402 2466.10302734 2946.65283203 344.067810059 2466.10302734
+		 1990.67834473 664.029541016 3643.74365234 2849.79272461 664.029541016 3960.49804688
+		 2946.65283203 664.029541016 2466.10302734 2998.30566406 664.029541016 1543.55761719
+		 2151.66601563 664.029541016 1744.9161377 1586.81945801 664.029541016 2531.35742188
+		 2826.27197266 344.067810059 3964.70751953 2932.76855469 344.067810059 1559.44592285
+		 2932.76855469 664.029541016 1559.44592285 2932.76855469 761.86462402 1559.44592285
+		 2851.35449219 761.86462402 2473.34228516 2826.27197266 761.86462402 3964.70751953
+		 2826.27197266 664.029541016 3964.70751953 2856.8203125 664.029541016 2411.98510742
+		 2856.8203125 344.067840576 2411.98510742 2950.12060547 344.067810059 2404.16503906
+		 2950.12060547 664.029541016 2404.16503906 2950.12060547 761.86462402 2404.16503906
+		 2856.8203125 761.86462402 2411.98510742 1624.7421875 761.86462402 2478.55737305 1624.7421875 664.029541016 2478.55737305
+		 1620.0045166016 664.029541016 2622.76220703 1620.0046386719 761.86462402 2622.76220703
+		 2849.29345703 761.86462402 2595.88769531 2938.69384766 761.86462402 2588.89746094
+		 2938.69384766 664.029541016 2588.89746094 2938.69384766 344.067810059 2588.89746094
+		 2849.29345703 344.067810059 2595.88769531 2849.29345703 664.029541016 2595.88769531
+		 1586.81958008 344.067840576 2531.35742188 1620.0045166016 344.067840576 2622.76220703
+		 1624.74243164 344.067840576 2478.55737305 2856.8203125 344.067840576 2466.10302734;
+	setAttr -s 80 ".ed[0:79]"  20 21 0 21 10 0 10 2 0 2 20 0 26 27 0 27 19 0
+		 19 7 0 7 26 0 17 18 0 18 4 0 4 12 0 12 17 0 7 11 0 11 25 0 25 26 0 28 29 0 29 14 0
+		 14 6 0 6 28 0 19 32 0 32 33 0 33 7 0 33 34 0 34 11 0 14 30 0 30 31 0 31 6 0 21 15 0
+		 15 0 0 0 10 0 34 35 0 35 8 0 8 11 0 24 25 0 8 24 0 16 17 0 12 5 0 5 16 0 3 18 0 17 13 0
+		 13 3 0 6 19 0 27 28 0 31 32 0 9 21 0 20 1 0 1 9 0 16 23 0 23 22 0 22 17 0 24 23 0
+		 5 24 0 12 25 0 4 26 0 18 27 0 3 28 0 13 29 0 30 9 0 1 31 0 20 32 0 2 33 0 10 34 0
+		 0 35 0 15 36 0 36 35 0 37 36 0 21 37 0 14 38 0 38 39 0 39 30 0 29 40 0 40 38 0 39 36 0
+		 37 30 0 23 40 0 29 22 0 8 41 0 41 23 0 36 41 0 38 41 0;
+	setAttr -s 160 ".n[0:159]" -type "float3"  -0.34593469 0 0.93825853 -0.30796015
+		 0 0.95139927 0.17617077 0 0.98435968 0.17617337 0 0.98435909 0 1 -2.2999844e-08 0
+		 1 4.5752259e-08 0 1 2.1595961e-08 0 1 1.7591167e-07 -0.23223408 0 -0.97266001 -0.23137869
+		 0 -0.97286373 -0.23560567 0 -0.97184879 -0.23560713 0 -0.97184843 0.99809241 0 0.061737701
+		 0.99809241 0 0.06173772 0.99843627 0 0.05590193 0.99843627 0 0.055901933 -0.81221515
+		 0 -0.58335805 -0.81221515 0 -0.58335805 -0.99946076 1.1069071e-06 -0.032835726 -0.99946076
+		 1.1069071e-06 -0.032835726 0 1 2.1595961e-08 0 1 -3.2491364e-08 0 1 8.623104e-08
+		 0 1 1.7591167e-07 0.99790603 0 0.064679846 0.99790603 0 0.064679869 0.99809241 0
+		 0.06173772 0.99809241 0 0.061737701 -0.99946076 1.1069071e-06 -0.032835726 -0.99946076
+		 1.1069071e-06 -0.032835726 -0.93996835 1.2145782e-06 0.34126151 -0.93996841 1.2145784e-06
+		 0.34126157 -0.30796015 0 0.95139927 0.17616998 0 0.98435974 0.17616998 0 0.98435974
+		 0.17617077 0 0.98435968 0.99790603 0 0.064679869 0.99790615 0 0.064679727 0.99809247
+		 0 0.061737727 0.99809241 0 0.06173772 0.99843621 0 0.055901926 0.99843627 0 0.05590193
+		 0.99809241 0 0.06173772 0.99809247 0 0.061737727 -0.23560759 0 -0.97184837 -0.23223408
+		 0 -0.97266001 -0.23560713 0 -0.97184843 -0.23560759 0 -0.97184837 -0.23102346 0 -0.97294819
+		 -0.23137869 0 -0.97286373 -0.23223408 0 -0.97266001 -0.23102346 0 -0.97294819 0 1
+		 -9.7991141e-08 0 1 2.1595961e-08 0 1 4.5752259e-08 0 1 1.3114962e-07 0 1 -5.6920296e-08
+		 0 1 -3.2491364e-08 0 1 2.1595961e-08 0 1 -9.7991141e-08 -0.35857198 0 0.93350202
+		 -0.30796015 0 0.95139927 -0.34593469 0 0.93825853 -0.35857198 0 0.93350202 -0.99605536
+		 0 -0.088733353 -0.99605536 0 -0.088733353 -0.99605536 0 -0.088733353 -0.99605536
+		 0 -0.088733353 -1.9154351e-07 -1 0 -1.9154349e-07 -1 0 -1.9154351e-07 -1 0 -1.9154349e-07
+		 -1 0 0.99843627 0 0.055902041 0.99843627 0 0.05590193 0.99843621 0 0.055901926 0.99843621
+		 0 0.055902038 0.99843627 0 0.055901933 0.99843627 0 0.05590193 0.99843627 0 0.055902041
+		 0.99843621 0 0.055902049 0 1 -6.880887e-09 0 1 4.5752259e-08 0 1 -2.2999844e-08 0
+		 0.99999994 -5.8049132e-08 0 1 1.3114962e-07 0 1 4.5752259e-08 0 1 -6.880887e-09 0
+		 1 0 -0.81221515 0 -0.58335799 -0.81221515 0 -0.58335805 -0.81221515 0 -0.58335805
+		 -0.81221515 0 -0.58335799 -0.93996841 1.2145784e-06 0.34126157 -0.93996835 1.2145782e-06
+		 0.34126151 -0.93996841 1.1762801e-06 0.34126154 -0.93996841 1.1762801e-06 0.34126154
+		 0 1 0 0 1 6.8037393e-09 0 1 -3.2491364e-08 0 1 -5.6920296e-08 0 1 8.623104e-08 0
+		 1 -3.2491364e-08 0 1 6.8037393e-09 0 1 1.0139651e-07 0.99790609 0 0.064679891 0.99790603
+		 0 0.064679869 0.99790603 0 0.064679846 0.99790609 0 0.064679861 0.99790603 0 0.064679898
+		 0.99790603 0 0.064679898 0.99790603 0 0.064679869 0.99790609 0 0.064679891 0 -1 -1.2674544e-08
+		 0 -1 -1.2674545e-08 0 -1 -1.2674545e-08 0 -1 -1.2674546e-08 -0.74370283 0 0.66851044
+		 -0.74370283 0 0.66851038 -0.99985856 0 -0.016816117 -0.99985856 0 -0.016816117 -0.93996853
+		 -5.0218858e-07 0.34126097 -0.93996865 -5.0218864e-07 0.341261 -0.93996865 -5.0218864e-07
+		 0.34126097 -0.93996853 -5.0218858e-07 0.34126097 -0.81221408 -3.7560213e-07 -0.58335954
+		 -0.81221408 -3.7560216e-07 -0.5833596 -0.81221408 -3.7560216e-07 -0.58335954 -0.81221414
+		 -3.7560213e-07 -0.58335954 0.021856446 0 0.99976116 0.021856446 0 0.99976116 -0.74370283
+		 0 0.66851038 -0.74370283 0 0.66851044 -0.053953782 0 -0.99854344 -0.053953782 0 -0.99854344
+		 -0.053953782 0 -0.9985435 -0.053953782 0 -0.9985435 0 -0.99999994 -4.1100584e-08
+		 0 -1 -4.1100588e-08 0 -1 -4.1100588e-08 0 -1 -4.1100588e-08 0 -1 0 0 -1 0 0 -1 0
+		 0 -1 0 -3.3370907e-07 -1 0 -3.3370907e-07 -1 0 -3.337091e-07 -1 0 -3.3370907e-07
+		 -1 0 -1.7539931e-07 -1 6.4870271e-08 -1.7539929e-07 -0.99999994 6.4870271e-08 -1.7539932e-07
+		 -1 6.4870278e-08 -1.7539931e-07 -1 6.4870278e-08 -1.7222726e-08 -1 -2.2515211e-07
+		 -1.7222728e-08 -1 -2.2515211e-07 -1.7222726e-08 -1 -2.2515211e-07 -1.7222725e-08
+		 -1 -2.2515209e-07 0 -1 0 0 -1 0 0 -1 0 0 -0.99999994 0;
+	setAttr -s 40 -ch 160 ".fc[0:39]" -type "polyFaces" 
+		f 4 0 1 2 3
+		mu 0 4 72 73 74 75
+		f 4 4 5 6 7
+		mu 0 4 36 37 38 39
+		f 4 8 9 10 11
+		mu 0 4 78 79 80 81
+		f 4 12 13 14 -8
+		mu 0 4 0 1 2 3
+		f 4 15 16 17 18
+		mu 0 4 19 20 16 90
+		f 4 19 20 21 -7
+		mu 0 4 38 44 45 39
+		f 4 22 23 -13 -22
+		mu 0 4 4 5 1 0
+		f 4 -18 24 25 26
+		mu 0 4 15 88 17 18
+		f 4 27 28 29 -2
+		mu 0 4 73 76 77 74
+		f 4 30 31 32 -24
+		mu 0 4 5 12 7 1
+		f 4 33 -14 -33 34
+		mu 0 4 6 2 1 7
+		f 4 35 -12 36 37
+		mu 0 4 82 78 81 83
+		f 4 38 -9 39 40
+		mu 0 4 26 79 78 25
+		f 4 41 -6 42 -19
+		mu 0 4 42 38 37 43
+		f 4 43 -20 -42 -27
+		mu 0 4 47 44 38 42
+		f 4 44 -1 45 46
+		mu 0 4 23 73 72 24
+		f 4 47 48 49 -36
+		mu 0 4 28 29 30 31
+		f 4 50 -48 -38 51
+		mu 0 4 51 52 53 54
+		f 4 52 -34 -52 -37
+		mu 0 4 8 2 6 13
+		f 4 -15 -53 -11 53
+		mu 0 4 3 2 8 9
+		f 4 54 -5 -54 -10
+		mu 0 4 40 37 36 41
+		f 4 -43 -55 -39 55
+		mu 0 4 43 37 40 46
+		f 4 56 -16 -56 -41
+		mu 0 4 25 20 19 26
+		f 4 -26 57 -47 58
+		mu 0 4 18 17 23 24
+		f 4 -46 59 -44 -59
+		mu 0 4 50 48 44 47
+		f 4 -21 -60 -4 60
+		mu 0 4 45 44 48 49
+		f 4 61 -23 -61 -3
+		mu 0 4 10 5 4 11
+		f 4 62 -31 -62 -30
+		mu 0 4 14 12 5 10
+		f 4 63 64 -63 -29
+		mu 0 4 61 58 57 62
+		f 4 65 -64 -28 66
+		mu 0 4 32 33 34 35
+		f 4 -25 67 68 69
+		mu 0 4 17 88 89 22
+		f 4 -17 70 71 -68
+		mu 0 4 16 20 27 21
+		f 4 -70 72 -66 73
+		mu 0 4 84 85 33 32
+		f 4 -49 74 -71 75
+		mu 0 4 30 29 86 87
+		f 4 -50 -76 -57 -40
+		mu 0 4 64 65 66 67
+		f 4 -74 -67 -45 -58
+		mu 0 4 68 69 70 71
+		f 4 -51 -35 76 77
+		mu 0 4 52 51 55 56
+		f 4 -65 78 -77 -32
+		mu 0 4 57 58 56 55
+		f 4 -69 79 -79 -73
+		mu 0 4 63 59 56 58
+		f 4 -72 -75 -78 -80
+		mu 0 4 59 60 52 56;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape2" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
+	rename -uid "781CF9AE-44AC-F03E-5CA0-8AB4C6367A3F";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 3 ".iog[0].og";
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 10 "f[0]" "f[2]" "f[4:5]" "f[7]" "f[9]" "f[16]" "f[19]" "f[22]" "f[26]" "f[30:31]";
+	setAttr ".iog[0].og[1].gcl" -type "componentList" 8 "f[1]" "f[3]" "f[6]" "f[8]" "f[15]" "f[18]" "f[20]" "f[23:25]";
+	setAttr ".iog[0].og[2].gcl" -type "componentList" 4 "f[10:14]" "f[17]" "f[21]" "f[27:29]";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" -0.33606311678886414 0.73785197734832764 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 70 ".uvst[0].uvsp[0:69]" -type "float2" -0.53323287 0.29925343
+		 -0.50847715 0.29925436 -0.50847805 0.32314005 -0.53323382 0.32313904 -0.53322989
+		 0.22113791 -0.50847417 0.22113886 -0.3178328 0.2992616 -0.31783366 0.32314724 -0.30703044
+		 0.29926196 -0.30703133 0.32314759 -0.50788915 0.75405478 -0.52247012 0.75405705 -0.52186412
+		 0.67593771 -0.50787753 0.67593968 -0.51147842 0.90385008 -0.49947065 0.90348637 -0.49684256
+		 0.92566502 -0.5060209 0.92566311 -0.508717 0.81291091 -0.53284883 0.81843394 -0.17181075
+		 0.91188014 -0.1570155 0.92573833 -0.32287759 0.77037895 -0.15454161 0.91202319 -0.13951308
+		 0.92574203 -0.3123475 0.76796889 -0.49871057 0.97703612 -0.51018995 0.97382891 -0.50288779
+		 0.96105659 -0.49405181 0.96354008 -0.55774891 1.057015419 -0.53601414 1.068866491
+		 -0.18028235 1.06242919 -0.16690052 1.055487752 -0.1671828 1.068832874 -0.15005082
+		 1.060223579 -0.093362629 0.32315558 -0.093207479 0.29927 -0.073013186 0.29927078
+		 -0.07301414 0.3231563 -0.092183948 0.22115448 -0.073010266 0.2211552 -0.14361691
+		 0.62812304 -0.14361975 0.65200865 -0.16610515 0.65200597 -0.16610235 0.62812042 -0.055570841
+		 0.65201896 -0.055568039 0.62813342 -0.17528352 0.6520049 -0.17528072 0.62811935 -0.15138078
+		 0.55000663 -0.1660932 0.55000484 -0.05555892 0.55001783 -0.51511061 0.65196508 -0.51510781
+		 0.62807953 -0.17527154 0.55000377 -0.53261036 0.62807745 -0.53261316 0.651963 -0.51509851
+		 0.54996383 -0.53260118 0.54996192 -0.079094887 0.75411868 -0.17821211 0.7541039 -0.17820048
+		 0.67598885 -0.079083204 0.67600363 -0.28701195 0.38715231 -0.10170251 0.43193689
+		 -0.11394146 0.53029633 -0.44362086 0.53031558 -0.45717007 0.52684534 -0.29751199
+		 0.38461465;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr -s 12 ".pt";
+	setAttr ".pt[0]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[2]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[8]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[9]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[11]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[12]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[17]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[18]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[19]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[26]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[27]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr ".pt[28]" -type "float3" -1.5258789e-05 0 0 ;
+	setAttr -s 34 ".vt[0:33]"  2981.9206543 344.068054199 1032.20410156
+		 2039.83056641 761.86486816 855.41210938 2981.9206543 761.86480713 1032.20410156 1661.66503906 761.86480713 9.57519054
+		 2078.62792969 761.86480713 -166.84272766 1661.66503906 344.068054199 9.57519054 2078.62792969 344.068054199 -166.84272766
+		 1703.051391602 761.86480713 102.14441681 2101.24853516 761.86480713 -136.81509399
+		 2101.24853516 344.068054199 -136.81509399 1703.051391602 344.068054199 102.14442444
+		 2981.9206543 664.029541016 1032.20410156 2101.24853516 664.029541016 -136.81507874
+		 2078.62792969 664.029541016 -166.84272766 1661.66503906 664.029541016 9.57519054
+		 1703.051391602 664.029541016 102.14442444 2021.77148438 761.86480713 815.019104004
+		 2938.78466797 761.86480713 974.94360352 2938.78466797 664.029541016 974.94360352
+		 2938.78417969 344.068054199 974.9432373 2904.73291016 344.068054199 1017.71899414
+		 2877.95483398 344.068054199 964.33459473 2052.56494141 344.068054199 -104.41320038
+		 2023.12902832 344.068054199 -143.36106873 1993.80725098 664.029541016 -130.9551239
+		 1993.80737305 761.86480713 -130.9551239 2022.203125 761.86480713 -90.76881409 2856.9855957 761.86480713 960.67785645
+		 2900.0029296875 761.86480713 1016.83129883 2900.62402344 664.029541016 1016.94793701
+		 2052.56494141 664.029663086 -104.41319275 2877.95483398 664.029663086 964.33465576
+		 2021.77148438 664.029541016 815.018798828 2039.83056641 664.029541016 855.41204834;
+	setAttr -s 64 ".ed[0:63]"  28 29 0 29 11 0 11 2 0 2 28 0 25 26 0 26 8 0
+		 8 4 0 4 25 0 24 25 0 4 13 0 13 24 0 22 23 0 23 6 0 6 9 0 9 22 0 8 12 0 12 13 0 14 15 0
+		 15 7 0 7 3 0 3 14 0 26 27 0 27 17 0 17 8 0 17 18 0 18 12 0 21 22 0 9 19 0 19 21 0
+		 15 32 0 32 16 0 16 7 0 29 20 0 20 0 0 0 11 0 18 19 0 9 12 0 6 13 0 23 24 0 5 10 0
+		 10 15 0 14 5 0 27 28 0 2 17 0 11 18 0 0 19 0 20 21 0 32 33 0 33 1 0 1 16 0 5 23 0
+		 22 10 0 14 24 0 3 25 0 7 26 0 16 27 0 1 28 0 33 29 0 22 30 0 30 15 0 21 31 0 31 30 0
+		 29 31 0 31 32 0;
+	setAttr -s 128 ".n[0:127]" -type "float3"  -0.18444054 4.8086235e-07 0.9828437
+		 -0.1844409 2.3106803e-07 0.98284358 -0.18444093 2.3031825e-07 0.98284364 -0.18444052
+		 4.808623e-07 0.9828437 0 1 2.569019e-07 0 1 1.851916e-08 0 1 4.1457841e-07 0 1 0
+		 -0.38965976 -2.8852361e-08 -0.92095894 -0.3896597 7.0550038e-07 -0.92095888 -0.38965806
+		 0 -0.92095953 -0.38965818 -1.1700368e-07 -0.92095953 0 -1 -6.6698732e-08 0 -1 -1.546195e-07
+		 0 -1 0 0 -1 -2.7469625e-08 0.7987166 0 -0.60170746 0.79871655 -4.1858422e-07 -0.60170752
+		 0.79872292 0 -0.60169911 0.7987228 0 -0.60169911 -0.91291457 0 0.40815079 -0.9129132
+		 0 0.40815371 -0.91291279 0 0.40815479 -0.91291463 0 0.40815079 0 1 1.851916e-08 2.0733619e-08
+		 1 -1.5579253e-07 0 0.99999994 3.80313e-07 0 1 4.1457841e-07 0.79871672 0 -0.60170734
+		 0.7987166 -4.0883288e-07 -0.60170734 0.79871655 -4.1858422e-07 -0.60170752 0.7987166
+		 0 -0.60170746 0 -1 -2.7873227e-08 0 -1 -6.6698732e-08 0 -1 -2.7469625e-08 0 -0.99999994
+		 -2.4571696e-08 -0.91291279 0 0.40815479 -0.9129132 0 0.40815371 -0.91291249 0 0.40815532
+		 -0.91291255 0 0.40815532 -0.1844409 2.3106803e-07 0.98284358 -0.18444106 1.5142248e-07
+		 0.98284364 -0.18444103 1.5142247e-07 0.98284358 -0.18444093 2.3031825e-07 0.98284364
+		 0.7987166 -4.0883288e-07 -0.60170734 0.79871666 -5.3384287e-07 -0.6017074 0.79871649
+		 -5.4657556e-07 -0.60170752 0.79871655 -4.1858422e-07 -0.60170752 0.79872292 0 -0.60169911
+		 0.79871655 -4.1858422e-07 -0.60170752 0.79871649 -5.4657556e-07 -0.60170752 0.79872286
+		 0 -0.60169905 -0.38965967 -2.4085952e-07 -0.92095888 -0.38965976 -2.8852361e-08 -0.92095894
+		 -0.38965818 -1.1700368e-07 -0.92095953 -0.38965824 -1.6025609e-07 -0.92095953 -0.91291457
+		 0 0.40815076 -0.91291457 0 0.40815076 -0.9129132 0 0.40815371 -0.91291457 0 0.40815079
+		 2.0733619e-08 1 -1.5579253e-07 1.2462041e-07 1 -1.6203373e-06 0 1 0 0 0.99999994
+		 3.80313e-07 0.79872143 0 -0.60170096 0.7987166 -4.0883288e-07 -0.60170734 0.79871672
+		 0 -0.60170734 0.79872179 0 -0.60170043 0.79872131 0 -0.60170114 0.79871666 -5.3384287e-07
+		 -0.6017074 0.7987166 -4.0883288e-07 -0.60170734 0.79872143 0 -0.60170096 0 -1 0 0
+		 -1 -2.7873227e-08 0 -0.99999994 -2.4571696e-08 0 -1 0 -0.91291547 -1.8047497e-06
+		 0.40814865 -0.91291553 -1.8047499e-06 0.40814868 -0.91291547 -1.8047497e-06 0.40814865
+		 -0.91291547 -1.8047498e-06 0.40814868 0 -1 -1.641754e-07 0 -1 -1.546195e-07 0 -1
+		 -6.6698732e-08 0 -1 -1.6417542e-07 -0.38966006 1.522485e-14 -0.92095882 -0.38965976
+		 -2.8852361e-08 -0.92095894 -0.38965967 -2.4085952e-07 -0.92095888 -0.38966003 -2.593639e-07
+		 -0.92095876 -0.38966009 8.8566713e-07 -0.92095876 -0.3896597 7.0550038e-07 -0.92095888
+		 -0.38965976 -2.8852361e-08 -0.92095894 -0.38966006 1.522485e-14 -0.92095882 0 1 -4.4988596e-08
+		 0 1 1.851916e-08 0 1 2.569019e-07 0 1 2.8478686e-07 5.1611941e-09 1 -1.2506671e-07
+		 2.0733619e-08 1 -1.5579253e-07 0 1 1.851916e-08 0 1 -4.4988596e-08 1.699827e-07 1
+		 -2.2101462e-06 1.2462041e-07 1 -1.6203373e-06 2.0733619e-08 1 -1.5579253e-07 5.1611941e-09
+		 1 -1.2506671e-07 -0.18443964 -5.8212817e-09 0.98284394 -0.18443963 -5.8212808e-09
+		 0.98284382 -0.18443963 -5.8212812e-09 0.98284382 -0.18443966 -5.8212821e-09 0.98284394
+		 0.50877839 -2.4056897e-07 0.86089748 0.50877839 -2.4056897e-07 0.86089748 0.50877839
+		 -2.4056899e-07 0.86089748 0.50877839 -2.4056899e-07 0.86089748 -0.79145002 -5.4237182e-07
+		 0.61123389 -0.79145002 -5.4237177e-07 0.61123383 -0.79145002 -5.4237188e-07 0.61123395
+		 -0.79145002 -5.4237182e-07 0.61123389 -0.90623039 -0.00530966 0.42275083 -0.90623045
+		 -0.00530966 0.42275086 -0.90623045 -0.0053096609 0.42275083 -0.90623033 -0.00530966
+		 0.42275077 1.9649849e-07 -1 -1.129389e-07 1.964985e-07 -1 -1.1293891e-07 1.9649852e-07
+		 -1 -1.1293891e-07 1.9649852e-07 -1 -1.129389e-07 3.3530037e-07 -1 3.7194883e-07 3.3530037e-07
+		 -1 3.7194886e-07 3.3530043e-07 -1 3.7194886e-07 3.353004e-07 -1 3.7194886e-07;
+	setAttr -s 32 -ch 128 ".fc[0:31]" -type "polyFaces" 
+		f 4 0 1 2 3
+		mu 0 4 36 37 38 39
+		f 4 4 5 6 7
+		mu 0 4 14 15 16 17
+		f 4 8 -8 9 10
+		mu 0 4 42 43 44 45
+		f 4 11 12 13 14
+		mu 0 4 26 27 28 29
+		f 4 15 16 -10 -7
+		mu 0 4 48 49 45 44
+		f 4 17 18 19 20
+		mu 0 4 0 1 2 3
+		f 4 21 22 23 -6
+		mu 0 4 15 20 21 16
+		f 4 24 25 -16 -24
+		mu 0 4 53 54 49 48
+		f 4 26 -15 27 28
+		mu 0 4 32 26 29 33
+		f 4 -19 29 30 31
+		mu 0 4 2 1 6 7
+		f 4 32 33 34 -2
+		mu 0 4 37 40 41 38
+		f 4 35 -28 36 -26
+		mu 0 4 54 58 55 49
+		f 4 -17 -37 -14 37
+		mu 0 4 45 49 55 51
+		f 4 38 -11 -38 -13
+		mu 0 4 50 42 45 51
+		f 4 39 40 -18 41
+		mu 0 4 4 5 1 0
+		f 4 42 -4 43 -23
+		mu 0 4 20 23 24 21
+		f 4 44 -25 -44 -3
+		mu 0 4 56 54 53 57
+		f 4 45 -36 -45 -35
+		mu 0 4 59 58 54 56
+		f 4 46 -29 -46 -34
+		mu 0 4 34 32 33 35
+		f 4 -31 47 48 49
+		mu 0 4 7 6 8 9
+		f 4 50 -12 51 -40
+		mu 0 4 30 27 26 31
+		f 4 52 -39 -51 -42
+		mu 0 4 47 42 50 52
+		f 4 53 -9 -53 -21
+		mu 0 4 46 43 42 47
+		f 4 54 -5 -54 -20
+		mu 0 4 18 15 14 19
+		f 4 55 -22 -55 -32
+		mu 0 4 22 20 15 18
+		f 4 56 -43 -56 -50
+		mu 0 4 25 23 20 22
+		f 4 57 -1 -57 -49
+		mu 0 4 8 37 36 9
+		f 4 -52 58 59 -41
+		mu 0 4 60 61 62 63
+		f 4 -27 60 61 -59
+		mu 0 4 61 10 13 62
+		f 4 -47 -33 62 -61
+		mu 0 4 10 11 12 13
+		f 4 -30 -60 -62 63
+		mu 0 4 64 65 66 67
+		f 4 -64 -63 -58 -48
+		mu 0 4 64 67 68 69;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "6BD32832-4F4E-EABA-E1EB-4C89E29E9CB6";
 	setAttr -s 183 ".lnk";
@@ -50739,7 +51174,7 @@ createNode renderLayer -n "defaultRenderLayer";
 	setAttr ".g" yes;
 createNode reference -n "Shopping_Mall_GEO_LightfixRN";
 	rename -uid "DA75F613-4EAD-0F90-5829-91A0E9DE61C8";
-	setAttr -s 42 ".phl";
+	setAttr -s 90 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -50782,19 +51217,154 @@ createNode reference -n "Shopping_Mall_GEO_LightfixRN";
 	setAttr ".phl[40]" 0;
 	setAttr ".phl[41]" 0;
 	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Shopping_Mall_GEO_LightfixRN"
 		"Shopping_Mall_GEO_LightfixRN" 1
 		2 "|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
 		"pnts[89]" " -type \"float3\" 0 0 0 0 0 0 1602.77890000000002146 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1602.77890000000002146 0 0 0 0 0 1602.77890000000002146 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0 0 1281.27089999999998327 0"
 		
-		"Shopping_Mall_GEO_LightfixRN" 74
+		"Shopping_Mall_GEO_LightfixRN" 186
 		0 "|Shopping_Mall_GEO_Lightfix:ShoppingMall" "|LevelGeo" "-s -r "
+		0 "|Shopping_Mall_GEO_LightfixRNfosterParent1|Shopping_Mall_GEO_Lightfix:polySurfaceShape2" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1" 
+		"-s -r "
+		0 "|Shopping_Mall_GEO_LightfixRNfosterParent1|Shopping_Mall_GEO_Lightfix:polySurfaceShape4" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2" 
+		"-s -r "
 		0 "|Shopping_Mall_GEO_LightfixRNfosterParent1|Shopping_Mall_GEO_Lightfix:polySurfaceShape1" 
 		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1" 
 		"-s -r "
+		0 "|Shopping_Mall_GEO_LightfixRNfosterParent1|Shopping_Mall_GEO_Lightfix:polySurfaceShape3" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall" 
+		"-s -r "
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall" "translate" " -type \"double3\" 0 0 0"
 		
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"instObjGroups.objectGroups" " -s 6"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"uvPivot" " -type \"double2\" -0.33606311678886414 0.73785197734832764"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts" " -s 13"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[0]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[32]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[33]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[34]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[35]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[36]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[37]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[38]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[39]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[40]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[41]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[42]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape" 
+		"pnts[43]" " -type \"float3\" 476.34576 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"instObjGroups.objectGroups" " -s 8"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"uvPivot" " -type \"double2\" -1.95727086067199707 0.62911137938499451"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts" " -s 18"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[0]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[4]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[5]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[39]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[40]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[41]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[42]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[43]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[44]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[45]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[46]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[47]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[48]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[49]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[50]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[51]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[52]" " -type \"float3\" 438.0676 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape" 
+		"pnts[53]" " -type \"float3\" 438.0676 0 0"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
 		"instObjGroups.objectGroups" " -s 12"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape" 
@@ -50834,10 +51404,22 @@ createNode reference -n "Shopping_Mall_GEO_LightfixRN";
 		"pnts[148]" " -type \"float3\" 0 0 0"
 		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor2|Shopping_Mall_GEO_Lightfix:Floor2Shape" 
 		"pt[170:171]" " -type \"float3\" 0 0 257.4671 0 0 257.4671"
-		3 "Shopping_Mall_GEO_Lightfix:groupId35.message" "Shopping_Mall_GEO_Lightfix:Floor1SG.groupNodes" 
-		"-na"
-		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[0]" 
-		"Shopping_Mall_GEO_Lightfix:Floor1SG.dagSetMembers" "-na"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape" 
+		"uvPivot" " -type \"double2\" 1.48008400201797485 -2.32878172397613525"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape" 
+		"pnts" " -s 5"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape" 
+		"pnts[1]" " -type \"float3\" 0 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape" 
+		"pnts[8]" " -type \"float3\" 467.91492 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape" 
+		"pnts[9]" " -type \"float3\" 467.91492 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape" 
+		"pnts[10]" " -type \"float3\" 467.91492 0 0"
+		2 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape" 
+		"pnts[11]" " -type \"float3\" 467.91492 0 0"
 		3 "Shopping_Mall_GEO_Lightfix:groupId39.message" "Shopping_Mall_GEO_Lightfix:Floor1SG3.groupNodes" 
 		"-na"
 		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[4]" 
@@ -50870,101 +51452,257 @@ createNode reference -n "Shopping_Mall_GEO_LightfixRN";
 		"-na"
 		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[5]" 
 		"Shopping_Mall_GEO_Lightfix:Floor1SG4.dagSetMembers" "-na"
-		3 "Shopping_Mall_GEO_Lightfix:groupId36.message" "Shopping_Mall_GEO_Lightfix:FloorSG.groupNodes" 
+		3 "Shopping_Mall_GEO_Lightfix:groupId28.message" "Shopping_Mall_GEO_Lightfix:Store1SG2.groupNodes" 
 		"-na"
-		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[1]" 
-		"Shopping_Mall_GEO_Lightfix:FloorSG.dagSetMembers" "-na"
+		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[2]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG2.dagSetMembers" "-na"
+		3 "Shopping_Mall_GEO_Lightfix:groupId32.message" "Shopping_Mall_GEO_Lightfix:Store1SG2.groupNodes" 
+		"-na"
+		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[3]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG2.dagSetMembers" "-na"
 		3 "Shopping_Mall_GEO_Lightfix:groupId37.message" "Shopping_Mall_GEO_Lightfix:Floor1SG1.groupNodes" 
 		"-na"
 		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[2]" 
 		"Shopping_Mall_GEO_Lightfix:Floor1SG1.dagSetMembers" "-na"
+		3 "Shopping_Mall_GEO_Lightfix:groupId27.message" "Shopping_Mall_GEO_Lightfix:Store1SG1.groupNodes" 
+		"-na"
+		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[1]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG1.dagSetMembers" "-na"
+		3 "Shopping_Mall_GEO_Lightfix:groupId29.message" "Shopping_Mall_GEO_Lightfix:Store1SG1.groupNodes" 
+		"-na"
+		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[0]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG1.dagSetMembers" "-na"
+		3 "Shopping_Mall_GEO_Lightfix:groupId35.message" "Shopping_Mall_GEO_Lightfix:Floor1SG.groupNodes" 
+		"-na"
+		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[0]" 
+		"Shopping_Mall_GEO_Lightfix:Floor1SG.dagSetMembers" "-na"
+		3 "Shopping_Mall_GEO_Lightfix:groupId36.message" "Shopping_Mall_GEO_Lightfix:FloorSG.groupNodes" 
+		"-na"
+		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[1]" 
+		"Shopping_Mall_GEO_Lightfix:FloorSG.dagSetMembers" "-na"
+		3 "Shopping_Mall_GEO_Lightfix:groupId30.message" "Shopping_Mall_GEO_Lightfix:Store2SG.groupNodes" 
+		"-na"
+		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[1]" 
+		"Shopping_Mall_GEO_Lightfix:Store2SG.dagSetMembers" "-na"
+		3 "Shopping_Mall_GEO_Lightfix:Store1SG1.memberWireframeColor" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:groupId29.groupId" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:Store2SG.memberWireframeColor" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[1].objectGrpColor" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:groupId30.groupId" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[1].objectGroupId" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:Store2SG1.memberWireframeColor" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:groupId31.groupId" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:Store1SG2.memberWireframeColor" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:groupId32.groupId" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:groupId31.message" "Shopping_Mall_GEO_Lightfix:Store2SG1.groupNodes" 
+		"-na"
+		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[2]" 
+		"Shopping_Mall_GEO_Lightfix:Store2SG1.dagSetMembers" "-na"
+		3 "Shopping_Mall_GEO_Lightfix:Store1SG.memberWireframeColor" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:groupId26.groupId" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:Store1SG1.memberWireframeColor" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[1].objectGrpColor" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:groupId27.groupId" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[1].objectGroupId" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:Store1SG2.memberWireframeColor" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:groupId28.groupId" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 "Shopping_Mall_GEO_Lightfix:groupId26.message" "Shopping_Mall_GEO_Lightfix:Store1SG.groupNodes" 
+		"-na"
+		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[0]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG.dagSetMembers" "-na"
 		3 "Shopping_Mall_GEO_Lightfix:groupId38.message" "Shopping_Mall_GEO_Lightfix:Floor1SG2.groupNodes" 
 		"-na"
 		3 "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[3]" 
 		"Shopping_Mall_GEO_Lightfix:Floor1SG2.dagSetMembers" "-na"
 		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall.drawOverride" 
 		"Shopping_Mall_GEO_LightfixRN.placeHolderList[1]" ""
-		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		"Shopping_Mall_GEO_LightfixRN.placeHolderList[2]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG.memberWireframeColor" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[3]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[4]" 
+		"Shopping_Mall_GEO_Lightfix:Store1Shape.iog.og[0].gco"
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[1].objectGroupId" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[5]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG1.memberWireframeColor" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[1].objectGrpColor" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[6]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[7]" 
+		"Shopping_Mall_GEO_Lightfix:Store1Shape.iog.og[1].gco"
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[8]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG2.memberWireframeColor" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[9]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[10]" 
+		"Shopping_Mall_GEO_Lightfix:Store1Shape.iog.og[2].gco"
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.inMesh" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[11]" ""
+		5 3 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.worldMatrix" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[12]" ""
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[13]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG1.memberWireframeColor" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[14]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[15]" 
+		"Shopping_Mall_GEO_Lightfix:Store1Shape.iog.og[1].gco"
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[1].objectGroupId" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[16]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store2SG.memberWireframeColor" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[1].objectGrpColor" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[17]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[18]" 
+		"Shopping_Mall_GEO_Lightfix:Store2Shape.iog.og[1].gco"
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[19]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store2SG1.memberWireframeColor" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[20]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[21]" 
+		"Shopping_Mall_GEO_Lightfix:Store2Shape.iog.og[2].gco"
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[22]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG2.memberWireframeColor" 
+		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[23]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[24]" 
+		"Shopping_Mall_GEO_Lightfix:Store1Shape.iog.og[2].gco"
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.inMesh" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[25]" ""
+		5 3 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.worldMatrix" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[26]" ""
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[27]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG.memberWireframeColor" 
 		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[3]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[4]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[28]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[29]" 
 		"Shopping_Mall_GEO_Lightfix:Floor1Shape.iog.og[0].gco"
 		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[1].objectGroupId" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[5]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[30]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:FloorSG.memberWireframeColor" 
 		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[1].objectGrpColor" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[6]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[7]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[31]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[32]" 
 		"Shopping_Mall_GEO_Lightfix:Floor1Shape.iog.og[1].gco"
 		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[2].objectGroupId" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[8]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[33]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG1.memberWireframeColor" 
 		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[2].objectGrpColor" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[9]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[10]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[34]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[35]" 
 		"Shopping_Mall_GEO_Lightfix:Floor1Shape.iog.og[2].gco"
 		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[3].objectGroupId" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[11]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[36]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG2.memberWireframeColor" 
 		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[12]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[13]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[37]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[38]" 
 		"Shopping_Mall_GEO_Lightfix:Floor1Shape.iog.og[3].gco"
 		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[4].objectGroupId" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[14]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[39]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG3.memberWireframeColor" 
 		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[4].objectGrpColor" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[15]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[16]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[40]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[41]" 
 		"Shopping_Mall_GEO_Lightfix:Floor1Shape.iog.og[4].gco"
 		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[5].objectGroupId" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[17]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[42]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG4.memberWireframeColor" 
 		"|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[5].objectGrpColor" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[18]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[19]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[43]" "Shopping_Mall_GEO_LightfixRN.placeHolderList[44]" 
 		"Shopping_Mall_GEO_Lightfix:Floor1Shape.iog.og[5].gco"
 		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.inMesh" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[20]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[45]" ""
 		5 3 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.worldMatrix" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[21]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[46]" ""
 		5 3 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.worldMatrix" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[22]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[47]" ""
 		5 3 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.worldMatrix" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[23]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[48]" ""
 		5 3 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.worldMatrix" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[24]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[49]" ""
+		5 4 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape.inMesh" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[50]" ""
+		5 3 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Wall|Shopping_Mall_GEO_Lightfix:WallShape.worldMatrix" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[51]" ""
+		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG.groupNodes" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[52]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[0]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[53]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[54]" "Shopping_Mall_GEO_Lightfix:Store1SG.dsm"
+		
+		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG1.groupNodes" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[55]" ""
+		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG1.groupNodes" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[56]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[1]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG1.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[57]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[58]" "Shopping_Mall_GEO_Lightfix:Store1SG1.dsm"
+		
+		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[0]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG1.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[59]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[60]" "Shopping_Mall_GEO_Lightfix:Store1SG1.dsm"
+		
+		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG2.groupNodes" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[61]" ""
+		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store1SG2.groupNodes" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[62]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store1|Shopping_Mall_GEO_Lightfix:Store1Shape.instObjGroups.objectGroups[2]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG2.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[63]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[64]" "Shopping_Mall_GEO_Lightfix:Store1SG2.dsm"
+		
+		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[3]" 
+		"Shopping_Mall_GEO_Lightfix:Store1SG2.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[65]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[66]" "Shopping_Mall_GEO_Lightfix:Store1SG2.dsm"
+		
+		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store2SG.groupNodes" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[67]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[1]" 
+		"Shopping_Mall_GEO_Lightfix:Store2SG.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[68]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[69]" "Shopping_Mall_GEO_Lightfix:Store2SG.dsm"
+		
+		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Store2SG1.groupNodes" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[70]" ""
+		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Store2|Shopping_Mall_GEO_Lightfix:Store2Shape.instObjGroups.objectGroups[2]" 
+		"Shopping_Mall_GEO_Lightfix:Store2SG1.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[71]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[72]" "Shopping_Mall_GEO_Lightfix:Store2SG1.dsm"
+		
 		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:FloorSG.groupNodes" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[25]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[73]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[1]" 
-		"Shopping_Mall_GEO_Lightfix:FloorSG.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[26]" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[27]" "Shopping_Mall_GEO_Lightfix:FloorSG.dsm"
+		"Shopping_Mall_GEO_Lightfix:FloorSG.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[74]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[75]" "Shopping_Mall_GEO_Lightfix:FloorSG.dsm"
 		
 		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG.groupNodes" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[28]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[76]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[0]" 
-		"Shopping_Mall_GEO_Lightfix:Floor1SG.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[29]" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[30]" "Shopping_Mall_GEO_Lightfix:Floor1SG.dsm"
+		"Shopping_Mall_GEO_Lightfix:Floor1SG.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[77]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[78]" "Shopping_Mall_GEO_Lightfix:Floor1SG.dsm"
 		
 		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG1.groupNodes" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[31]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[79]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[2]" 
-		"Shopping_Mall_GEO_Lightfix:Floor1SG1.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[32]" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[33]" "Shopping_Mall_GEO_Lightfix:Floor1SG1.dsm"
+		"Shopping_Mall_GEO_Lightfix:Floor1SG1.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[80]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[81]" "Shopping_Mall_GEO_Lightfix:Floor1SG1.dsm"
 		
 		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG2.groupNodes" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[34]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[82]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[3]" 
-		"Shopping_Mall_GEO_Lightfix:Floor1SG2.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[35]" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[36]" "Shopping_Mall_GEO_Lightfix:Floor1SG2.dsm"
+		"Shopping_Mall_GEO_Lightfix:Floor1SG2.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[83]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[84]" "Shopping_Mall_GEO_Lightfix:Floor1SG2.dsm"
 		
 		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG3.groupNodes" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[37]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[85]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[4]" 
-		"Shopping_Mall_GEO_Lightfix:Floor1SG3.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[38]" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[39]" "Shopping_Mall_GEO_Lightfix:Floor1SG3.dsm"
+		"Shopping_Mall_GEO_Lightfix:Floor1SG3.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[86]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[87]" "Shopping_Mall_GEO_Lightfix:Floor1SG3.dsm"
 		
 		5 4 "Shopping_Mall_GEO_LightfixRN" "Shopping_Mall_GEO_Lightfix:Floor1SG4.groupNodes" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[40]" ""
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[88]" ""
 		5 0 "Shopping_Mall_GEO_LightfixRN" "|LevelGeo|Shopping_Mall_GEO_Lightfix:ShoppingMall|Shopping_Mall_GEO_Lightfix:Floor1|Shopping_Mall_GEO_Lightfix:Floor1Shape.instObjGroups.objectGroups[5]" 
-		"Shopping_Mall_GEO_Lightfix:Floor1SG4.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[41]" 
-		"Shopping_Mall_GEO_LightfixRN.placeHolderList[42]" "Shopping_Mall_GEO_Lightfix:Floor1SG4.dsm";
+		"Shopping_Mall_GEO_Lightfix:Floor1SG4.dagSetMembers" "Shopping_Mall_GEO_LightfixRN.placeHolderList[89]" 
+		"Shopping_Mall_GEO_LightfixRN.placeHolderList[90]" "Shopping_Mall_GEO_Lightfix:Floor1SG4.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Escalator_Stair_lowRN";
@@ -68138,22 +68876,351 @@ createNode reference -n "Vampire__ControllerRN1";
 lockNode -l 1 ;
 createNode reference -n "Vampire__ControllerRN2";
 	rename -uid "5C442749-41BC-0C5B-6AA8-63938347D4E6";
+	setAttr -s 2 ".phl";
 	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Vampire__ControllerRN2"
 		"Vampire__ControllerRN2" 0
-		"Vampire__ControllerRN2" 5
+		"Vampire__ControllerRN2" 119
 		2 "|Vampire__Controller2:Vampire_Model" "translate" " -type \"double3\" 0 0 0"
 		
+		2 "|Vampire__Controller2:IK_Group" "rotate" " -type \"double3\" 0 -80.43732026726472384 0"
+		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "translate" 
-		" -type \"double3\" 0 0 809.11679649340453579"
+		" -type \"double3\" 2915.8229185771729135 488.53867737204961941 1236.38869298873237312"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "translateX" 
+		" -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "translateY" 
+		" -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "translateZ" 
 		" -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "rotate" 
+		" -type \"double3\" 178.13438423540574718 -65.42392544877860416 -92.59840181166572393"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "rotateX" 
+		" -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "rotateY" 
+		" -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "rotateZ" 
+		" -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON" 
+		"translate" " -type \"double3\" 18.79961579194068477 -38.07730528706851914 26.67981354890171986"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON" 
+		"translateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON" 
+		"translateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON" 
+		"translateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full" 
+		"rotate" " -type \"double3\" -0.72548762737364203 0 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON" 
+		"rotate" " -type \"double3\" -21.54150316149751276 0 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON" 
+		"rotate" " -type \"double3\" -26.24968837144632516 0 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON" 
+		"rotate" " -type \"double3\" 31.60171070589093745 0 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON" 
+		"rotate" " -type \"double3\" -55.23709424609567264 19.21653514832341259 6.96004023961443874"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON|Vampire__Controller2:Zero_Head_CON|Vampire__Controller2:Head_CON" 
+		"rotate" " -type \"double3\" -10.92483777260924782 -12.00381617327387396 5.80833942209175547"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON|Vampire__Controller2:Zero_Head_CON|Vampire__Controller2:Head_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON|Vampire__Controller2:Zero_Head_CON|Vampire__Controller2:Head_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON|Vampire__Controller2:Zero_Head_CON|Vampire__Controller2:Head_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_LeftShoulder_CON|Vampire__Controller2:LeftShoulder_CON" 
+		"rotate" " -type \"double3\" -1.68849522317417677 42.80696284076568503 17.56554338943425364"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_LeftShoulder_CON|Vampire__Controller2:LeftShoulder_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_LeftShoulder_CON|Vampire__Controller2:LeftShoulder_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_LeftShoulder_CON|Vampire__Controller2:LeftShoulder_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_RightShoulder_CON|Vampire__Controller2:RightShoulder_CON" 
+		"rotate" " -type \"double3\" -45.24575307555330994 10.85156014706608829 -7.83998726730529238"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_RightShoulder_CON|Vampire__Controller2:RightShoulder_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_RightShoulder_CON|Vampire__Controller2:RightShoulder_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_RightShoulder_CON|Vampire__Controller2:RightShoulder_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHeel_CON|Vampire__Controller2:RightHeel_CON" 
+		"translate" " -type \"double3\" 12.24463910508267084 6.55926488930256646 41.85529613901669421"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHeel_CON|Vampire__Controller2:RightHeel_CON" 
+		"translateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHeel_CON|Vampire__Controller2:RightHeel_CON" 
+		"translateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHeel_CON|Vampire__Controller2:RightHeel_CON" 
+		"translateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHeel_CON|Vampire__Controller2:RightHeel_CON" 
+		"rotate" " -type \"double3\" -14.75785800538370474 0 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHeel_CON|Vampire__Controller2:RightHeel_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
+		"translate" " -type \"double3\" 22.9999761708413466 -0.79860995727353201 50.26429437696216951"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
+		"translateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
+		"translateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
+		"translateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
+		"rotate" " -type \"double3\" 0 23.67445982132198878 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
+		"translate" " -type \"double3\" 59.96290154637423342 260.91990678964862127 12.9220657973938291"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
+		"translateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
+		"translateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
+		"translateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
+		"rotate" " -type \"double3\" -88.37360158030102752 27.60908516175958738 0.75389147326712524"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Thumb1_CON|Vampire__Controller2:Right_Hand_Thumb1_CON" 
+		"rotate" " -type \"double3\" 0 -13.77877041602082997 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Thumb1_CON|Vampire__Controller2:Right_Hand_Thumb1_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Thumb1_CON|Vampire__Controller2:Right_Hand_Thumb1_CON|Vampire__Controller2:Right_Hand_Thumb2_CON|Vampire__Controller2:Right_Hand_Thumb2_CON" 
+		"rotate" " -type \"double3\" 0 -20.68735948274600389 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Thumb1_CON|Vampire__Controller2:Right_Hand_Thumb1_CON|Vampire__Controller2:Right_Hand_Thumb2_CON|Vampire__Controller2:Right_Hand_Thumb2_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Index1_CON|Vampire__Controller2:Right_Hand_Index1_CON" 
+		"rotate" " -type \"double3\" 0 -15.88568550850012606 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Index1_CON|Vampire__Controller2:Right_Hand_Index1_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Index1_CON|Vampire__Controller2:Right_Hand_Index1_CON|Vampire__Controller2:Right_Hand_Index2_CON|Vampire__Controller2:Right_Hand_Index2_CON" 
+		"rotate" " -type \"double3\" 0 -21.90985814077824401 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Index1_CON|Vampire__Controller2:Right_Hand_Index1_CON|Vampire__Controller2:Right_Hand_Index2_CON|Vampire__Controller2:Right_Hand_Index2_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Middle1_CON|Vampire__Controller2:Right_Hand_Middle1_CON" 
+		"rotate" " -type \"double3\" 0 -4.59623951641154527 -6.53203451385975598"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Middle1_CON|Vampire__Controller2:Right_Hand_Middle1_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Middle1_CON|Vampire__Controller2:Right_Hand_Middle1_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Middle1_CON|Vampire__Controller2:Right_Hand_Middle1_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Middle1_CON|Vampire__Controller2:Right_Hand_Middle1_CON|Vampire__Controller2:Right_Hand_Middle2_CON|Vampire__Controller2:Right_Hand_Middle2_CON" 
+		"rotate" " -type \"double3\" 0 -31.86650848995203589 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Middle1_CON|Vampire__Controller2:Right_Hand_Middle1_CON|Vampire__Controller2:Right_Hand_Middle2_CON|Vampire__Controller2:Right_Hand_Middle2_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring1_CON" 
+		"rotate" " -type \"double3\" 10.44539261514836248 0 -1.5340046574934143"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring1_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring1_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring1_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring2_CON|Vampire__Controller2:Right_Hand_Ring2_CON" 
+		"rotate" " -type \"double3\" 2.89435062223875272 -6.87234406222897221 -1.73513281391672658"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring2_CON|Vampire__Controller2:Right_Hand_Ring2_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring2_CON|Vampire__Controller2:Right_Hand_Ring2_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring1_CON|Vampire__Controller2:Right_Hand_Ring2_CON|Vampire__Controller2:Right_Hand_Ring2_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Pinky1_CON|Vampire__Controller2:Right_Hand_Pinky1_CON" 
+		"rotate" " -type \"double3\" 33.47802051550170432 0 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Pinky1_CON|Vampire__Controller2:Right_Hand_Pinky1_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
+		"translate" " -type \"double3\" 39.28334978032500402 156.11924684682000475 3.44882935856794504"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
+		"translateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
+		"translateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
+		"translateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
+		"rotate" " -type \"double3\" -82.74343680739750084 22.32301920562503383 0.44215986500557036"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Thumb1_CON|Vampire__Controller2:Left_Hand_Thumb1_CON" 
+		"rotate" " -type \"double3\" 2.07879721741655077 20.34794251960575906 5.95940100433913766"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Thumb1_CON|Vampire__Controller2:Left_Hand_Thumb1_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Thumb1_CON|Vampire__Controller2:Left_Hand_Thumb1_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Thumb1_CON|Vampire__Controller2:Left_Hand_Thumb1_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Thumb1_CON|Vampire__Controller2:Left_Hand_Thumb1_CON|Vampire__Controller2:Left_Hand_Thumb2_CON|Vampire__Controller2:Left_Hand_Thumb2_CON" 
+		"rotate" " -type \"double3\" 0 34.76454341306684626 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Thumb1_CON|Vampire__Controller2:Left_Hand_Thumb1_CON|Vampire__Controller2:Left_Hand_Thumb2_CON|Vampire__Controller2:Left_Hand_Thumb2_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Index1_CON|Vampire__Controller2:Left_Hand_Index1_CON" 
+		"rotate" " -type \"double3\" 0 17.77067091547272426 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Index1_CON|Vampire__Controller2:Left_Hand_Index1_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Index1_CON|Vampire__Controller2:Left_Hand_Index1_CON|Vampire__Controller2:Left_Hand_Index2_CON|Vampire__Controller2:Left_Hand_Index2_CON" 
+		"rotate" " -type \"double3\" 0 7.88759909150826122 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Index1_CON|Vampire__Controller2:Left_Hand_Index1_CON|Vampire__Controller2:Left_Hand_Index2_CON|Vampire__Controller2:Left_Hand_Index2_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Middle1_CON|Vampire__Controller2:Left_Hand_Middle1_CON" 
+		"rotate" " -type \"double3\" 19.73135306631619912 8.04225440837232419 2.87263810224162519"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Middle1_CON|Vampire__Controller2:Left_Hand_Middle1_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Middle1_CON|Vampire__Controller2:Left_Hand_Middle1_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Middle1_CON|Vampire__Controller2:Left_Hand_Middle1_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Middle1_CON|Vampire__Controller2:Left_Hand_Middle1_CON|Vampire__Controller2:Left_Hand_Middle2_CON|Vampire__Controller2:Left_Hand_Middle2_CON" 
+		"rotate" " -type \"double3\" 0 21.95420083918085297 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Middle1_CON|Vampire__Controller2:Left_Hand_Middle1_CON|Vampire__Controller2:Left_Hand_Middle2_CON|Vampire__Controller2:Left_Hand_Middle2_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Ring1_CON|Vampire__Controller2:Left_Hand_Ring1_CON" 
+		"rotate" " -type \"double3\" 24.46332772032059566 -1.51391607528862671 -0.68864811031810336"
+		
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Ring1_CON|Vampire__Controller2:Left_Hand_Ring1_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Ring1_CON|Vampire__Controller2:Left_Hand_Ring1_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Ring1_CON|Vampire__Controller2:Left_Hand_Ring1_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Ring1_CON|Vampire__Controller2:Left_Hand_Ring1_CON|Vampire__Controller2:Left_Hand_Ring2_CON|Vampire__Controller2:Left_Hand_Ring2_CON" 
+		"rotate" " -type \"double3\" 0 18.49920874074847887 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Ring1_CON|Vampire__Controller2:Left_Hand_Ring1_CON|Vampire__Controller2:Left_Hand_Ring2_CON|Vampire__Controller2:Left_Hand_Ring2_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Pinky1_CON|Vampire__Controller2:Left_Hand_Pinky1_CON" 
+		"rotate" " -type \"double3\" 49.09504433937259193 0 0"
+		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON|Vampire__Controller2:Left_Hand_Pinky1_CON|Vampire__Controller2:Left_Hand_Pinky1_CON" 
+		"rotateX" " -av"
 		2 "Vampire__Controller2:Skeleton" "visibility" " 0"
+		3 "Vampire__Controller2:Geometry.drawInfo" "|Vampire__Controller2:Vampire_Model|Vampire__Controller2:Vampire_Ver03_low.drawOverride" 
+		""
 		5 4 "Vampire__ControllerRN2" "|Vampire__Controller2:Vampire_Model.drawOverride" 
-		"Vampire__ControllerRN2.placeHolderList[1]" "";
+		"Vampire__ControllerRN2.placeHolderList[1]" ""
+		5 4 "Vampire__ControllerRN2" "|Vampire__Controller2:Vampire_Model|Vampire__Controller2:Vampire_Ver03_low.drawOverride" 
+		"Vampire__ControllerRN2.placeHolderList[2]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode polyExtrudeFace -n "polyExtrudeFace5";
+	rename -uid "AE353CAD-4D05-8D85-4999-1194607EF4A2";
+	setAttr ".ics" -type "componentList" 3 "f[6:7]" "f[11]" "f[15:17]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pvt" -type "float3" 2502.062 552.96643 447.69452 ;
+	setAttr ".rs" 48062;
+	setAttr ".c[0]"  0 1 1;
+	setAttr ".cbn" -type "double3" 2022.203125 344.06805419921875 -136.81509399414063 ;
+	setAttr ".cbx" -type "double3" 2981.920654296875 761.86480712890625 1032.2041015625 ;
+	setAttr ".raf" no;
+createNode groupId -n "Shopping_Mall_GEO_Lightfix:groupId56";
+	rename -uid "12712CE0-43E8-DF72-5760-28BE58975F47";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Shopping_Mall_GEO_Lightfix:groupParts7";
+	rename -uid "488DBD9B-45C5-30A4-4E82-FE95FA0F3477";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 10 "f[0]" "f[2]" "f[4:5]" "f[7]" "f[9]" "f[16]" "f[19]" "f[22]" "f[26]" "f[30:31]";
+createNode groupId -n "Shopping_Mall_GEO_Lightfix:groupId57";
+	rename -uid "62CB614F-4398-83A4-5DA9-E29963007ED7";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Shopping_Mall_GEO_Lightfix:groupParts8";
+	rename -uid "F8889EE6-4172-4A08-0FB3-EE8DEC3AFFE3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 8 "f[1]" "f[3]" "f[6]" "f[8]" "f[15]" "f[18]" "f[20]" "f[23:25]";
+createNode groupId -n "Shopping_Mall_GEO_Lightfix:groupId58";
+	rename -uid "E95A2021-431D-E452-480E-A99EFAC53EC9";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Shopping_Mall_GEO_Lightfix:groupParts9";
+	rename -uid "2797254D-4570-6E40-0E0E-B697AAE3D1E1";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 4 "f[10:14]" "f[17]" "f[21]" "f[27:29]";
+createNode polyExtrudeFace -n "polyExtrudeFace6";
+	rename -uid "6E86B12D-4298-2871-406A-DB80894157C9";
+	setAttr ".ics" -type "componentList" 1 "f[4]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pvt" -type "float3" 2990.1133 552.96619 1287.8807 ;
+	setAttr ".rs" 60566;
+	setAttr ".c[0]"  0 1 1;
+	setAttr ".cbn" -type "double3" 2981.920654296875 344.06784057617188 1032.203857421875 ;
+	setAttr ".cbx" -type "double3" 2998.3056640625 761.86456298828125 1543.5576171875 ;
+	setAttr ".raf" no;
+createNode polyExtrudeFace -n "polyExtrudeFace7";
+	rename -uid "EF53ACC5-4287-4692-81A8-22BBD7898FB0";
+	setAttr ".ics" -type "componentList" 5 "f[3]" "f[6]" "f[9:10]" "f[18:19]" "f[26:27]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pvt" -type "float3" 2924.0493 552.96619 2752.0278 ;
+	setAttr ".rs" 54712;
+	setAttr ".c[0]"  0 1 1;
+	setAttr ".cbn" -type "double3" 2849.792724609375 344.06781005859375 1543.5576171875 ;
+	setAttr ".cbx" -type "double3" 2998.3056640625 761.8646240234375 3960.498046875 ;
+	setAttr ".raf" no;
+createNode groupId -n "Shopping_Mall_GEO_Lightfix:groupId59";
+	rename -uid "FEC85882-4BC0-5FC5-9D97-6FB514BCFBAF";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Shopping_Mall_GEO_Lightfix:groupParts10";
+	rename -uid "75551041-4FC8-C8DC-CB9C-118C28977CE4";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 8 "f[0:3]" "f[5:6]" "f[13:14]" "f[17]" "f[19:21]" "f[24:26]" "f[28]" "f[34:37]";
+createNode groupId -n "Shopping_Mall_GEO_Lightfix:groupId60";
+	rename -uid "30C12C08-4BB7-68A8-4404-30A234042FBE";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Shopping_Mall_GEO_Lightfix:groupParts11";
+	rename -uid "BFB57DFA-4450-4367-6A4A-FCB1F091B686";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "f[4]" "f[12]" "f[22]";
+createNode groupId -n "Shopping_Mall_GEO_Lightfix:groupId61";
+	rename -uid "6C709C95-4EDA-F58E-4BED-69A58B9BA536";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Shopping_Mall_GEO_Lightfix:groupParts12";
+	rename -uid "44D67A0C-49B8-3D93-9BBF-FD81DF38DD52";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "f[7]" "f[15]" "f[23]";
+createNode groupId -n "Shopping_Mall_GEO_Lightfix:groupId62";
+	rename -uid "14AE4DCB-4C05-AB9C-EB20-8CB38F6FCC52";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Shopping_Mall_GEO_Lightfix:groupParts13";
+	rename -uid "E380E058-4B57-8E3C-9951-67B1AC9BDF04";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 6 "f[8:11]" "f[16]" "f[18]" "f[27]" "f[29:33]" "f[38:39]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -68190,58 +69257,120 @@ select -ne :hardwareRenderGlobals;
 select -ne :ikSystem;
 	setAttr -s 3 ".sol";
 connectAttr "Env_Geo.di" "Shopping_Mall_GEO_LightfixRN.phl[1]";
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId50.id" "Shopping_Mall_GEO_LightfixRN.phl[2]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId56.id" "Shopping_Mall_GEO_LightfixRN.phl[2]"
 		;
 connectAttr "Shopping_Mall_GEO_LightfixRN.phl[3]" "Shopping_Mall_GEO_LightfixRN.phl[4]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId51.id" "Shopping_Mall_GEO_LightfixRN.phl[5]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId57.id" "Shopping_Mall_GEO_LightfixRN.phl[5]"
 		;
 connectAttr "Shopping_Mall_GEO_LightfixRN.phl[6]" "Shopping_Mall_GEO_LightfixRN.phl[7]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId52.id" "Shopping_Mall_GEO_LightfixRN.phl[8]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId58.id" "Shopping_Mall_GEO_LightfixRN.phl[8]"
 		;
 connectAttr "Shopping_Mall_GEO_LightfixRN.phl[9]" "Shopping_Mall_GEO_LightfixRN.phl[10]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId53.id" "Shopping_Mall_GEO_LightfixRN.phl[11]"
+connectAttr "polyExtrudeFace5.out" "Shopping_Mall_GEO_LightfixRN.phl[11]";
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[12]" "polyExtrudeFace5.mp";
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId59.id" "Shopping_Mall_GEO_LightfixRN.phl[13]"
 		;
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[12]" "Shopping_Mall_GEO_LightfixRN.phl[13]"
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[14]" "Shopping_Mall_GEO_LightfixRN.phl[15]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId54.id" "Shopping_Mall_GEO_LightfixRN.phl[14]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId60.id" "Shopping_Mall_GEO_LightfixRN.phl[16]"
 		;
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[15]" "Shopping_Mall_GEO_LightfixRN.phl[16]"
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[17]" "Shopping_Mall_GEO_LightfixRN.phl[18]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId55.id" "Shopping_Mall_GEO_LightfixRN.phl[17]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId61.id" "Shopping_Mall_GEO_LightfixRN.phl[19]"
 		;
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[18]" "Shopping_Mall_GEO_LightfixRN.phl[19]"
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[20]" "Shopping_Mall_GEO_LightfixRN.phl[21]"
 		;
-connectAttr "polyExtrudeFace4.out" "Shopping_Mall_GEO_LightfixRN.phl[20]";
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[21]" "polyExtrudeFace1.mp";
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[22]" "polyExtrudeFace2.mp";
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[23]" "polyExtrudeFace3.mp";
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[24]" "polyExtrudeFace4.mp";
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId51.msg" "Shopping_Mall_GEO_LightfixRN.phl[25]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId62.id" "Shopping_Mall_GEO_LightfixRN.phl[22]"
 		;
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[26]" "Shopping_Mall_GEO_LightfixRN.phl[27]"
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[23]" "Shopping_Mall_GEO_LightfixRN.phl[24]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId50.msg" "Shopping_Mall_GEO_LightfixRN.phl[28]"
+connectAttr "polyExtrudeFace7.out" "Shopping_Mall_GEO_LightfixRN.phl[25]";
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[26]" "polyExtrudeFace7.mp";
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId50.id" "Shopping_Mall_GEO_LightfixRN.phl[27]"
 		;
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[29]" "Shopping_Mall_GEO_LightfixRN.phl[30]"
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[28]" "Shopping_Mall_GEO_LightfixRN.phl[29]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId52.msg" "Shopping_Mall_GEO_LightfixRN.phl[31]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId51.id" "Shopping_Mall_GEO_LightfixRN.phl[30]"
 		;
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[32]" "Shopping_Mall_GEO_LightfixRN.phl[33]"
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[31]" "Shopping_Mall_GEO_LightfixRN.phl[32]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId53.msg" "Shopping_Mall_GEO_LightfixRN.phl[34]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId52.id" "Shopping_Mall_GEO_LightfixRN.phl[33]"
 		;
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[35]" "Shopping_Mall_GEO_LightfixRN.phl[36]"
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[34]" "Shopping_Mall_GEO_LightfixRN.phl[35]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId54.msg" "Shopping_Mall_GEO_LightfixRN.phl[37]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId53.id" "Shopping_Mall_GEO_LightfixRN.phl[36]"
 		;
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[38]" "Shopping_Mall_GEO_LightfixRN.phl[39]"
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[37]" "Shopping_Mall_GEO_LightfixRN.phl[38]"
 		;
-connectAttr "Shopping_Mall_GEO_Lightfix:groupId55.msg" "Shopping_Mall_GEO_LightfixRN.phl[40]"
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId54.id" "Shopping_Mall_GEO_LightfixRN.phl[39]"
 		;
-connectAttr "Shopping_Mall_GEO_LightfixRN.phl[41]" "Shopping_Mall_GEO_LightfixRN.phl[42]"
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[40]" "Shopping_Mall_GEO_LightfixRN.phl[41]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId55.id" "Shopping_Mall_GEO_LightfixRN.phl[42]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[43]" "Shopping_Mall_GEO_LightfixRN.phl[44]"
+		;
+connectAttr "polyExtrudeFace4.out" "Shopping_Mall_GEO_LightfixRN.phl[45]";
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[46]" "polyExtrudeFace1.mp";
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[47]" "polyExtrudeFace2.mp";
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[48]" "polyExtrudeFace3.mp";
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[49]" "polyExtrudeFace4.mp";
+connectAttr "polyExtrudeFace6.out" "Shopping_Mall_GEO_LightfixRN.phl[50]";
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[51]" "polyExtrudeFace6.mp";
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId56.msg" "Shopping_Mall_GEO_LightfixRN.phl[52]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[53]" "Shopping_Mall_GEO_LightfixRN.phl[54]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId57.msg" "Shopping_Mall_GEO_LightfixRN.phl[55]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId59.msg" "Shopping_Mall_GEO_LightfixRN.phl[56]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[57]" "Shopping_Mall_GEO_LightfixRN.phl[58]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[59]" "Shopping_Mall_GEO_LightfixRN.phl[60]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId58.msg" "Shopping_Mall_GEO_LightfixRN.phl[61]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId62.msg" "Shopping_Mall_GEO_LightfixRN.phl[62]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[63]" "Shopping_Mall_GEO_LightfixRN.phl[64]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[65]" "Shopping_Mall_GEO_LightfixRN.phl[66]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId60.msg" "Shopping_Mall_GEO_LightfixRN.phl[67]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[68]" "Shopping_Mall_GEO_LightfixRN.phl[69]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId61.msg" "Shopping_Mall_GEO_LightfixRN.phl[70]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[71]" "Shopping_Mall_GEO_LightfixRN.phl[72]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId51.msg" "Shopping_Mall_GEO_LightfixRN.phl[73]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[74]" "Shopping_Mall_GEO_LightfixRN.phl[75]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId50.msg" "Shopping_Mall_GEO_LightfixRN.phl[76]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[77]" "Shopping_Mall_GEO_LightfixRN.phl[78]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId52.msg" "Shopping_Mall_GEO_LightfixRN.phl[79]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[80]" "Shopping_Mall_GEO_LightfixRN.phl[81]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId53.msg" "Shopping_Mall_GEO_LightfixRN.phl[82]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[83]" "Shopping_Mall_GEO_LightfixRN.phl[84]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId54.msg" "Shopping_Mall_GEO_LightfixRN.phl[85]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[86]" "Shopping_Mall_GEO_LightfixRN.phl[87]"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId55.msg" "Shopping_Mall_GEO_LightfixRN.phl[88]"
+		;
+connectAttr "Shopping_Mall_GEO_LightfixRN.phl[89]" "Shopping_Mall_GEO_LightfixRN.phl[90]"
 		;
 connectAttr "Env_Geo.di" "Escalator_Stair_lowRN.phl[1]";
 connectAttr "Escalator_Stairs_lowShape.iog" "Escalator_Stair_lowRN.phl[2]";
@@ -68280,6 +69409,7 @@ connectAttr "Char_Geo.di" "Vampire__ControllerRN.phl[1]";
 connectAttr "Char_Geo.di" "Vampire__ControllerRN1.phl[1]";
 connectAttr "Char_Geo.di" "Vampire__ControllerRN1.phl[2]";
 connectAttr "Char_Geo.di" "Vampire__ControllerRN2.phl[1]";
+connectAttr "Char_Geo.di" "Vampire__ControllerRN2.phl[2]";
 connectAttr "Char_Geo.di" "Ezra_low1.do";
 connectAttr "skinCluster1GroupId.id" "Hair_lowShape.iog.og[0].gid";
 connectAttr "skinCluster1Set.mwc" "Hair_lowShape.iog.og[0].gco";
@@ -69035,6 +70165,38 @@ connectAttr "Body_lowShapeOrig.w" "groupParts16.ig";
 connectAttr "groupId16.id" "groupParts16.gi";
 connectAttr "layerManager.dli[1]" "Char_Geo.id";
 connectAttr "layerManager.dli[2]" "Env_Geo.id";
+connectAttr "Shopping_Mall_GEO_Lightfix:groupParts9.og" "polyExtrudeFace5.ip";
+connectAttr "Shopping_Mall_GEO_Lightfix:polySurfaceShape2.o" "Shopping_Mall_GEO_Lightfix:groupParts7.ig"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId56.id" "Shopping_Mall_GEO_Lightfix:groupParts7.gi"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupParts7.og" "Shopping_Mall_GEO_Lightfix:groupParts8.ig"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId57.id" "Shopping_Mall_GEO_Lightfix:groupParts8.gi"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupParts8.og" "Shopping_Mall_GEO_Lightfix:groupParts9.ig"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId58.id" "Shopping_Mall_GEO_Lightfix:groupParts9.gi"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:polySurfaceShape3.o" "polyExtrudeFace6.ip"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupParts13.og" "polyExtrudeFace7.ip";
+connectAttr "Shopping_Mall_GEO_Lightfix:polySurfaceShape4.o" "Shopping_Mall_GEO_Lightfix:groupParts10.ig"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId59.id" "Shopping_Mall_GEO_Lightfix:groupParts10.gi"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupParts10.og" "Shopping_Mall_GEO_Lightfix:groupParts11.ig"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId60.id" "Shopping_Mall_GEO_Lightfix:groupParts11.gi"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupParts11.og" "Shopping_Mall_GEO_Lightfix:groupParts12.ig"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId61.id" "Shopping_Mall_GEO_Lightfix:groupParts12.gi"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupParts12.og" "Shopping_Mall_GEO_Lightfix:groupParts13.ig"
+		;
+connectAttr "Shopping_Mall_GEO_Lightfix:groupId62.id" "Shopping_Mall_GEO_Lightfix:groupParts13.gi"
+		;
 connectAttr "Hair_lowSG.pa" ":renderPartition.st" -na;
 connectAttr "M_Ezra2.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
