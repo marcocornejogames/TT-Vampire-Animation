@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: TT-Trailer-S2.ma
-//Last modified: Sat, Jul 17, 2021 10:27:10 AM
+//Last modified: Sat, Jul 17, 2021 10:36:36 AM
 //Codeset: 1252
 requires "fbxmaya" "2020.1.1";
 file -rdi 1 -ns "Shopping_Mall_GEO_Lightfix" -rfn "Shopping_Mall_GEO_LightfixRN"
@@ -51,17 +51,17 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "0A59FDB3-4012-B80B-C200-E7A5FD8159C6";
+fileInfo "UUID" "58025EE3-452B-4343-33BB-59BC19CB92CF";
 createNode transform -s -n "persp";
 	rename -uid "52586057-4BF7-9F02-55E1-75A41DCAFC5F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1197.8859816426632 564.06856408126794 1338.7761864757485 ;
-	setAttr ".r" -type "double3" -5.7383526233100897 -6204.9999999793054 -4.5615965283276327e-15 ;
+	setAttr ".t" -type "double3" 1491.4888203550067 403.27412634735811 529.43550087098993 ;
+	setAttr ".r" -type "double3" 1.4616474895615199 -6977.0000000050923 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "850FB6B5-4412-3A63-F21E-5C80EE9BBFF6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 873.7515665901692;
+	setAttr ".coi" 1060.1741986382206;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -46385,7 +46385,7 @@ createNode joint -n "mixamorig:Spine" -p "Ezra_hips";
 	addAttr -is true -ci true -k true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 
 		1 -at "bool";
 	setAttr ".t" -type "double3" 0 10.127960205078196 -1.3574736118316701 ;
-	setAttr ".r" -type "double3" 31.989541986468975 0.0020114183567812431 -0.012839452016540092 ;
+	setAttr ".r" -type "double3" 24.824423012719464 0.0020114183567812448 -0.012839452016540095 ;
 	setAttr ".s" -type "double3" 1 1.0000000000000002 1.0000000000000002 ;
 	setAttr ".jo" -type "double3" -7.6339846448595408 0 0 ;
 	setAttr ".ssc" no;
@@ -46435,7 +46435,7 @@ createNode joint -n "mixamorig:Neck" -p "mixamorig:Spine2";
 	addAttr -is true -ci true -k true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 
 		1 -at "bool";
 	setAttr ".t" -type "double3" 0 15.327792167663574 1.0660303360054968e-06 ;
-	setAttr ".r" -type "double3" -22.670844177976004 0 0 ;
+	setAttr ".r" -type "double3" -29.73921735643621 39.012684912080985 -19.779975915951489 ;
 	setAttr ".s" -type "double3" 1 0.99999999999999956 0.99999999999999956 ;
 	setAttr ".jo" -type "double3" 7.6339905683055802 0 0 ;
 	setAttr ".ssc" no;
@@ -46494,7 +46494,7 @@ createNode joint -n "mixamorig:LeftArm" -p "mixamorig:LeftShoulder";
 	addAttr -is true -ci true -k true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 
 		1 -at "bool";
 	setAttr ".t" -type "double3" 2.4917717666994577e-08 14.62039852142334 1.8126266354556719e-07 ;
-	setAttr ".r" -type "double3" 51.718315371963541 -9.628666995455319 24.82763030190625 ;
+	setAttr ".r" -type "double3" 78.068626806782632 12.630591239869595 10.892597477889799 ;
 	setAttr ".s" -type "double3" 1.0000000000000007 0.99999999999999978 0.99999999999999989 ;
 	setAttr ".jo" -type "double3" -8.9887444715848996 -6.6817120867562998e-07 1.1590529425241001 ;
 	setAttr ".ssc" no;
@@ -46867,7 +46867,7 @@ createNode joint -n "mixamorig:RightArm" -p "mixamorig:RightShoulder";
 	addAttr -is true -ci true -k true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 
 		1 -at "bool";
 	setAttr ".t" -type "double3" -2.6039653988618738e-08 14.62039852142334 1.811044114674587e-07 ;
-	setAttr ".r" -type "double3" 21.331432451553042 36.369383868748294 -45.936561843370647 ;
+	setAttr ".r" -type "double3" 55.228262866647938 11.927293208526399 -3.1635089048250933 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 0.99999999999999978 1.0000000000000002 ;
 	setAttr ".jo" -type "double3" -9.0010520518564494 -3.4243817258573501e-07 -1.0708768037980301 ;
 	setAttr ".ssc" no;
@@ -47214,7 +47214,7 @@ createNode joint -n "mixamorig:LeftUpLeg" -p "Ezra_hips";
 	addAttr -is true -ci true -k true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 
 		1 -at "bool";
 	setAttr ".t" -type "double3" 8.2782793045043963 -5.6274032592774006 -0.15439081192017001 ;
-	setAttr ".r" -type "double3" 45.695479812168806 -0.19868511743725839 -4.2545950788955889 ;
+	setAttr ".r" -type "double3" 17.598193557035131 -1.6021611583772957 0.15917583663590149 ;
 	setAttr ".s" -type "double3" 0.99999999999999944 0.99999999999999933 0.99999999999999989 ;
 	setAttr ".jo" -type "double3" -5.2382636810205101 0.45671868390983694 -175.030916533116 ;
 	setAttr ".ssc" no;
@@ -47248,7 +47248,7 @@ createNode joint -n "mixamorig:LeftFoot" -p "mixamorig:LeftLeg";
 	addAttr -is true -ci true -k true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 
 		1 -at "bool";
 	setAttr ".t" -type "double3" -2.1252549231576268e-07 42.563583374023438 -5.012416437466527e-08 ;
-	setAttr ".r" -type "double3" 16.498467074948117 -11.023965066586829 9.4763667370485294 ;
+	setAttr ".r" -type "double3" 29.082694248143582 -3.9824575364103421 -3.6930941995059299 ;
 	setAttr ".s" -type "double3" 0.99999999999999944 0.99999999999999956 0.99999999999999978 ;
 	setAttr ".jo" -type "double3" 57.4295282828597 -13.657296911312599 8.86631613831038e-10 ;
 	setAttr ".ssc" no;
@@ -47267,7 +47267,7 @@ createNode joint -n "mixamorig:LeftToeBase" -p "mixamorig:LeftFoot";
 	addAttr -is true -ci true -k true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 
 		1 -at "bool";
 	setAttr ".t" -type "double3" -7.1829369119313924e-08 16.752864837646484 -4.3443304775792058e-07 ;
-	setAttr ".r" -type "double3" -5.5753048400219996e-06 -3.6898079542879709e-06 4.7139079129010502e-07 ;
+	setAttr ".r" -type "double3" 37.629844808188722 -3.6898079542879862e-06 1.8957583197733907e-22 ;
 	setAttr ".s" -type "double3" 1.0000000000000011 1.0000000000000002 1.0000000000000004 ;
 	setAttr ".jo" -type "double3" 32.5451468680535 8.6334043846859991 1.4710035249850699e-06 ;
 	setAttr ".ssc" no;
@@ -47297,7 +47297,7 @@ createNode joint -n "mixamorig:RightUpLeg" -p "Ezra_hips";
 	addAttr -is true -ci true -k true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 
 		1 -at "bool";
 	setAttr ".t" -type "double3" -8.2782793045043945 -5.6274032592774006 -0.23186588287354004 ;
-	setAttr ".r" -type "double3" 31.416104036008225 36.647857441032805 1.9703445148328387 ;
+	setAttr ".r" -type "double3" 55.557058977923823 30.104151632404431 6.8141784528554181 ;
 	setAttr ".s" -type "double3" 1 1 0.99999999999999956 ;
 	setAttr ".jo" -type "double3" -5.2813013824523303 -0.46042827378129803 175.03160536733401 ;
 	setAttr ".ssc" no;
@@ -47350,7 +47350,7 @@ createNode joint -n "mixamorig:RightToeBase" -p "mixamorig:RightFoot";
 	addAttr -is true -ci true -k true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 
 		1 -at "bool";
 	setAttr ".t" -type "double3" -9.0900673654914499e-09 16.831161499023438 -1.4563737238404428e-07 ;
-	setAttr ".r" -type "double3" 52.115869839017435 26.886700097222793 -3.6359574461560138 ;
+	setAttr ".r" -type "double3" 15.042344257894175 26.886700097222807 -3.6359574461560178 ;
 	setAttr ".s" -type "double3" 1 0.99999999999999989 0.99999999999999933 ;
 	setAttr ".jo" -type "double3" 32.358206683970003 -8.5162259844195205 -2.03780519180797e-06 ;
 	setAttr ".ssc" no;
@@ -50324,7 +50324,7 @@ createNode mesh -n "Escalator_End_2_lowShape" -p "|LevelGeo|Escalator_low2|Escal
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode fosterParent -n "Shopping_Mall_GEO_LightfixRNfosterParent1";
-	rename -uid "5B8F2685-48D6-26C5-CB5D-6EBF4F855691";
+	rename -uid "91DB6004-42C4-E2B1-FF37-89853664B50E";
 createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape3" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
 	rename -uid "C24E4AFD-4769-508D-F9D8-91912C4A654B";
 	setAttr -k off ".v";
@@ -68011,7 +68011,7 @@ createNode reference -n "Mahler_AutoRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Mahler_AutoRN"
 		"Mahler_AutoRN" 0
-		"Mahler_AutoRN" 56
+		"Mahler_AutoRN" 136
 		2 "|Mahler_Auto:mixamorig:Hips" "visibility" " -av 1"
 		2 "|Mahler_Auto:mixamorig:Hips" "preferredAngle" " -type \"double3\" 0 0 0"
 		
@@ -68024,19 +68024,62 @@ createNode reference -n "Mahler_AutoRN";
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck" 
+		"rotate" " -type \"double3\" -10.9297490206394059 -53.08663329885817461 8.95559575399031615"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:Neck|Mahler_Auto:mixamorig:Head" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm" 
+		"rotate" " -type \"double3\" 71.35856182508413781 -3.29828258378831984 14.46437827578509072"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm" 
+		"rotate" " -type \"double3\" -3.21579422613704713 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm" 
 		"preferredAngle" " -type \"double3\" -6.8154841770251551e-09 -1.8764428943995881e-07 -8.9767659972039837e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand" 
+		"rotate" " -type \"double3\" -12.19252591453459544 7.82890851889725603 0.51193818612801667"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand" 
 		"preferredAngle" " -type \"double3\" 1.5584564749815399e-08 -1.8968654558193523e-07 -6.694401832874064e-08"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1" 
+		"rotate" " -type \"double3\" 0 0 -18.01323373279697293"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandThumb1" 
 		"preferredAngle" " -type \"double3\" -1.1497792939962893e-07 -1.6436374039585644e-07 -2.1679689155007509e-08"
 		
@@ -68047,45 +68090,177 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" 6.58479881286621094 -4.32209873199462891 22.38180923461914063"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1" 
+		"rotate" " -type \"double3\" 42.61136014778313807 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1" 
 		"preferredAngle" " -type \"double3\" -2.2067554894533714e-08 -1.9038381537939131e-07 -6.3026917018760287e-08"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2" 
+		"rotate" " -type \"double3\" 72.00339810498323345 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2" 
 		"preferredAngle" " -type \"double3\" -2.2067558447247393e-08 -2.8988290523557225e-07 -2.9169232362846742e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2|Mahler_Auto:mixamorig:LeftHandIndex3" 
+		"rotate" " -type \"double3\" 38.13442603154914678 -0.013097696937620645 -0.13526090979576133"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2|Mahler_Auto:mixamorig:LeftHandIndex3" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2|Mahler_Auto:mixamorig:LeftHandIndex3" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2|Mahler_Auto:mixamorig:LeftHandIndex3" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandIndex1|Mahler_Auto:mixamorig:LeftHandIndex2|Mahler_Auto:mixamorig:LeftHandIndex3" 
 		"preferredAngle" " -type \"double3\" -2.50756931304931641 -0.01309769693762064 -0.13526090979576111"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1" 
+		"rotate" " -type \"double3\" 34.01506459673667848 6.26456999545707927 12.92949703926929139"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1" 
 		"preferredAngle" " -type \"double3\" -1.48314889258927e-08 -1.9585029065183335e-07 -4.6130828934565216e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2" 
+		"rotate" " -type \"double3\" 78.51338013920094738 3.97496403964042821 19.11171205095776315"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2" 
 		"preferredAngle" " -type \"double3\" -1.4831489814071118e-08 -3.3202204008375702e-07 -4.6376246842783075e-08"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2|Mahler_Auto:mixamorig:LeftHandMiddle3" 
+		"rotate" " -type \"double3\" 45.28860301734034266 5.12016057896505838 10.1995638293801214"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2|Mahler_Auto:mixamorig:LeftHandMiddle3" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2|Mahler_Auto:mixamorig:LeftHandMiddle3" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2|Mahler_Auto:mixamorig:LeftHandMiddle3" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandMiddle1|Mahler_Auto:mixamorig:LeftHandMiddle2|Mahler_Auto:mixamorig:LeftHandMiddle3" 
 		"preferredAngle" " -type \"double3\" 2.15819048881530762 -0.0072653298266232005 0.11834285408258438"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1" 
+		"rotate" " -type \"double3\" 28.55495212397547178 13.14298364510516315 13.04338104641060525"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1" 
 		"preferredAngle" " -type \"double3\" 1.3911680696310214e-08 -1.9464377487565798e-07 -5.1240874654467916e-08"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2" 
+		"rotate" " -type \"double3\" 70.61659628962190993 14.94699647595917824 19.5486231154222807"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2" 
 		"preferredAngle" " -type \"double3\" 1.3911678031774954e-08 -4.5807837523170747e-07 -1.5127243457868644e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2|Mahler_Auto:mixamorig:LeftHandRing3" 
+		"rotate" " -type \"double3\" 60.38487342476769015 15.26364467302009231 16.01681848320579604"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2|Mahler_Auto:mixamorig:LeftHandRing3" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2|Mahler_Auto:mixamorig:LeftHandRing3" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2|Mahler_Auto:mixamorig:LeftHandRing3" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandRing1|Mahler_Auto:mixamorig:LeftHandRing2|Mahler_Auto:mixamorig:LeftHandRing3" 
 		"preferredAngle" " -type \"double3\" -1.96579611301422141 -0.0044107669964432716 -0.085382647812366486"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1" 
+		"rotate" " -type \"double3\" 19.22119605530803454 0.38284015526425796 8.81093470897452669"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1" 
 		"preferredAngle" " -type \"double3\" 7.5010156308508158e-08 -1.8615229180340975e-07 -2.0643748044335556e-08"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2" 
+		"rotate" " -type \"double3\" 74.05502991078432729 31.93049460864836675 31.44356817822328765"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2" 
 		"preferredAngle" " -type \"double3\" 7.5010156308508158e-08 -7.7839155210313038e-07 6.3062373101274729e-08"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2|Mahler_Auto:mixamorig:LeftHandPinky3" 
+		"rotate" " -type \"double3\" 43.08110999088594184 -0.0021527849603444377 0.0161896161735058"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2|Mahler_Auto:mixamorig:LeftHandPinky3" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2|Mahler_Auto:mixamorig:LeftHandPinky3" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2|Mahler_Auto:mixamorig:LeftHandPinky3" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:LeftShoulder|Mahler_Auto:mixamorig:LeftArm|Mahler_Auto:mixamorig:LeftForeArm|Mahler_Auto:mixamorig:LeftHand|Mahler_Auto:mixamorig:LeftHandPinky1|Mahler_Auto:mixamorig:LeftHandPinky2|Mahler_Auto:mixamorig:LeftHandPinky3" 
 		"preferredAngle" " -type \"double3\" 3.60140156745910645 -0.0021527849603444338 0.016189616173505787"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm" 
+		"rotate" " -type \"double3\" 8.49928542127900322 51.40835655156347173 -65.01570930070217003"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm" 
+		"rotate" " -type \"double3\" 76.85617399446383047 33.33123860380073467 -0.54041867488215345"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm" 
 		"preferredAngle" " -type \"double3\" 2.2629441431831765e-08 -3.8000200675014639e-07 -1.8184887551342399e-07"
 		
@@ -68167,9 +68342,9 @@ createNode reference -n "TrashCanLidRN";
 		"TrashCanLidRN"
 		"TrashCanLidRN" 0
 		"TrashCanLidRN" 5
-		2 "|TrashCanLid:TrashCan_low" "translate" " -type \"double3\" 2270.14326553593127755 452.87141876333788559 1390.11510009860853643"
+		2 "|TrashCanLid:TrashCan_low" "translate" " -type \"double3\" 2270.14326553593127755 470.09336962465272336 1371.74045161109302171"
 		
-		2 "|TrashCanLid:TrashCan_low" "rotate" " -type \"double3\" -128.25491951091365195 -21.53099995198970973 -99.41702632073122459"
+		2 "|TrashCanLid:TrashCan_low" "rotate" " -type \"double3\" -146.14317826126827526 -21.53099995198970618 -99.4170263207312388"
 		
 		2 "|TrashCanLid:TrashCan_low" "scale" " -type \"double3\" 0.91810941156352466 0.91810941156352466 0.91810941156352466"
 		
