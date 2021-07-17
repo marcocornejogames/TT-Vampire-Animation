@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: TT-Trailer-S3.ma
-//Last modified: Sat, Jul 17, 2021 11:11:59 AM
+//Last modified: Sat, Jul 17, 2021 11:18:02 AM
 //Codeset: 1252
 requires "fbxmaya" "2020.1.1";
 file -rdi 1 -ns "Shopping_Mall_GEO_Lightfix" -rfn "Shopping_Mall_GEO_LightfixRN"
@@ -51,17 +51,17 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "DD9EF410-4C8E-4AE1-7C4A-1E88AE39817A";
+fileInfo "UUID" "5FB909C7-4BC3-1511-31DA-3BBEACB1934B";
 createNode transform -s -n "persp";
 	rename -uid "52586057-4BF7-9F02-55E1-75A41DCAFC5F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1688.1791318835717 550.0466011294086 1352.8190477547123 ;
-	setAttr ".r" -type "double3" -9.3383525159222298 -14856.999999999669 0 ;
+	setAttr ".t" -type "double3" 2038.8375216578238 922.17125809580398 1615.3191638926214 ;
+	setAttr ".r" -type "double3" -49.538352496293903 -15109.400000005195 -2.4268290006265968e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "850FB6B5-4412-3A63-F21E-5C80EE9BBFF6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 621.29730903307779;
+	setAttr ".coi" 753.85659022887364;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -50324,7 +50324,7 @@ createNode mesh -n "Escalator_End_2_lowShape" -p "|LevelGeo|Escalator_low2|Escal
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode fosterParent -n "Shopping_Mall_GEO_LightfixRNfosterParent1";
-	rename -uid "D3679507-4FA7-7A78-DD40-9E9A76600276";
+	rename -uid "1F0B4CCA-4ECA-01FB-62A7-14866514C55C";
 createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape3" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
 	rename -uid "C24E4AFD-4769-508D-F9D8-91912C4A654B";
 	setAttr -k off ".v";
@@ -68521,22 +68521,15 @@ createNode reference -n "TrashCanLidRN";
 lockNode -l 1 ;
 createNode reference -n "Vampire__ControllerRN";
 	rename -uid "D280C637-4DDC-19EF-0B5A-EAABF0C30F84";
+	setAttr -s 2 ".phl";
 	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Vampire__ControllerRN"
 		"Vampire__ControllerRN" 0
-		"Vampire__ControllerRN" 138
-		2 "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Left_Shoulder" 
-		"rotate" " -type \"double3\" 75.52676907805985707 -21.58817547614498622 -13.81132315943094113"
-		
-		2 "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Left_Shoulder" 
-		"rotateX" " -av"
-		2 "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Left_Shoulder" 
-		"rotateY" " -av"
-		2 "|Vampire__Controller:Root|Vampire__Controller:Hips|Vampire__Controller:Spine|Vampire__Controller:Spine1|Vampire__Controller:Spine2|Vampire__Controller:Left_Shoulder" 
-		"rotateZ" " -av"
+		"Vampire__ControllerRN" 148
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON" "translate" 
-		" -type \"double3\" 1830.21806302895652152 366.22219050681701447 837.52907879423833037"
+		" -type \"double3\" 1995.40228070468356236 366.22219050681701447 1148.5916874241277128"
 		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON" "translateX" 
 		" -av"
@@ -68553,7 +68546,8 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON" "rotateZ" 
 		" -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON" 
-		"translate" " -type \"double3\" 0 -39.2423968735703852 0"
+		"translate" " -type \"double3\" 8.1252006476357046 -39.2423968735703852 -18.55598478148588271"
+		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON" 
 		"translateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON" 
@@ -68561,7 +68555,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON" 
 		"translateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full" 
-		"rotate" " -type \"double3\" 0 13.65856675540863918 0"
+		"rotate" " -type \"double3\" -17.06705123815648406 13.65856675540863918 0"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full" 
@@ -68578,7 +68572,8 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON" 
-		"rotate" " -type \"double3\" 0 20.80901429519165546 0"
+		"rotate" " -type \"double3\" -11.79082189649667178 28.36830006246612967 26.16449562073745128"
+		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON" 
@@ -68593,6 +68588,15 @@ createNode reference -n "Vampire__ControllerRN";
 		"rotateY" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON" 
 		"rotateZ" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON" 
+		"rotate" " -type \"double3\" 22.511546750230778 -37.27995576394545196 -15.87689303264241403"
+		
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON" 
+		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON" 
 		"rotate" " -type \"double3\" -27.35403832335289209 0 0"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON" 
@@ -68602,7 +68606,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON|Vampire__Controller:Zero_Head_CON|Vampire__Controller:Head_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON" 
-		"rotate" " -type \"double3\" 0 -25.86379371456007092 0"
+		"rotate" " -type \"double3\" 0 -36.12090698061013683 0"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON" 
@@ -68610,7 +68614,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_LeftShoulder_CON|Vampire__Controller:LeftShoulder_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON" 
-		"rotate" " -type \"double3\" -11.17571467538419228 27.54693530293232229 -0.72083099662194539"
+		"rotate" " -type \"double3\" -2.43114226311456738 -12.63208858329432793 -34.33941798626918285"
 		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON" 
 		"rotateX" " -av"
@@ -68619,7 +68623,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_RightShoulder_CON|Vampire__Controller:RightShoulder_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON" 
-		"translate" " -type \"double3\" 5.52290190118651481 0 53.37686240126140547"
+		"translate" " -type \"double3\" 10.26695516214870096 0 33.56258620544317495"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON" 
 		"translateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON" 
@@ -68627,7 +68631,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHeel_CON|Vampire__Controller:RightHeel_CON" 
 		"translateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON" 
-		"translate" " -type \"double3\" 0.028032260433747069 0 0"
+		"translate" " -type \"double3\" 5.42057118566809137 0 -12.31524913287348788"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON" 
 		"translateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHeel_CON|Vampire__Controller:LeftHeel_CON" 
@@ -68726,7 +68730,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_RightHand_CON|Vampire__Controller:RightHand_CON|Vampire__Controller:Right_Hand_Pinky1_CON|Vampire__Controller:Right_Hand_Pinky1_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON" 
-		"translate" " -type \"double3\" 29.42852682532316066 105.13359549495430656 43.8557246024045071"
+		"translate" " -type \"double3\" -15.83980965001989638 54.7602103535009519 -75.47953236281369982"
 		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON" 
 		"translateX" " -av"
@@ -68735,7 +68739,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON" 
 		"translateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON" 
-		"rotate" " -type \"double3\" 12.14929423727437729 -16.36906105912164833 75.84178623748476866"
+		"rotate" " -type \"double3\" 21.08914820473700402 -11.8985248439546929 -40.15648550368982228"
 		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON" 
 		"rotateX" " -av"
@@ -68762,7 +68766,8 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb1_CON|Vampire__Controller:Left_Hand_Thumb2_CON|Vampire__Controller:Left_Hand_Thumb2_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON" 
-		"rotate" " -type \"double3\" 0 38.67093688161989462 0"
+		"rotate" " -type \"double3\" -6.74557804211456613 21.10981156697966554 24.25646426004124478"
+		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON" 
@@ -68770,7 +68775,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON" 
-		"rotate" " -type \"double3\" 0 8.79531844085656189 0"
+		"rotate" " -type \"double3\" 0 33.61038129755153392 0"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index1_CON|Vampire__Controller:Left_Hand_Index2_CON|Vampire__Controller:Left_Hand_Index2_CON" 
@@ -68786,7 +68791,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON" 
-		"rotate" " -type \"double3\" 17.37751707846813432 14.84674333814750469 3.25863362950385449"
+		"rotate" " -type \"double3\" 19.88063947577341395 31.90242076813641248 9.4929278251979774"
 		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON" 
 		"rotateX" " -av"
@@ -68795,7 +68800,8 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle1_CON|Vampire__Controller:Left_Hand_Middle2_CON|Vampire__Controller:Left_Hand_Middle2_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON" 
-		"rotate" " -type \"double3\" 0 9.29163110044122043 0"
+		"rotate" " -type \"double3\" 1.22666515167098322 20.48084507402092669 0.023976814439468457"
+		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON" 
@@ -68803,16 +68809,39 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON" 
-		"rotate" " -type \"double3\" 14.20070492705097109 0 0"
+		"rotate" " -type \"double3\" 14.79553870217242029 16.12854865559812012 4.19644494566558013"
+		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON" 
 		"rotateY" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring1_CON|Vampire__Controller:Left_Hand_Ring2_CON|Vampire__Controller:Left_Hand_Ring2_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON" 
+		"rotate" " -type \"double3\" 20.58783434811856239 31.40979437223609594 8.0266852619867457"
+		
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON" 
+		"rotateZ" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON" 
+		"rotate" " -type \"double3\" 1.64037925102748527 13.34579936642242082 -2.29694565172035414"
+		
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON" 
+		"rotateX" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON" 
+		"rotateY" " -av"
+		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:Zero_LeftHand_CON|Vampire__Controller:LeftHand_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky1_CON|Vampire__Controller:Left_Hand_Pinky2_CON|Vampire__Controller:Left_Hand_Pinky2_CON" 
 		"rotateZ" " -av"
 		2 "Vampire__Controller:Skeleton" "visibility" " 0"
+		3 "Vampire__Controller:Geometry.drawInfo" "|Vampire__Controller:Vampire_Model|Vampire__Controller:Vampire_Ver03_low.drawOverride" 
+		""
 		5 4 "Vampire__ControllerRN" "|Vampire__Controller:Vampire_Model.drawOverride" 
-		"Vampire__ControllerRN.placeHolderList[1]" "";
+		"Vampire__ControllerRN.placeHolderList[1]" ""
+		5 4 "Vampire__ControllerRN" "|Vampire__Controller:Vampire_Model|Vampire__Controller:Vampire_Ver03_low.drawOverride" 
+		"Vampire__ControllerRN.placeHolderList[2]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Vampire__ControllerRN1";
@@ -69816,6 +69845,7 @@ connectAttr "|LevelGeo|Escalator_low2|Escalator_End_2_low|Escalator_End_2_lowSha
 connectAttr "Char_Geo.di" "Haruka_Auto_RigRN.phl[1]";
 connectAttr "Char_Geo.di" "Mahler_AutoRN.phl[1]";
 connectAttr "Char_Geo.di" "Vampire__ControllerRN.phl[1]";
+connectAttr "Char_Geo.di" "Vampire__ControllerRN.phl[2]";
 connectAttr "Char_Geo.di" "Vampire__ControllerRN1.phl[1]";
 connectAttr "Char_Geo.di" "Vampire__ControllerRN1.phl[2]";
 connectAttr "Char_Geo.di" "Vampire__ControllerRN2.phl[1]";
