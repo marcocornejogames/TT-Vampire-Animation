@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: TT-Trailer-S3.ma
-//Last modified: Sat, Jul 17, 2021 11:02:23 AM
+//Last modified: Sat, Jul 17, 2021 11:11:59 AM
 //Codeset: 1252
 requires "fbxmaya" "2020.1.1";
 file -rdi 1 -ns "Shopping_Mall_GEO_Lightfix" -rfn "Shopping_Mall_GEO_LightfixRN"
@@ -51,17 +51,17 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "875F5749-4C55-EAEC-63AC-C79F6284E191";
+fileInfo "UUID" "DD9EF410-4C8E-4AE1-7C4A-1E88AE39817A";
 createNode transform -s -n "persp";
 	rename -uid "52586057-4BF7-9F02-55E1-75A41DCAFC5F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1830.5741109186388 661.76279032679042 1665.0754191992023 ;
-	setAttr ".r" -type "double3" -21.938352514126983 -12657.800000003686 2.9843275302487564e-15 ;
+	setAttr ".t" -type "double3" 1688.1791318835717 550.0466011294086 1352.8190477547123 ;
+	setAttr ".r" -type "double3" -9.3383525159222298 -14856.999999999669 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "850FB6B5-4412-3A63-F21E-5C80EE9BBFF6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 753.85659025858843;
+	setAttr ".coi" 621.29730903307779;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -50324,7 +50324,7 @@ createNode mesh -n "Escalator_End_2_lowShape" -p "|LevelGeo|Escalator_low2|Escal
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode fosterParent -n "Shopping_Mall_GEO_LightfixRNfosterParent1";
-	rename -uid "FA749BDB-472D-C9EE-9911-80879F8D232E";
+	rename -uid "D3679507-4FA7-7A78-DD40-9E9A76600276";
 createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape3" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
 	rename -uid "C24E4AFD-4769-508D-F9D8-91912C4A654B";
 	setAttr -k off ".v";
@@ -68023,9 +68023,9 @@ createNode reference -n "Mahler_AutoRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Mahler_AutoRN"
 		"Mahler_AutoRN" 0
-		"Mahler_AutoRN" 188
+		"Mahler_AutoRN" 220
 		2 "|Mahler_Auto:mixamorig:Hips" "visibility" " -av 1"
-		2 "|Mahler_Auto:mixamorig:Hips" "translate" " -type \"double3\" 2304.12755412380738562 414.76735561994246382 1360.20430645723763519"
+		2 "|Mahler_Auto:mixamorig:Hips" "translate" " -type \"double3\" 2287.9589812434119267 414.76735561994246382 1360.20430645723763519"
 		
 		2 "|Mahler_Auto:mixamorig:Hips" "translateX" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips" "translateY" " -av"
@@ -68314,6 +68314,15 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" 2.2629441431831765e-08 -3.8000200675014639e-07 -1.8184887551342399e-07"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand" 
+		"rotate" " -type \"double3\" 3.28515390980196242 -1.81454555178124832 7.69215941441542483"
+		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand" 
 		"preferredAngle" " -type \"double3\" 1.2505985580446579e-08 -8.1574551558105668e-09 -1.4964504657655198e-07"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandThumb1" 
@@ -68326,8 +68335,24 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" -4.43892192840576172 -2.25117850303649902 -19.45441627502441762"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1" 
+		"rotate" " -type \"double3\" 32.29577971812805259 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1" 
 		"preferredAngle" " -type \"double3\" 1.4365030054364071e-08 1.2739457266874865e-09 -1.4969502615258534e-07"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1|Mahler_Auto:mixamorig:RightHandIndex2" 
+		"rotate" " -type \"double3\" 65.68871981164969043 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1|Mahler_Auto:mixamorig:RightHandIndex2" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1|Mahler_Auto:mixamorig:RightHandIndex2" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1|Mahler_Auto:mixamorig:RightHandIndex2" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandIndex1|Mahler_Auto:mixamorig:RightHandIndex2" 
 		"preferredAngle" " -type \"double3\" 1.4365038936148267e-08 -1.3341781368580996e-07 -1.3302353352173668e-07"
 		
@@ -68335,8 +68360,24 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" -5.63078975677490234 0.060984943062067032 0.34480243921279907"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1" 
+		"rotate" " -type \"double3\" 53.46625982348184181 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1" 
 		"preferredAngle" " -type \"double3\" 1.3888074690271424e-08 -1.6755970833060019e-08 -1.4880504295433639e-07"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1|Mahler_Auto:mixamorig:RightHandMiddle2" 
+		"rotate" " -type \"double3\" 89.67461176670663292 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1|Mahler_Auto:mixamorig:RightHandMiddle2" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1|Mahler_Auto:mixamorig:RightHandMiddle2" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1|Mahler_Auto:mixamorig:RightHandMiddle2" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandMiddle1|Mahler_Auto:mixamorig:RightHandMiddle2" 
 		"preferredAngle" " -type \"double3\" 1.3888072025736165e-08 4.2243520681495283e-08 -1.5498802952151891e-07"
 		
@@ -68344,14 +68385,38 @@ createNode reference -n "Mahler_AutoRN";
 		"preferredAngle" " -type \"double3\" 7.69458532333374023 0.060903493314981461 -0.40372079610824585"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1" 
+		"rotate" " -type \"double3\" 67.98389088630598565 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1" 
+		"rotateZ" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1" 
 		"preferredAngle" " -type \"double3\" 1.2557376471988846e-08 -2.2167807145478949e-08 -1.4821431193468015e-07"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1|Mahler_Auto:mixamorig:RightHandRing2" 
+		"rotate" " -type \"double3\" 71.60697496732464629 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1|Mahler_Auto:mixamorig:RightHandRing2" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1|Mahler_Auto:mixamorig:RightHandRing2" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1|Mahler_Auto:mixamorig:RightHandRing2" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1|Mahler_Auto:mixamorig:RightHandRing2" 
 		"preferredAngle" " -type \"double3\" 1.2557377360167266e-08 1.5230403960231342e-07 -1.666157345425745e-07"
 		
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandRing1|Mahler_Auto:mixamorig:RightHandRing2|Mahler_Auto:mixamorig:RightHandRing3" 
 		"preferredAngle" " -type \"double3\" -4.24847412109375 0.01347819808870554 0.14804790914058685"
 		
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandPinky1" 
+		"rotate" " -type \"double3\" 74.52171311750878147 0 0"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandPinky1" 
+		"rotateX" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandPinky1" 
+		"rotateY" " -av"
+		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandPinky1" 
+		"rotateZ" " -av"
 		2 "|Mahler_Auto:mixamorig:Hips|Mahler_Auto:mixamorig:Spine|Mahler_Auto:mixamorig:Spine1|Mahler_Auto:mixamorig:Spine2|Mahler_Auto:mixamorig:RightShoulder|Mahler_Auto:mixamorig:RightArm|Mahler_Auto:mixamorig:RightForeArm|Mahler_Auto:mixamorig:RightHand|Mahler_Auto:mixamorig:RightHandPinky1" 
 		"preferredAngle" " -type \"double3\" 9.8296286665799926e-09 -4.7992603668944867e-08 -1.421853568217557e-07"
 		
@@ -68443,9 +68508,9 @@ createNode reference -n "TrashCanLidRN";
 		"TrashCanLidRN"
 		"TrashCanLidRN" 0
 		"TrashCanLidRN" 5
-		2 "|TrashCanLid:TrashCan_low" "translate" " -type \"double3\" 2270.14326553593127755 470.09336962465272336 1094.99355212722389297"
+		2 "|TrashCanLid:TrashCan_low" "translate" " -type \"double3\" 2319.936977424518318 467.15090506198851017 1369.15307843816390232"
 		
-		2 "|TrashCanLid:TrashCan_low" "rotate" " -type \"double3\" -146.14317826126827526 -21.53099995198970618 -99.4170263207312388"
+		2 "|TrashCanLid:TrashCan_low" "rotate" " -type \"double3\" -175.51061724014508059 -25.47691943594137598 -74.305374877985642"
 		
 		2 "|TrashCanLid:TrashCan_low" "scale" " -type \"double3\" 0.91810941156352466 0.91810941156352466 0.91810941156352466"
 		
@@ -69127,7 +69192,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		"Vampire__ControllerRN2" 0
 		"Vampire__ControllerRN2" 170
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Left_Shoulder|Vampire__Controller2:Left_Arm" 
-		"rotate" " -type \"double3\" -20.63802449683923612 6.79844273415648015 28.47633676341289188"
+		"rotate" " -type \"double3\" -111.38344923475484904 47.33493018116530493 -63.12632195680391334"
 		
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Left_Shoulder|Vampire__Controller2:Left_Arm" 
 		"rotateX" " -av"
@@ -69136,7 +69201,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Left_Shoulder|Vampire__Controller2:Left_Arm" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Right_Shoulder|Vampire__Controller2:Right_Arm" 
-		"rotate" " -type \"double3\" -9.31501612029481763 22.49345940156768719 36.61730161452450716"
+		"rotate" " -type \"double3\" -29.04199973670143464 63.31135315360955929 15.53395863639190821"
 		
 		2 "|Vampire__Controller2:Root|Vampire__Controller2:Hips|Vampire__Controller2:Spine|Vampire__Controller2:Spine1|Vampire__Controller2:Spine2|Vampire__Controller2:Right_Shoulder|Vampire__Controller2:Right_Arm" 
 		"rotateX" " -av"
@@ -69149,7 +69214,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:IK_Group" "rotate" " -type \"double3\" 0 -80.43732026726472384 0"
 		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "translate" 
-		" -type \"double3\" 2409.14314977899311998 335.51374660707404018 1362.6643864806833335"
+		" -type \"double3\" 2378.18736616106298243 335.51374660707404018 1362.6643864806833335"
 		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON" "translateX" 
 		" -av"
@@ -69196,7 +69261,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON" 
-		"rotate" " -type \"double3\" 8.94062890718470982 0 0"
+		"rotate" " -type \"double3\" -22.68557856419480601 0 0"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON" 
@@ -69204,7 +69269,8 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 33.84777847549627694 -0.21107986711294119 11.66102276540281935"
+		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON" 
@@ -69212,7 +69278,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 17.29961275206516191 0 0"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON" 
@@ -69220,7 +69286,8 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" -2.83357810554575495 2.22131287640788599 30.34954869484138129"
+		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_Neck_CON|Vampire__Controller2:Neck_CON" 
@@ -69256,7 +69323,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:ZERO_Hips_Translate_CON|Vampire__Controller2:Hips_Translate_CON|Vampire__Controller2:ZERO_Hips_Rotate_CON_Full|Vampire__Controller2:Hips_Rotate_CON_Full|Vampire__Controller2:Zero_Spine_CON|Vampire__Controller2:Spine_CON|Vampire__Controller2:Zero_Spine1_CON|Vampire__Controller2:Spine1_CON|Vampire__Controller2:Zero_Spine2_CON|Vampire__Controller2:Spine2_CON|Vampire__Controller2:Zero_RightShoulder_CON|Vampire__Controller2:RightShoulder_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHeel_CON|Vampire__Controller2:RightHeel_CON" 
-		"translate" " -type \"double3\" 0.93125065284759145 16.3135322989150886 18.64179815124361284"
+		"translate" " -type \"double3\" 1.14342907102602975 19.76554063819263618 -9.71831608740332165"
 		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHeel_CON|Vampire__Controller2:RightHeel_CON" 
 		"translateX" " -av"
@@ -69273,7 +69340,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHeel_CON|Vampire__Controller2:RightHeel_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
-		"translate" " -type \"double3\" -6.79078571777009632 81.45358987866430311 -20.50762543792780335"
+		"translate" " -type \"double3\" 0.62991849092102603 11.22650904280668627 36.20320945753113051"
 		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
 		"translateX" " -av"
@@ -69282,7 +69349,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
 		"translateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
-		"rotate" " -type \"double3\" 73.1256306171081718 23.6744598213220101 0"
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
@@ -69290,7 +69357,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHeel_CON|Vampire__Controller2:LeftHeel_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
-		"translate" " -type \"double3\" 24.0978444676920347 1.98848619540423943 45.9753506272806689"
+		"translate" " -type \"double3\" 24.49900494161347098 8.51511276400382755 -7.64441412601480774"
 		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON" 
 		"translateX" " -av"
@@ -69381,7 +69448,7 @@ createNode reference -n "Vampire__ControllerRN2";
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_RightHand_CON|Vampire__Controller2:RightHand_CON|Vampire__Controller2:Right_Hand_Pinky1_CON|Vampire__Controller2:Right_Hand_Pinky1_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
-		"translate" " -type \"double3\" 7.1698420904466591 -10.5261434679519077 52.36940216626236122"
+		"translate" " -type \"double3\" 13.10208195186108604 91.71613200918379505 -35.41986112417003341"
 		
 		2 "|Vampire__Controller2:ZERO_Root_CON|Vampire__Controller2:Root_CON|Vampire__Controller2:Zero_LeftHand_CON|Vampire__Controller2:LeftHand_CON" 
 		"translateX" " -av"
