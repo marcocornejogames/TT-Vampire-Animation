@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: TT-Trailer-S2.ma
-//Last modified: Sat, Jul 17, 2021 10:20:00 AM
+//Last modified: Sat, Jul 17, 2021 10:27:10 AM
 //Codeset: 1252
 requires "fbxmaya" "2020.1.1";
 file -rdi 1 -ns "Shopping_Mall_GEO_Lightfix" -rfn "Shopping_Mall_GEO_LightfixRN"
@@ -51,17 +51,17 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "0E08476D-4FF8-586C-E915-8C96A1F8C635";
+fileInfo "UUID" "0A59FDB3-4012-B80B-C200-E7A5FD8159C6";
 createNode transform -s -n "persp";
 	rename -uid "52586057-4BF7-9F02-55E1-75A41DCAFC5F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 938.11685996865617 918.68228296939753 1474.5889822035278 ;
-	setAttr ".r" -type "double3" -25.538352623237309 -6213.3999999814905 -2.5444437451708134e-14 ;
+	setAttr ".t" -type "double3" 1197.8859816426632 564.06856408126794 1338.7761864757485 ;
+	setAttr ".r" -type "double3" -5.7383526233100897 -6204.9999999793054 -4.5615965283276327e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "850FB6B5-4412-3A63-F21E-5C80EE9BBFF6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1560.830550731567;
+	setAttr ".coi" 873.7515665901692;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -50324,7 +50324,7 @@ createNode mesh -n "Escalator_End_2_lowShape" -p "|LevelGeo|Escalator_low2|Escal
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode fosterParent -n "Shopping_Mall_GEO_LightfixRNfosterParent1";
-	rename -uid "71923D5C-4AFF-6B95-86E8-58B7F4918261";
+	rename -uid "5B8F2685-48D6-26C5-CB5D-6EBF4F855691";
 createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape3" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
 	rename -uid "C24E4AFD-4769-508D-F9D8-91912C4A654B";
 	setAttr -k off ".v";
@@ -67888,7 +67888,7 @@ createNode reference -n "Haruka_Auto_RigRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Haruka_Auto_RigRN"
 		"Haruka_Auto_RigRN" 0
-		"Haruka_Auto_RigRN" 38
+		"Haruka_Auto_RigRN" 44
 		2 "|Haruka_Auto_Rig:Haruka_low" "translate" " -type \"double3\" 0 0 0"
 		2 "|Haruka_Auto_Rig:Root" "translate" " -type \"double3\" 2092.77296100329613182 328.35296615635354556 1312.78980296884287782"
 		
@@ -67901,62 +67901,77 @@ createNode reference -n "Haruka_Auto_RigRN";
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:Neck" 
-		"rotate" " -type \"double3\" -41.35628555211592783 0 0"
+		"rotate" " -type \"double3\" -51.8659261263498621 32.85688572172640676 -34.64770278313283569"
+		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:Neck|Haruka_Auto_Rig:mixamorig:Head" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm" 
 		"rotate" " -type \"double3\" 88.36130937845712197 -57.91070339947113155 22.1371023553696844"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm" 
-		"rotate" " -type \"double3\" 58.04118949680229633 46.45786580667737553 17.58365994906619889"
+		"rotate" " -type \"double3\" 51.62202022988598316 16.30213896568456633 46.62808776854330972"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand" 
-		"rotate" " -type \"double3\" -20.7309294837222744 -54.475546469000804 16.69091274247874779"
+		"rotate" " -type \"double3\" -19.22272840327126175 -7.24205409399393663 5.7641620957842532"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandThumb1" 
-		"rotate" " -type \"double3\" 19.59189682873492799 -1.90055922465985327 -11.12119543940436373"
+		"rotate" " -type \"double3\" 28.17981045416910746 -1.90055922465986749 -11.12119543940437971"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandThumb1|Haruka_Auto_Rig:mixamorig:LeftHandThumb2" 
-		"rotate" " -type \"double3\" 0 0 -5.7595125857566325"
+		"rotate" " -type \"double3\" -4.75385007850639774 0 -5.75951258575663694"
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandThumb1|Haruka_Auto_Rig:mixamorig:LeftHandThumb2|Haruka_Auto_Rig:mixamorig:LeftHandThumb3" 
+		"rotate" " -type \"double3\" -20.12813144441665614 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandIndex1" 
-		"rotate" " -type \"double3\" 0 0 -8.29021288528126732"
+		"rotate" " -type \"double3\" 40.06020134625440932 0 -8.29021288528127442"
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandIndex1|Haruka_Auto_Rig:mixamorig:LeftHandIndex2" 
+		"rotate" " -type \"double3\" 36.39392842887379231 0 0"
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandIndex1|Haruka_Auto_Rig:mixamorig:LeftHandIndex2|Haruka_Auto_Rig:mixamorig:LeftHandIndex3" 
+		"rotate" " -type \"double3\" 39.40403774412981619 0 1.98588407127543976"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandMiddle1" 
 		"rotate" " -type \"double3\" 0 0 -6.68185447145557543"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandMiddle1|Haruka_Auto_Rig:mixamorig:LeftHandMiddle2" 
 		"rotate" " -type \"double3\" 91.28269757668108753 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandRing1" 
-		"rotate" " -type \"double3\" 59.30367742452914115 0 0"
+		"rotate" " -type \"double3\" 32.65755149245044464 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandRing1|Haruka_Auto_Rig:mixamorig:LeftHandRing2" 
 		"rotate" " -type \"double3\" 59.60467269461234707 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandPinky1" 
-		"rotate" " -type \"double3\" 73.57123040696500027 0 0"
+		"rotate" " -type \"double3\" 25.65398086788089316 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandPinky1|Haruka_Auto_Rig:mixamorig:LeftHandPinky2" 
 		"rotate" " -type \"double3\" 32.15589469130668476 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm" 
-		"rotate" " -type \"double3\" 52.28253746978464989 33.12832458666718338 -34.5559958062655852"
+		"rotate" " -type \"double3\" 57.70634352922834864 9.09129894985788489 -22.88975297766343786"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm" 
-		"rotate" " -type \"double3\" 42.70221355630525295 51.95793793688723383 25.96713049733710932"
+		"rotate" " -type \"double3\" -15.97392118825707286 14.97800325736297289 -96.48647981388894834"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand" 
-		"rotate" " -type \"double3\" -19.07502669453737454 43.58095329600145362 0"
+		"rotate" " -type \"double3\" -0.7913242358128969 22.15999441331816655 -25.53433619542656885"
+		
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandThumb1" 
+		"rotate" " -type \"double3\" 20.03809757922871881 -6.46845165654140963 9.28009089238254603"
+		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandIndex1" 
 		"rotate" " -type \"double3\" 10.65078931933144446 -0.30823757797836915 -4.10040556738361595"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandIndex1|Haruka_Auto_Rig:mixamorig:RightHandIndex2" 
-		"rotate" " -type \"double3\" 21.42675415228638158 0 0"
+		"rotate" " -type \"double3\" 55.76202219514819092 0 0"
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandIndex1|Haruka_Auto_Rig:mixamorig:RightHandIndex2|Haruka_Auto_Rig:mixamorig:RightHandIndex3" 
+		"rotate" " -type \"double3\" 79.25674795877040424 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandMiddle1" 
 		"rotate" " -type \"double3\" 40.03511280902029057 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandMiddle1|Haruka_Auto_Rig:mixamorig:RightHandMiddle2" 
 		"rotate" " -type \"double3\" 50.45036746141046535 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandRing1" 
-		"rotate" " -type \"double3\" 54.9918802462607843 0 0"
+		"rotate" " -type \"double3\" 39.75772986458488134 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandRing1|Haruka_Auto_Rig:mixamorig:RightHandRing2" 
-		"rotate" " -type \"double3\" 47.7524210887804017 0 0"
+		"rotate" " -type \"double3\" 60.40735179314431491 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandPinky1" 
-		"rotate" " -type \"double3\" 58.40179626953256786 0 0"
+		"rotate" " -type \"double3\" 39.93185364602190646 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandPinky1|Haruka_Auto_Rig:mixamorig:RightHandPinky2" 
-		"rotate" " -type \"double3\" 44.98150835977963879 0 0"
+		"rotate" " -type \"double3\" 32.09463920224713718 0 0"
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandPinky1|Haruka_Auto_Rig:mixamorig:RightHandPinky2|Haruka_Auto_Rig:mixamorig:RightHandPinky3" 
+		"rotate" " -type \"double3\" 9.35390908370659169 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:LeftUpLeg" 
 		"rotate" " -type \"double3\" 46.96574887017401068 1.56598134845766057 6.70078040001850184"
 		
@@ -67983,9 +67998,9 @@ createNode reference -n "Baseball_BatRN";
 		"Baseball_BatRN"
 		"Baseball_BatRN" 0
 		"Baseball_BatRN" 3
-		2 "|Baseball_Bat:BaseBall_Bat" "translate" " -type \"double3\" 2087.22031025312844577 402.74389231504432018 1253.72330228184023326"
+		2 "|Baseball_Bat:BaseBall_Bat" "translate" " -type \"double3\" 2099.64497142213394909 475.12659679333773965 1274.48818649615077447"
 		
-		2 "|Baseball_Bat:BaseBall_Bat" "rotate" " -type \"double3\" -117.83645441439279011 -56.62681140776194155 109.54654356315418795"
+		2 "|Baseball_Bat:BaseBall_Bat" "rotate" " -type \"double3\" -228.13484855569706156 9.78001980501263013 239.3638477384088219"
 		
 		2 "|Baseball_Bat:BaseBall_Bat" "scale" " -type \"double3\" 0.91689391151447575 0.91689391151447575 0.91689391151447575";
 	setAttr ".ptag" -type "string" "";
