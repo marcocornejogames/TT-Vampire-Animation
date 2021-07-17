@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
-//Name: TT-Trailer-S2.ma
-//Last modified: Sat, Jul 17, 2021 10:51:29 AM
+//Name: TT-Trailer-S3.ma
+//Last modified: Sat, Jul 17, 2021 10:51:48 AM
 //Codeset: 1252
 requires "fbxmaya" "2020.1.1";
 file -rdi 1 -ns "Shopping_Mall_GEO_Lightfix" -rfn "Shopping_Mall_GEO_LightfixRN"
@@ -51,7 +51,7 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "4D3DD01C-4BEA-95B8-EBA3-11A512AD0272";
+fileInfo "UUID" "BEB44BDF-428C-CF56-26C9-AC987B6E84F6";
 createNode transform -s -n "persp";
 	rename -uid "52586057-4BF7-9F02-55E1-75A41DCAFC5F";
 	setAttr ".v" no;
@@ -50324,7 +50324,7 @@ createNode mesh -n "Escalator_End_2_lowShape" -p "|LevelGeo|Escalator_low2|Escal
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode fosterParent -n "Shopping_Mall_GEO_LightfixRNfosterParent1";
-	rename -uid "09230E6E-4B92-9F76-AE69-8D84D08704F3";
+	rename -uid "7B4A1E19-4768-C0CD-A277-2D86E2A20B2C";
 createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape3" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
 	rename -uid "C24E4AFD-4769-508D-F9D8-91912C4A654B";
 	setAttr -k off ".v";
@@ -70442,4 +70442,4 @@ connectAttr "Shopping_Mall_GEO_Lightfix:groupId62.id" "Shopping_Mall_GEO_Lightfi
 connectAttr "Hair_lowSG.pa" ":renderPartition.st" -na;
 connectAttr "M_Ezra2.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-// End of TT-Trailer-S2.ma
+// End of TT-Trailer-S3.ma
