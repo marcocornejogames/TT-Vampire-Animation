@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: TT-Trailer-S3.ma
-//Last modified: Sat, Jul 17, 2021 11:18:02 AM
+//Last modified: Sat, Jul 17, 2021 11:36:17 AM
 //Codeset: 1252
 requires "fbxmaya" "2020.1.1";
 file -rdi 1 -ns "Shopping_Mall_GEO_Lightfix" -rfn "Shopping_Mall_GEO_LightfixRN"
@@ -51,17 +51,17 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202009141615-87c40af620";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 18363)\n";
-fileInfo "UUID" "5FB909C7-4BC3-1511-31DA-3BBEACB1934B";
+fileInfo "UUID" "6465EDCD-4CFA-2D40-D412-95B0E834AF7D";
 createNode transform -s -n "persp";
 	rename -uid "52586057-4BF7-9F02-55E1-75A41DCAFC5F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2038.8375216578238 922.17125809580398 1615.3191638926214 ;
-	setAttr ".r" -type "double3" -49.538352496293903 -15109.400000005195 -2.4268290006265968e-15 ;
+	setAttr ".t" -type "double3" 1724.3248651355316 663.03317679394195 1333.0721816709324 ;
+	setAttr ".r" -type "double3" -31.538352458943322 -12360.999999997279 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "850FB6B5-4412-3A63-F21E-5C80EE9BBFF6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 753.85659022887364;
+	setAttr ".coi" 347.80168597946493;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -50324,7 +50324,7 @@ createNode mesh -n "Escalator_End_2_lowShape" -p "|LevelGeo|Escalator_low2|Escal
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode fosterParent -n "Shopping_Mall_GEO_LightfixRNfosterParent1";
-	rename -uid "1F0B4CCA-4ECA-01FB-62A7-14866514C55C";
+	rename -uid "6EF5B1FF-4948-F393-12A5-6098D1A94F0D";
 createNode mesh -n "Shopping_Mall_GEO_Lightfix:polySurfaceShape3" -p "Shopping_Mall_GEO_LightfixRNfosterParent1";
 	rename -uid "C24E4AFD-4769-508D-F9D8-91912C4A654B";
 	setAttr -k off ".v";
@@ -67900,31 +67900,38 @@ createNode reference -n "Haruka_Auto_RigRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Haruka_Auto_RigRN"
 		"Haruka_Auto_RigRN" 0
-		"Haruka_Auto_RigRN" 44
+		"Haruka_Auto_RigRN" 47
 		2 "|Haruka_Auto_Rig:Haruka_low" "translate" " -type \"double3\" 0 0 0"
 		2 "|Haruka_Auto_Rig:Root" "translate" " -type \"double3\" 2092.77296100329613182 328.35296615635354556 1312.78980296884287782"
 		
 		2 "|Haruka_Auto_Rig:Root" "rotate" " -type \"double3\" 0 -140.37512327849873373 0"
 		
-		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips" "rotate" " -type \"double3\" 0 0 0"
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips" "rotate" " -type \"double3\" 0 -30.72363356797879064 0"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine" 
-		"rotate" " -type \"double3\" 36.50825079438954646 0 0"
+		"rotate" " -type \"double3\" -10.73004575635301627 -16.17076615361547454 2.80523462408570268"
+		
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1" 
+		"rotate" " -type \"double3\" 26.65072778852446334 25.5787681875149211 15.58747690447021306"
+		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 12.16429996915573852 0.55018330203872645 -0.49788510283040982"
+		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:Neck" 
-		"rotate" " -type \"double3\" -51.8659261263498621 32.85688572172640676 -34.64770278313283569"
+		"rotate" " -type \"double3\" -20.5071880000784077 -8.18564101669193356 -0.89346101116051457"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:Neck|Haruka_Auto_Rig:mixamorig:Head" 
 		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder" 
+		"rotate" " -type \"double3\" 0 0 26.57548528828152001"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm" 
-		"rotate" " -type \"double3\" 88.36130937845712197 -57.91070339947113155 22.1371023553696844"
+		"rotate" " -type \"double3\" 56.63147136987131347 -82.40239000197374253 -16.41411677629160693"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm" 
-		"rotate" " -type \"double3\" 51.62202022988598316 16.30213896568456633 46.62808776854330972"
+		"rotate" " -type \"double3\" 44.55190125294894443 -25.76319806859901718 -6.97466546966277079"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand" 
-		"rotate" " -type \"double3\" -19.22272840327126175 -7.24205409399393663 5.7641620957842532"
+		"rotate" " -type \"double3\" -7.19111576771911043 -17.10038425166559861 11.55735234843154302"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandThumb1" 
 		"rotate" " -type \"double3\" 28.17981045416910746 -1.90055922465986749 -11.12119543940437971"
@@ -67934,31 +67941,36 @@ createNode reference -n "Haruka_Auto_RigRN";
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandThumb1|Haruka_Auto_Rig:mixamorig:LeftHandThumb2|Haruka_Auto_Rig:mixamorig:LeftHandThumb3" 
 		"rotate" " -type \"double3\" -20.12813144441665614 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandIndex1" 
-		"rotate" " -type \"double3\" 40.06020134625440932 0 -8.29021288528127442"
+		"rotate" " -type \"double3\" -3.51348538817618472 0 -8.29021288528127975"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandIndex1|Haruka_Auto_Rig:mixamorig:LeftHandIndex2" 
-		"rotate" " -type \"double3\" 36.39392842887379231 0 0"
+		"rotate" " -type \"double3\" 94.3047476315762907 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandIndex1|Haruka_Auto_Rig:mixamorig:LeftHandIndex2|Haruka_Auto_Rig:mixamorig:LeftHandIndex3" 
 		"rotate" " -type \"double3\" 39.40403774412981619 0 1.98588407127543976"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandMiddle1" 
-		"rotate" " -type \"double3\" 0 0 -6.68185447145557543"
+		"rotate" " -type \"double3\" 20.69013932170839354 -1.34293825526963229 -4.92768838823303668"
+		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandMiddle1|Haruka_Auto_Rig:mixamorig:LeftHandMiddle2" 
 		"rotate" " -type \"double3\" 91.28269757668108753 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandRing1" 
-		"rotate" " -type \"double3\" 32.65755149245044464 0 0"
+		"rotate" " -type \"double3\" 55.13686436518547396 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandRing1|Haruka_Auto_Rig:mixamorig:LeftHandRing2" 
 		"rotate" " -type \"double3\" 59.60467269461234707 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandPinky1" 
-		"rotate" " -type \"double3\" 25.65398086788089316 0 0"
+		"rotate" " -type \"double3\" 78.28301914515905935 0.45993320010717065 0.22090139465549941"
+		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:LeftShoulder|Haruka_Auto_Rig:mixamorig:LeftArm|Haruka_Auto_Rig:mixamorig:LeftForeArm|Haruka_Auto_Rig:mixamorig:LeftHand|Haruka_Auto_Rig:mixamorig:LeftHandPinky1|Haruka_Auto_Rig:mixamorig:LeftHandPinky2" 
 		"rotate" " -type \"double3\" 32.15589469130668476 0 0"
+		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder" 
+		"rotate" " -type \"double3\" -22.61757527286911795 -15.46828484618384536 -57.06938916927293093"
+		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm" 
-		"rotate" " -type \"double3\" 57.70634352922834864 9.09129894985788489 -22.88975297766343786"
+		"rotate" " -type \"double3\" 11.23353591662105622 -0.38412817041450914 -60.92173960344450734"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm" 
-		"rotate" " -type \"double3\" -15.97392118825707286 14.97800325736297289 -96.48647981388894834"
+		"rotate" " -type \"double3\" -7.06926320232273042 36.1244496697353199 -13.90991146969223813"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand" 
-		"rotate" " -type \"double3\" -0.7913242358128969 22.15999441331816655 -25.53433619542656885"
+		"rotate" " -type \"double3\" -2.3474796885176894 52.36693382103609196 -3.97971886107193829"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:Spine|Haruka_Auto_Rig:mixamorig:Spine1|Haruka_Auto_Rig:mixamorig:Spine2|Haruka_Auto_Rig:mixamorig:RightShoulder|Haruka_Auto_Rig:mixamorig:RightArm|Haruka_Auto_Rig:mixamorig:RightForeArm|Haruka_Auto_Rig:mixamorig:RightHand|Haruka_Auto_Rig:mixamorig:RightHandThumb1" 
 		"rotate" " -type \"double3\" 20.03809757922871881 -6.46845165654140963 9.28009089238254603"
@@ -67994,10 +68006,10 @@ createNode reference -n "Haruka_Auto_RigRN";
 		"rotate" " -type \"double3\" 14.48059750876983109 2.95021261566100801 1.79175620691430537"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:RightUpLeg" 
-		"rotate" " -type \"double3\" -5.07208958825852196 -0.34600672923935771 -7.7068408884364068"
+		"rotate" " -type \"double3\" 11.3343527794050658 -0.34600672923935899 -7.70684088843641479"
 		
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:RightUpLeg|Haruka_Auto_Rig:mixamorig:RightLeg" 
-		"rotate" " -type \"double3\" -52.40624622459481685 0 0"
+		"rotate" " -type \"double3\" -69.3549856846115631 0 0"
 		2 "|Haruka_Auto_Rig:Root|Haruka_Auto_Rig:mixamorig:Hips|Haruka_Auto_Rig:mixamorig:RightUpLeg|Haruka_Auto_Rig:mixamorig:RightLeg|Haruka_Auto_Rig:mixamorig:RightFoot|Haruka_Auto_Rig:mixamorig:RightToeBase" 
 		"rotate" " -type \"double3\" 50.79127884836327667 0 0"
 		5 4 "Haruka_Auto_RigRN" "|Haruka_Auto_Rig:Haruka_low.drawOverride" "Haruka_Auto_RigRN.placeHolderList[1]" 
@@ -68010,9 +68022,9 @@ createNode reference -n "Baseball_BatRN";
 		"Baseball_BatRN"
 		"Baseball_BatRN" 0
 		"Baseball_BatRN" 3
-		2 "|Baseball_Bat:BaseBall_Bat" "translate" " -type \"double3\" 2099.64497142213394909 475.12659679333773965 1274.48818649615077447"
+		2 "|Baseball_Bat:BaseBall_Bat" "translate" " -type \"double3\" 2032.41820361691634389 498.11102346628223358 1263.56632408222435515"
 		
-		2 "|Baseball_Bat:BaseBall_Bat" "rotate" " -type \"double3\" -228.13484855569706156 9.78001980501263013 239.3638477384088219"
+		2 "|Baseball_Bat:BaseBall_Bat" "rotate" " -type \"double3\" -280.14577021962941217 -9.07520431584260123 311.11444214006075981"
 		
 		2 "|Baseball_Bat:BaseBall_Bat" "scale" " -type \"double3\" 0.91689391151447575 0.91689391151447575 0.91689391151447575";
 	setAttr ".ptag" -type "string" "";
@@ -68529,7 +68541,7 @@ createNode reference -n "Vampire__ControllerRN";
 		"Vampire__ControllerRN" 0
 		"Vampire__ControllerRN" 148
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON" "translate" 
-		" -type \"double3\" 1995.40228070468356236 366.22219050681701447 1148.5916874241277128"
+		" -type \"double3\" 2003.21949124916477558 366.22219050681701447 1219.19848832286152174"
 		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON" "translateX" 
 		" -av"
@@ -68581,7 +68593,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON" 
-		"rotate" " -type \"double3\" 0 -16.28649361339733659 0"
+		"rotate" " -type \"double3\" -37.356126967710793 -16.28649361339737922 0"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON" 
 		"rotateX" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON" 
@@ -68589,7 +68601,7 @@ createNode reference -n "Vampire__ControllerRN";
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON" 
-		"rotate" " -type \"double3\" 22.511546750230778 -37.27995576394545196 -15.87689303264241403"
+		"rotate" " -type \"double3\" 35.89278662417707011 -27.18095539523487503 -20.74565130418039161"
 		
 		2 "|Vampire__Controller:ZERO_Root_CON|Vampire__Controller:Root_CON|Vampire__Controller:ZERO_Hips_Translate_CON|Vampire__Controller:Hips_Translate_CON|Vampire__Controller:ZERO_Hips_Rotate_CON_Full|Vampire__Controller:Hips_Rotate_CON_Full|Vampire__Controller:Zero_Spine_CON|Vampire__Controller:Spine_CON|Vampire__Controller:Zero_Spine1_CON|Vampire__Controller:Spine1_CON|Vampire__Controller:Zero_Spine2_CON|Vampire__Controller:Spine2_CON|Vampire__Controller:Zero_Neck_CON|Vampire__Controller:Neck_CON" 
 		"rotateX" " -av"
@@ -68854,7 +68866,7 @@ createNode reference -n "Vampire__ControllerRN1";
 		"Vampire__ControllerRN1" 0
 		"Vampire__ControllerRN1" 170
 		2 "|Vampire__Controller1:Root|Vampire__Controller1:Hips|Vampire__Controller1:Spine|Vampire__Controller1:Spine1|Vampire__Controller1:Spine2|Vampire__Controller1:Left_Shoulder|Vampire__Controller1:Left_Arm" 
-		"rotate" " -type \"double3\" -36.82624914460967602 42.10715949593168972 -4.4749356493487138"
+		"rotate" " -type \"double3\" -36.82624914460948418 42.10715949593161866 -4.47493564934864452"
 		
 		2 "|Vampire__Controller1:Root|Vampire__Controller1:Hips|Vampire__Controller1:Spine|Vampire__Controller1:Spine1|Vampire__Controller1:Spine2|Vampire__Controller1:Left_Shoulder|Vampire__Controller1:Left_Arm" 
 		"rotateX" " -av"
@@ -68863,7 +68875,7 @@ createNode reference -n "Vampire__ControllerRN1";
 		2 "|Vampire__Controller1:Root|Vampire__Controller1:Hips|Vampire__Controller1:Spine|Vampire__Controller1:Spine1|Vampire__Controller1:Spine2|Vampire__Controller1:Left_Shoulder|Vampire__Controller1:Left_Arm" 
 		"rotateZ" " -av"
 		2 "|Vampire__Controller1:Root|Vampire__Controller1:Hips|Vampire__Controller1:Spine|Vampire__Controller1:Spine1|Vampire__Controller1:Spine2|Vampire__Controller1:Right_Shoulder|Vampire__Controller1:Right_Arm" 
-		"rotate" " -type \"double3\" -44.871444532118268 52.90073177332095611 57.44095822032318921"
+		"rotate" " -type \"double3\" -44.87144453211821826 52.90073177332071452 57.44095822032320342"
 		
 		2 "|Vampire__Controller1:Root|Vampire__Controller1:Hips|Vampire__Controller1:Spine|Vampire__Controller1:Spine1|Vampire__Controller1:Spine2|Vampire__Controller1:Right_Shoulder|Vampire__Controller1:Right_Arm" 
 		"rotateX" " -av"
@@ -68874,7 +68886,7 @@ createNode reference -n "Vampire__ControllerRN1";
 		2 "|Vampire__Controller1:IK_Group" "rotate" " -type \"double3\" 0 143.19997081633275116 0"
 		
 		2 "|Vampire__Controller1:ZERO_Root_CON|Vampire__Controller1:Root_CON" "translate" 
-		" -type \"double3\" 1908.56255496901371771 303.03144576535135002 1781.05489404380659835"
+		" -type \"double3\" 2062.39665215935747256 337.75065929320618352 1575.4208304747778584"
 		
 		2 "|Vampire__Controller1:ZERO_Root_CON|Vampire__Controller1:Root_CON" "translateX" 
 		" -av"
